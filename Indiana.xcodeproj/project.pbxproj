@@ -26,6 +26,7 @@
 		76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76037CDB1CBF8B4F00D72AA7 /* LaunchScreen.storyboard */; };
 		76037CE81CBF8B4F00D72AA7 /* IndianaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CE71CBF8B4F00D72AA7 /* IndianaTests.m */; };
 		76037CF31CBF8B4F00D72AA7 /* IndianaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CF21CBF8B4F00D72AA7 /* IndianaUITests.m */; };
+		76039A041CC0EC1200F486C8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76039A031CC0EC1200F486C8 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		76037CEE1CBF8B4F00D72AA7 /* IndianaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndianaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76037CF21CBF8B4F00D72AA7 /* IndianaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndianaUITests.m; sourceTree = "<group>"; };
 		76037CF41CBF8B4F00D72AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76039A031CC0EC1200F486C8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CA116AEA8B6F229310F6F10E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76039A041CC0EC1200F486C8 /* SystemConfiguration.framework in Frameworks */,
 				038BF5F78328C5E09B8B98A6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +164,7 @@
 		5C8FEF29D556C2ABE23DAC27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76039A031CC0EC1200F486C8 /* SystemConfiguration.framework */,
 				00E94AED93A33FBF44252FC7 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -308,7 +312,7 @@
 				TargetAttributes = {
 					76037CC91CBF8B4F00D72AA7 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JVX8354953;
+						DevelopmentTeam = 6U7UH8838D;
 					};
 					76037CE21CBF8B4F00D72AA7 = {
 						CreatedOnToolsVersion = 7.2;
@@ -577,7 +581,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Indiana/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Tagcare.Indiana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare.Indiana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -590,7 +594,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Indiana/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Tagcare.Indiana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare.Indiana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
