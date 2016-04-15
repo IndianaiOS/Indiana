@@ -26,7 +26,6 @@
 		76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76037CDB1CBF8B4F00D72AA7 /* LaunchScreen.storyboard */; };
 		76037CE81CBF8B4F00D72AA7 /* IndianaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CE71CBF8B4F00D72AA7 /* IndianaTests.m */; };
 		76037CF31CBF8B4F00D72AA7 /* IndianaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CF21CBF8B4F00D72AA7 /* IndianaUITests.m */; };
-		76039A021CC0911D00F486C8 /* TabBC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76039A011CC0911D00F486C8 /* TabBC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +80,6 @@
 		76037CEE1CBF8B4F00D72AA7 /* IndianaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndianaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76037CF21CBF8B4F00D72AA7 /* IndianaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndianaUITests.m; sourceTree = "<group>"; };
 		76037CF41CBF8B4F00D72AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76039A011CC0911D00F486C8 /* TabBC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBC.storyboard; sourceTree = "<group>"; };
 		CA116AEA8B6F229310F6F10E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,7 +195,6 @@
 				76037CD31CBF8B4F00D72AA7 /* ViewController.h */,
 				76037CD41CBF8B4F00D72AA7 /* ViewController.m */,
 				76037CD61CBF8B4F00D72AA7 /* Main.storyboard */,
-				76039A011CC0911D00F486C8 /* TabBC.storyboard */,
 				76037CD91CBF8B4F00D72AA7 /* Assets.xcassets */,
 				76037CDB1CBF8B4F00D72AA7 /* LaunchScreen.storyboard */,
 				76037CDE1CBF8B4F00D72AA7 /* Info.plist */,
@@ -350,7 +347,6 @@
 			files = (
 				2985F6711CC094A800ED5DDA /* MyViewController.xib in Resources */,
 				76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */,
-				76039A021CC0911D00F486C8 /* TabBC.storyboard in Resources */,
 				2985F66F1CC094A800ED5DDA /* ListViewController.xib in Resources */,
 				2985F66D1CC094A800ED5DDA /* HomeViewController.xib in Resources */,
 				76037CDA1CBF8B4F00D72AA7 /* Assets.xcassets in Resources */,
