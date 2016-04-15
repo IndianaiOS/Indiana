@@ -1,22 +1,22 @@
 //
-//  ListViewController.m
+//  BaseViewController.m
 //  Indiana
 //
 //  Created by Tagcare on 16/4/15.
 //  Copyright © 2016年 Tagcare. All rights reserved.
 //
 
-#import "ListViewController.h"
+#import "BaseViewController.h"
 
-@interface ListViewController ()
+@interface BaseViewController ()
 
 @end
 
-@implementation ListViewController
+@implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

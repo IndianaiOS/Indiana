@@ -1,13 +1,13 @@
 //
-//  MyViewController.h
+//  BaseViewController.h
 //  Indiana
 //
 //  Created by Tagcare on 16/4/15.
 //  Copyright © 2016年 Tagcare. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface MyViewController : UIViewController
+@interface BaseViewController : ViewController
 
 @end

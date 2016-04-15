@@ -1,5 +1,5 @@
 //
-//  ListViewController.h
+//  TabBarController.h
 //  Indiana
 //
 //  Created by Tagcare on 16/4/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListViewController : UIViewController
+@interface TabBarController : UITabBarController
 
 @end
