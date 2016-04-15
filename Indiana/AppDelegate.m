@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
+#import "NewViewController.h"
+#import "ListViewController.h"
+#import "MyViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +21,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+    HomeViewController *homeVC = [[HomeViewController alloc]init];
+    UINavigationController * homeNC = [[UINavigationController alloc]initWithRootViewController:homeVC];
+    homeNC.tabBarItem.title = @"零钱夺宝";
+    
+    NewViewController *newVC = [[NewViewController alloc]init];
+    UINavigationController * newNC = [[UINavigationController alloc]initWithRootViewController:newVC];
+    newNC.tabBarItem.title = @"最新揭晓";
+    
+    ListViewController *listVC = [[ListViewController alloc]init];
+    UINavigationController * listNC = [[UINavigationController alloc]initWithRootViewController:listVC];
+    listNC.tabBarItem.title = @"清单";
+    
+    MyViewController *myVC = [[MyViewController alloc]init];
+    UINavigationController * myNC = [[UINavigationController alloc]initWithRootViewController:myVC];
+    myNC.tabBarItem.title = @"我";
+    
+    UITabBarController *tabBC = [[UITabBarController alloc]init];
+    tabBC.viewControllers = @[homeNC,newNC,listNC,myNC];
+    
+    self.window.rootViewController = tabBC;
+    
     return YES;
 }
 
