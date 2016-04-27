@@ -8,8 +8,12 @@
 
 #import "AppDelegate.h"
 #import "TabBarController.h"
+#import <AFNetworking.h>
 
 @interface AppDelegate ()
+{
+    NSString *networkInfo;
+}
 
 @end
 
@@ -25,7 +29,43 @@
     TabBarController * tabBC = [[TabBarController alloc] init];
     self.window.rootViewController = tabBC;
     
+    [self checkNetwork];
+    
     return YES;
+}
+
+- (void)checkNetwork{
+    AFNetworkReachabilityManager *manger = [AFNetworkReachabilityManager sharedManager];
+    
+    [manger setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未知");
+                networkInfo = @"未知";
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"没有网络");
+                networkInfo = @"没有网络";
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"3G|4G");
+                networkInfo = @"3G|4G";
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"WiFi");
+                networkInfo = @"WiFi";
+                break;
+            default:
+                break;
+        }
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:networkInfo preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:cancelAction];
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    }];
+    
+    [manger startMonitoring];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

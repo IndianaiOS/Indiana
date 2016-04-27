@@ -25,6 +25,8 @@
 		76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76037CDB1CBF8B4F00D72AA7 /* LaunchScreen.storyboard */; };
 		76037CE81CBF8B4F00D72AA7 /* IndianaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CE71CBF8B4F00D72AA7 /* IndianaTests.m */; };
 		76037CF31CBF8B4F00D72AA7 /* IndianaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CF21CBF8B4F00D72AA7 /* IndianaUITests.m */; };
+		76039A041CC0EC1200F486C8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76039A031CC0EC1200F486C8 /* SystemConfiguration.framework */; };
+		7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7613CF0C1CCDFC2F00195D22 /* DataService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,9 @@
 		76037CEE1CBF8B4F00D72AA7 /* IndianaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndianaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76037CF21CBF8B4F00D72AA7 /* IndianaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndianaUITests.m; sourceTree = "<group>"; };
 		76037CF41CBF8B4F00D72AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76039A031CC0EC1200F486C8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7613CF0B1CCDFC2F00195D22 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		7613CF0C1CCDFC2F00195D22 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		CA116AEA8B6F229310F6F10E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76039A041CC0EC1200F486C8 /* SystemConfiguration.framework in Frameworks */,
 				038BF5F78328C5E09B8B98A6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +115,7 @@
 		2985F6591CC094A800ED5DDA /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7613CF0A1CCDFC0900195D22 /* DataSource */,
 				2985F65A1CC094A800ED5DDA /* App */,
 				2985F65D1CC094A800ED5DDA /* Root */,
 				2985F65E1CC094A800ED5DDA /* Scene */,
@@ -158,6 +165,7 @@
 		5C8FEF29D556C2ABE23DAC27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76039A031CC0EC1200F486C8 /* SystemConfiguration.framework */,
 				00E94AED93A33FBF44252FC7 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -222,6 +230,15 @@
 				76037CF41CBF8B4F00D72AA7 /* Info.plist */,
 			);
 			path = IndianaUITests;
+			sourceTree = "<group>";
+		};
+		7613CF0A1CCDFC0900195D22 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				7613CF0B1CCDFC2F00195D22 /* DataService.h */,
+				7613CF0C1CCDFC2F00195D22 /* DataService.m */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		772654A24F79612B73DC7331 /* Pods */ = {
@@ -303,7 +320,7 @@
 				TargetAttributes = {
 					76037CC91CBF8B4F00D72AA7 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JVX8354953;
+						DevelopmentTeam = 6U7UH8838D;
 					};
 					76037CE21CBF8B4F00D72AA7 = {
 						CreatedOnToolsVersion = 7.2;
@@ -420,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2985F6721CC094A800ED5DDA /* NewViewController.m in Sources */,
+				7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */,
 				2985F6761CC094C600ED5DDA /* BaseViewController.m in Sources */,
 				2985F6701CC094A800ED5DDA /* MyViewController.m in Sources */,
 				2985F6791CC094FB00ED5DDA /* TabBarController.m in Sources */,
@@ -570,8 +588,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Indiana/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Tagcare.Indiana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare.Indiana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -583,8 +602,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Indiana/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Tagcare.Indiana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare.Indiana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

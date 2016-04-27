@@ -1,15 +1,15 @@
 //
-//  BaseViewController.h
+//  ViewController.h
 //  Indiana
 //
-//  Created by Tagcare on 16/4/15.
+//  Created by Tagcare on 16/4/14.
 //  Copyright © 2016年 Tagcare. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "UIScrollView+EmptyDataSet.h"
+#import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController
+@interface ViewController : UIViewController
 
 @property(nonatomic, strong)UITableView * baseTableView;
 
@@ -19,3 +19,4 @@
 - (void)setupRefresh;
 
 @end
+

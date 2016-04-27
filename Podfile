@@ -1,5 +1,5 @@
 platform :ios, '7.0'
-pod 'AFNetworking', '~> 3.0.0-beta.2'
+pod 'AFNetworking', '~> 3.0.4'
 pod 'DZNEmptyDataSet', '~> 1.7.2’
 pod 'BlocksKit', '~> 2.2.5’
 pod 'AVOSCloud', '~> 3.1.6.7’
