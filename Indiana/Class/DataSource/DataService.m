@@ -26,54 +26,36 @@
                    completion:(void (^)(id response, NSError *error,
                                         NSDictionary *header))completion {
     
-    return [super GET:URLString parameters:@{} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (responseObject) {
-            completion(responseObject, nil, nil);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%ld",(long)task.state);
-    }];
+    return [super GET:URLString
+           parameters:@{}
+             progress:nil
+              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+                  if (responseObject) {
+                      completion(responseObject, nil, nil);
+                  }
+              } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                  NSLog(@"%ld",(long)task.state);
+              }];
     
-//    return [super GET:URLString
-//           parameters:@{}
-//              success:^(NSURLSessionDataTask *_Nonnull task,
-//                        id _Nullable responseObject) {
-//                  
-//                  if (responseObject) {
-//                      completion(responseObject, nil, nil);
-//                  }
-//                  
-//              }
-//              failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
-//                  completion(nil, error, nil);
-//                  NSLog(@"%ld", (long)task.state);
-//              }];
 }
+
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
                     parameters:(id)parameters
                     completion:
 (void (^)(id response, NSError *error))completion {
     
-    return [super POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (responseObject) {
-            completion(responseObject, nil);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        completion(nil, error);
-    }];
-    
-//    return [super POST:URLString
-//            parameters:parameters
-//               success:^(NSURLSessionDataTask *_Nonnull task,
-//                         id _Nullable responseObject) {
-//                   if (responseObject) {
-//                       completion(responseObject, nil);
-//                   }
-//                   
-//               }
-//               failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
-//                   completion(nil, error);
-//               }];
+    return [super POST:URLString
+            parameters:parameters
+              progress:nil
+               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                   if (responseObject) {
+                       completion(responseObject, nil);
+                   }
+               } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                   completion(nil, error);
+               }];
+
 }
 
 @end
