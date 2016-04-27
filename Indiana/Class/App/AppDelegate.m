@@ -65,8 +65,6 @@
     }];
     
     [manger startMonitoring];
-    
-    
 
 }
 
