@@ -26,6 +26,7 @@
 		76037CE81CBF8B4F00D72AA7 /* IndianaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CE71CBF8B4F00D72AA7 /* IndianaTests.m */; };
 		76037CF31CBF8B4F00D72AA7 /* IndianaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CF21CBF8B4F00D72AA7 /* IndianaUITests.m */; };
 		76039A041CC0EC1200F486C8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76039A031CC0EC1200F486C8 /* SystemConfiguration.framework */; };
+		760B716C1D081CBC007D4D28 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760B716A1D081CBC007D4D28 /* HomeStoryboard.storyboard */; };
 		7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7613CF0C1CCDFC2F00195D22 /* DataService.m */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		76037CF21CBF8B4F00D72AA7 /* IndianaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndianaUITests.m; sourceTree = "<group>"; };
 		76037CF41CBF8B4F00D72AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76039A031CC0EC1200F486C8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		760B716B1D081CBC007D4D28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		7613CF0B1CCDFC2F00195D22 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		7613CF0C1CCDFC2F00195D22 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		CA116AEA8B6F229310F6F10E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				76037CD91CBF8B4F00D72AA7 /* Assets.xcassets */,
 				76037CDB1CBF8B4F00D72AA7 /* LaunchScreen.storyboard */,
 				29623E6B1CD0944800DEE393 /* Main.storyboard */,
+				760B716A1D081CBC007D4D28 /* HomeStoryboard.storyboard */,
 				76037CDE1CBF8B4F00D72AA7 /* Info.plist */,
 				76037CCD1CBF8B4F00D72AA7 /* Supporting Files */,
 			);
@@ -359,6 +362,7 @@
 			files = (
 				29623E6D1CD0944800DEE393 /* Main.storyboard in Resources */,
 				2985F6711CC094A800ED5DDA /* MyViewController.xib in Resources */,
+				760B716C1D081CBC007D4D28 /* HomeStoryboard.storyboard in Resources */,
 				76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */,
 				2985F66F1CC094A800ED5DDA /* ListViewController.xib in Resources */,
 				2985F66D1CC094A800ED5DDA /* HomeViewController.xib in Resources */,
@@ -494,6 +498,14 @@
 				76037CDC1CBF8B4F00D72AA7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		760B716A1D081CBC007D4D28 /* HomeStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				760B716B1D081CBC007D4D28 /* Base */,
+			);
+			name = HomeStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
