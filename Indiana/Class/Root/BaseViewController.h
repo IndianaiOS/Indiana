@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIScrollView+EmptyDataSet.h"
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController<DZNEmptyDataSetDelegate,DZNEmptyDataSetSource>
 
 @property(nonatomic, strong)UITableView * baseTableView;
 
@@ -17,5 +17,15 @@
  *  下拉刷新、上拉加载更过
  */
 - (void)setupRefresh;
+
+/**
+ *  空白页
+ */
+- (void)setupEmptyView;
+
+/**
+ *  返回按钮
+ */
+- (void)returnButton;
 
 @end

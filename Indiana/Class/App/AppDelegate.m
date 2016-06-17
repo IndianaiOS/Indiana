@@ -23,12 +23,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window makeKeyAndVisible];
-    
-    TabBarController * tabBC = [[TabBarController alloc] init];
-    self.window.rootViewController = tabBC;
-    
     [self checkNetwork];
     
     return YES;
