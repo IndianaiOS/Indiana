@@ -10,4 +10,8 @@
 
 @interface PersonalCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *logoImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+
 @end

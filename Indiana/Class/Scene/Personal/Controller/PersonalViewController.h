@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface PersonalViewController : BaseViewController
+@interface PersonalViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
 
 @end
