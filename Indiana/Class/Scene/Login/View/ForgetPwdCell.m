@@ -1,14 +1,14 @@
 //
-//  PhoneCell.m
+//  ForgetPwdCell.m
 //  Indiana
 //
-//  Created by Tagcare on 16/6/24.
+//  Created by Tagcare on 16/6/28.
 //  Copyright © 2016年 Tagcare. All rights reserved.
 //
 
-#import "PhoneCell.h"
+#import "ForgetPwdCell.h"
 
-@implementation PhoneCell
+@implementation ForgetPwdCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

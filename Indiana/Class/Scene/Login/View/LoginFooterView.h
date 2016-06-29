@@ -1,5 +1,5 @@
 //
-//  RegisterFooterView.h
+//  LoginFooterView.h
 //  Indiana
 //
 //  Created by Tagcare on 16/6/28.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterFooterView : UITableViewHeaderFooterView
+@interface LoginFooterView : UITableViewHeaderFooterView
 
 @end

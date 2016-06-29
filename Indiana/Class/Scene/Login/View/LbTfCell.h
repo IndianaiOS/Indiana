@@ -1,5 +1,5 @@
 //
-//  RegisterFooterView.h
+//  LbTfCell.h
 //  Indiana
 //
 //  Created by Tagcare on 16/6/28.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterFooterView : UITableViewHeaderFooterView
+@interface LbTfCell : UITableViewCell
 
 @end
