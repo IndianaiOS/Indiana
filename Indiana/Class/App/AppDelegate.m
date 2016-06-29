@@ -9,6 +9,11 @@
 #import "AppDelegate.h"
 #import "TabBarController.h"
 #import <AFNetworking.h>
+#import "UMSocial.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialWechatHandler.h"
+
+#define UmengAppkey @"57725d0467e58e361e001606"
 
 @interface AppDelegate ()
 {
@@ -24,6 +29,13 @@
     // Override point for customization after application launch.
     
     [self checkNetwork];
+    //设置友盟社会化组件appkey
+    [UMSocialData setAppKey:UmengAppkey];
+    //设置微信AppId、appSecret，分享url
+    [UMSocialWechatHandler setWXAppId:@"wx155e688c3fcd2188" appSecret:@"629de74ff71bcc0b20071a909cae882d" url:@"http://www.umeng.com/social"];
+    //设置手机QQ 的AppId，Appkey，和分享URL，需要#import "UMSocialQQHandler.h"
+    [UMSocialQQHandler setQQWithAppId:@"1105432387" appKey:@"QfSrZkSjWhdu9wn9" url:@"http://www.umeng.com/social"];
+    
     
     return YES;
 }
@@ -60,6 +72,15 @@
     
     [manger startMonitoring];
 
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL result = [UMSocialSnsService handleOpenURL:url];
+    if (result == FALSE) {
+        //调用其他SDK，例如支付宝SDK等
+    }
+    return result;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

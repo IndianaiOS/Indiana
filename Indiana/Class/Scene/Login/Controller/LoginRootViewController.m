@@ -43,6 +43,10 @@
     [self.view addSubview:self.registerVC.view];
 }
 
+- (IBAction)leftBarButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)segmentAction:(id)sender {
     if ([sender selectedSegmentIndex] == 0) {
         [self showRegisterVC];

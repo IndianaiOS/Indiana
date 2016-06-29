@@ -17,17 +17,18 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-N2-CPJ">
                         <rect key="frame" x="14" y="15" width="48" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sbm-fV-6qB">
-                        <rect key="frame" x="88" y="11" width="162" height="30"/>
+                        <rect key="frame" x="88" y="11" width="163" height="30"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHF-hk-vyz">
-                        <rect key="frame" x="259" y="10" width="96" height="30"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <rect key="frame" x="260" y="10" width="96" height="30"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="96" id="sUQ-BW-PHk"/>
                         </constraints>
@@ -43,13 +44,18 @@
                     <constraint firstAttribute="bottom" secondItem="pHF-hk-vyz" secondAttribute="bottom" constant="9" id="E2J-VR-onk"/>
                     <constraint firstItem="Sbm-fV-6qB" firstAttribute="leading" secondItem="eOz-N2-CPJ" secondAttribute="trailing" constant="26" id="Ijd-s4-c39"/>
                     <constraint firstAttribute="bottom" secondItem="Sbm-fV-6qB" secondAttribute="bottom" constant="8" id="Iy9-4e-rn9"/>
-                    <constraint firstAttribute="trailing" secondItem="pHF-hk-vyz" secondAttribute="trailing" constant="20" id="MDS-tb-YKN"/>
+                    <constraint firstAttribute="trailing" secondItem="pHF-hk-vyz" secondAttribute="trailing" constant="19" id="MDS-tb-YKN"/>
                     <constraint firstItem="eOz-N2-CPJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="YQq-mk-Sii"/>
                     <constraint firstItem="eOz-N2-CPJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="eBb-S9-E5D"/>
                     <constraint firstItem="pHF-hk-vyz" firstAttribute="leading" secondItem="Sbm-fV-6qB" secondAttribute="trailing" constant="9" id="raj-f1-RFO"/>
                     <constraint firstItem="pHF-hk-vyz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="zyU-8b-yGj"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="getVerifyCodeButton" destination="pHF-hk-vyz" id="Q3A-Fq-e2s"/>
+                <outlet property="textField" destination="Sbm-fV-6qB" id="quZ-qP-1YC"/>
+                <outlet property="titleLabel" destination="eOz-N2-CPJ" id="3Ep-ep-1dQ"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

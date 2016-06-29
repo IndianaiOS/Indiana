@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface LoginModel : NSObject
+
+- (void)QQLogin:(UIViewController *)viewController;
+- (void)weiXinLogin:(UIViewController *)viewController;
 
 @end

@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RegisterFooterView">
+        <view contentMode="scaleToFill" restorationIdentifier="registerFooterView" id="iN0-l3-epB" customClass="RegisterFooterView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="441"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -58,7 +58,7 @@
                             <state key="normal" title="    微信登录" image="login_btn_Weixin"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="jN3-Ca-uMw" firstAttribute="top" secondItem="L41-4p-P84" secondAttribute="top" constant="13" id="1fH-OF-44F"/>
                         <constraint firstItem="P6D-ng-C17" firstAttribute="leading" secondItem="L41-4p-P84" secondAttribute="leading" constant="10" id="3Ny-4X-u2I"/>
@@ -85,6 +85,13 @@
                 <constraint firstAttribute="trailing" secondItem="L41-4p-P84" secondAttribute="trailing" id="hBJ-lw-3g5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="CheckBox" destination="P6D-ng-C17" id="EnH-37-J9Y"/>
+                <outlet property="QQLoginBtn" destination="1SF-bt-oRh" id="Sa7-ce-bVh"/>
+                <outlet property="protocolLabel" destination="jN3-Ca-uMw" id="9O9-78-JPZ"/>
+                <outlet property="registerButton" destination="kyA-3R-6b8" id="14t-jl-kPJ"/>
+                <outlet property="weiXinLoginBtn" destination="GZN-H6-Zfu" id="9sV-YT-w7A"/>
+            </connections>
             <point key="canvasLocation" x="401.5" y="288.5"/>
         </view>
     </objects>

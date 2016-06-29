@@ -10,4 +10,11 @@
 
 @interface RegisterFooterView : UITableViewHeaderFooterView
 
+@property (weak, nonatomic) IBOutlet UIButton *CheckBox;
+@property (weak, nonatomic) IBOutlet UILabel *protocolLabel;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *QQLoginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *weiXinLoginBtn;
+
+
 @end

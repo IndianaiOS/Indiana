@@ -7,16 +7,78 @@
 //
 
 #import "LoginViewController.h"
+#import "LbTfCell.h"
+#import "ForgetPwdCell.h"
+#import "LoginFooterView.h"
+
+static NSString *const lbTfCellIdentifier = @"lbTfCell";
+static NSString *const forgetPwdCellIdentifier = @"forgetPwdCell";
+static NSString *const loginFooterViewIdentifier = @"loginFooterView";
 
 @interface LoginViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self tableViewRegister];
+    
+}
+
+- (void)tableViewRegister {
+    [self.tableView registerNib:[UINib nibWithNibName:@"LbTfCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:lbTfCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ForgetPwdCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:forgetPwdCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"LoginFooterView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:loginFooterViewIdentifier];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 18;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return self.view.frame.size.height-118-64;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    return 50;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    
+    LoginFooterView *footView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:loginFooterViewIdentifier];
+    
+    return footView;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 1) {
+        LbTfCell *cell = [tableView dequeueReusableCellWithIdentifier:lbTfCellIdentifier];
+        cell.titleLabel.text = NSLocalizedString(@"手机号", nil);
+        cell.textField.placeholder = NSLocalizedString(@"请输入手机号", nil);
+        return cell;
+        
+    } else {
+        ForgetPwdCell *cell = [tableView dequeueReusableCellWithIdentifier:forgetPwdCellIdentifier];
+        
+        return cell;
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

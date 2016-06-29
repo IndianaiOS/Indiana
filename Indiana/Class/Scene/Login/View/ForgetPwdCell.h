@@ -10,4 +10,8 @@
 
 @interface ForgetPwdCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *forgetPwdBtn;
+
 @end

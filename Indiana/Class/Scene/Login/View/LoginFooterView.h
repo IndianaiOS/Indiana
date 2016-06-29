@@ -10,4 +10,9 @@
 
 @interface LoginFooterView : UITableViewHeaderFooterView
 
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *QQLoginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *weiXinLoginBtn;
+
 @end

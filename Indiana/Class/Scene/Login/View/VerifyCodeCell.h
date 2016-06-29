@@ -10,4 +10,8 @@
 
 @interface VerifyCodeCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *getVerifyCodeButton;
+
 @end

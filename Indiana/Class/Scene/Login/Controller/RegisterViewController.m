@@ -8,11 +8,16 @@
 
 #import "RegisterViewController.h"
 #import "RegisterFooterView.h"
-#import "PhoneCell.h"
+#import "LbTfCell.h"
+#import "VerifyCodeCell.h"
+#import "LoginModel.h"
 
+static NSString *const lbTfCellIdentifier = @"lbTfCell";
+static NSString *const verifyCodeCellIdentifier = @"verifyCodeCell";
+static NSString *const registerFooterViewIdentifier = @"registerFooterView";
 @interface RegisterViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tabelView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -20,14 +25,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabelView.delegate = self;
-    self.tabelView.dataSource = self;
-    [self.tabelView registerClass:[PhoneCell class]  forCellReuseIdentifier:@"phoneCell"];
-    [self.tabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"verifyCodeCell"];
-    [self.tabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"passwordCell"];
-    [self.tabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"password2Cell"];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self tableViewRegister];
+    
+}
 
-    // Do any additional setup after loading the view.
+- (void)tableViewRegister {
+    [self.tableView registerNib:[UINib nibWithNibName:@"LbTfCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:lbTfCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"VerifyCodeCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:verifyCodeCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"RegisterFooterView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:registerFooterViewIdentifier];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -52,41 +59,58 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"RegisterFooterView" owner:self options:nil];
-    RegisterFooterView * footView = [nib objectAtIndex:0];
+    
+    RegisterFooterView *footView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:registerFooterViewIdentifier];
+    [footView.QQLoginBtn addTarget:self action:@selector(footViewQQLoginBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [footView.weiXinLoginBtn addTarget:self action:@selector(footViewWeiXinLoginBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
     return footView;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    switch (indexPath.row) {
-        case 0:{
-            PhoneCell *cell = [tableView dequeueReusableCellWithIdentifier:@"phoneCell" forIndexPath:indexPath];
-            cell.backgroundColor = [UIColor redColor];
-            return cell;
+    if (indexPath.row == 1) {
+        VerifyCodeCell *cell = [tableView dequeueReusableCellWithIdentifier:verifyCodeCellIdentifier];
+        
+        return cell;
+
+    } else {
+        LbTfCell *cell = [tableView dequeueReusableCellWithIdentifier:lbTfCellIdentifier];
+        switch (indexPath.row) {
+            case 0:{
+                cell.titleLabel.text = NSLocalizedString(@"手机号", nil);
+                cell.textField.placeholder = NSLocalizedString(@"请输入手机号", nil);
+
+            }
+                break;
+            case 2:{
+                cell.titleLabel.text = NSLocalizedString(@"密码", nil);
+                cell.textField.placeholder = NSLocalizedString(@"请输入6-20位登录密码", nil);
+            }
+                break;
+            case 3:{
+                cell.titleLabel.text = NSLocalizedString(@"确认密码", nil);
+                cell.textField.placeholder = NSLocalizedString(@"请再次输入密码", nil);
+            }
+                break;
+            default:
+                break;
         }
-            break;
-        case 1:{
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"verifyCodeCell" forIndexPath:indexPath];
-            return cell;
-        }
-            break;
-        case 2:{
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"passwordCell" forIndexPath:indexPath];
-            return cell;
-        }
-            break;
-        case 3:{
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"password2Cell" forIndexPath:indexPath];
-            return cell;
-        }
-            break;
-        default:
-            break;
+        return cell;
+
     }
     
-    return nil;
+}
+
+- (void)footViewQQLoginBtnAction:(UIButton *)button {
+    LoginModel * loginModel = [[LoginModel alloc] init];
+    [loginModel QQLogin:self];
+}
+
+- (void)footViewWeiXinLoginBtnAction:(UIButton *)button {
+    LoginModel * loginModel = [[LoginModel alloc] init];
+    [loginModel weiXinLogin:self];
 }
 
 - (void)didReceiveMemoryWarning {

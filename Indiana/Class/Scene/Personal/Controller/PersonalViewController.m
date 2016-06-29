@@ -9,6 +9,8 @@
 #import "PersonalViewController.h"
 #import "PersonalCell.h"
 
+static NSString *const personalCellIdentifier = @"personalCell";
+
 @interface PersonalViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tabelView;
@@ -21,7 +23,7 @@
     [super viewDidLoad];
     self.tabelView.delegate = self;
     self.tabelView.dataSource = self;
-    [self.tabelView registerNib:[UINib nibWithNibName:@"PersonalCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"personalCell"];
+    [self.tabelView registerNib:[UINib nibWithNibName:@"PersonalCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:personalCellIdentifier];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,7 +42,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PersonalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"personalCell"];
+    PersonalCell *cell = [tableView dequeueReusableCellWithIdentifier:personalCellIdentifier];
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
