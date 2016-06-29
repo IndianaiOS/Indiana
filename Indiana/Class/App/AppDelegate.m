@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "TabBarController.h"
 #import <AFNetworking.h>
+#import "TreasureListViewController.h"
+#import "Pingpp.h"
 
 @interface AppDelegate ()
 {
@@ -22,6 +24,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    TreasureListViewController* root = [[TreasureListViewController alloc] init];
+//    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:root];
+//    
+//    //self.viewController = nav;
+//    self.window.rootViewController = nav;
+//    [self.window makeKeyAndVisible];
     
     [self checkNetwork];
     
@@ -55,7 +63,7 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:networkInfo preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancelAction];
-        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+        //[self.window.rootViewController presentViewController:alert animated:YES completion:nil];
     }];
     
     [manger startMonitoring];
@@ -82,6 +90,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+    BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
+    return canHandleURL;
 }
 
 @end

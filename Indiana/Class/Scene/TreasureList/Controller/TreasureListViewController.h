@@ -10,6 +10,6 @@
 
 #import "BaseViewController.h"
 
-@interface TreasureListViewController :BaseViewController
+@interface TreasureListViewController :BaseViewController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @end

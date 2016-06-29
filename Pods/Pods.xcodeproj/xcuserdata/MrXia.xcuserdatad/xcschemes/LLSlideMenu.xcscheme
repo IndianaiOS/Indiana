@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B90E928EBADCA813A6BE5BD6'
+               BlueprintIdentifier = 'C49259B8722E1DFB477E9E58'
                BlueprintName = 'LLSlideMenu'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libLLSlideMenu.a'>
