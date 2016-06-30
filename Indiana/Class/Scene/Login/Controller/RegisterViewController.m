@@ -34,6 +34,7 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
     
 }
 
+#pragma mark - tableView
 - (void)tableViewRegister {
     [self.tableView registerNib:[UINib nibWithNibName:@"LbTfCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:lbTfCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"VerifyCodeCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:verifyCodeCellIdentifier];
@@ -49,8 +50,7 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-        return 18;
-   
+    return 18;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -151,19 +151,32 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
             self.userInfo.phone = textField.text;
         }
             break;
-        case 101:
-            
+        case 101:{
+            self.userInfo.captcha = textField.text;
+        }
             break;
-        case 102:
-            
+        case 102:{
+            self.userInfo.password = textField.text;
+        }
             break;
-        case 103:
-            
+        case 103:{
+            [self comparePassword:textField.text];
+        }
             break;
         default:
             break;
     }
 
+}
+
+//比较两次密码
+- (void)comparePassword:(NSString *)text {
+    if (![self.userInfo.password isEqualToString:text]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"两次密码不一致" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:cancelAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 //TODO:注销监听

@@ -8,7 +8,6 @@
 
 #import "UserInfoModel.h"
 
-#define USER_DEFAULT @"userDefault"
 static NSString *const loginUrl = @"login";
 static NSString *const phoneRegisterCAPTCHAUrl = @"phoneRegisterCAPTCHA";
 static NSString *const phoneRegisterUrl = @"phoneRegister";
@@ -21,8 +20,14 @@ static NSString *const phoneRegisterUrl = @"phoneRegister";
 
 - (NSURLSessionDataTask *)loginBlock:(void (^)(UserInfoModel *userInfoModel,
                                                NSError *error))completion {
-    //TODO:数据
-    NSDictionary *parameters = [NSDictionary dictionaryWithDictionary:[self dictionaryObject]];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:[self dictionaryObject]];
+    [parameters setObject:@"uid" forKey:self.uid];
+    [parameters setObject:@"nickname" forKey:self.nickname];
+    [parameters setObject:@"gender" forKey:self.gender];
+    [parameters setObject:@"avatar" forKey:self.avatar];
+    [parameters setObject:@"logintype" forKey:self.logintype];
+
     return [[DataService sharedClient]
             POST:[self url:loginUrl]
             parameters:parameters
@@ -36,8 +41,10 @@ static NSString *const phoneRegisterUrl = @"phoneRegister";
 
 - (NSURLSessionDataTask *)phoneRegisterBlock:(void (^)(UserInfoModel *userInfoModel,
                                                NSError *error))completion {
-    //TODO:数据
-    NSDictionary *parameters = [NSDictionary dictionaryWithDictionary:[self dictionaryObject]];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:[self dictionaryObject]];
+    [parameters setObject:@"captcha" forKey:self.captcha];
+    
     return [[DataService sharedClient]
             POST:[self url:phoneRegisterUrl]
             parameters:parameters
@@ -51,7 +58,6 @@ static NSString *const phoneRegisterUrl = @"phoneRegister";
 
 - (NSURLSessionDataTask *)phoneRegisterCAPTCHABlock:(void (^)(NSString * code,
                                                               NSError *error))completion; {
-    //TODO: 只传手机号
     NSDictionary *parameters = @{@"phone":self.phone};
     return [[DataService sharedClient]
             POST:[self url:phoneRegisterCAPTCHAUrl]
@@ -69,145 +75,18 @@ static NSString *const phoneRegisterUrl = @"phoneRegister";
     return url;
 }
 
-//- (NSString *)userid {
-//    if (_userid == nil) {
-//        _userid = @"";
-//    }
-//    return _userid;
-//}
-//
-//- (NSString *)uid {
-//    if (_uid == nil) {
-//        _uid = @"";
-//    }
-//    return _userid;
-//}
-//
-//- (NSString *)nickname {
-//    if (_nickname == nil) {
-//        _nickname = @"";
-//    }
-//    return _nickname;
-//}
-//
-//- (NSString *)gender {
-//    if (_gender == nil) {
-//        _gender = @"";
-//    }
-//    return _gender;
-//}
-//
-//- (NSString *)avatar {
-//    if (_avatar == nil) {
-//        _avatar = @"";
-//    }
-//    return _avatar;
-//}
-//
-//- (NSString *)logintype {
-//    if (_logintype == nil) {
-//        _logintype = @"";
-//    }
-//    return _logintype;
-//}
-//
-//- (NSString *)resolution {
-//    if (_resolution == nil) {
-//        _resolution = @"";
-//    }
-//    return _resolution;
-//}
-//
-//- (NSString *)os {
-//    if (_os == nil) {
-//        _os = @"";
-//    }
-//    return _os;
-//}
-//
-//- (NSString *)appversion {
-//    if (_appversion == nil) {
-//        _appversion = @"";
-//    }
-//    return _appversion;
-//}
-//
-//- (NSString *)deviceid {
-//    if (_deviceid == nil) {
-//        _deviceid = @"";
-//    }
-//    return _deviceid;
-//}
-//
-//- (NSString *)phone {
-//    if (_phone == nil) {
-//        _phone = @"";
-//    }
-//    return _phone;
-//}
-//
-//- (NSString *)password {
-//    if (_password == nil) {
-//        _password = @"";
-//    }
-//    return _password;
-//}
-//
-//- (NSString *)push_token {
-//    if (_push_token == nil) {
-//        _push_token = @"";
-//    }
-//    return _push_token;
-//}
-//
-//- (NSString *)coin {
-//    if (_coin == nil) {
-//        _coin = @"";
-//    }
-//    return _coin;
-//}
-//
-//- (NSString *)captcha {
-//    if (_captcha == nil) {
-//        _captcha = @"";
-//    }
-//    return _captcha;
-//}
-//
-//- (instancetype)init {
-//    NSDictionary * userDefault = [[NSUserDefaults standardUserDefaults] valueForKey:USER_DEFAULT];
-//    [self setValuesForKeysWithDictionary:userDefault];
-//    return self;
-//}
-//
-//-(void)saveDictionaryUser {
-//    
-//    NSLog(@"user %@",[self dictionaryObject]);
-//    [[NSUserDefaults standardUserDefaults] setObject:[self dictionaryObject] forKey:USER_DEFAULT];
-//    
-//}
-
 -(NSMutableDictionary *)dictionaryObject{
     
-    NSMutableDictionary * userDefaultDictionary = [[NSMutableDictionary alloc]init];
+    NSMutableDictionary * userInfoDic = [[NSMutableDictionary alloc]init];
     
-    [userDefaultDictionary setObject:self.userid forKey:@"userid"];
-    [userDefaultDictionary setObject:self.uid forKey:@"uid"];
-    [userDefaultDictionary setObject:self.nickname forKey:@"nickname"];
-    [userDefaultDictionary setObject:self.gender forKey:@"gender"];
-    [userDefaultDictionary setObject:self.avatar forKey:@"avatar"];
-    [userDefaultDictionary setObject:self.logintype forKey:@"logintype"];
-    [userDefaultDictionary setObject:self.resolution forKey:@"resolution"];
-    [userDefaultDictionary setObject:self.os forKey:@"os"];
-    [userDefaultDictionary setObject:self.appversion forKey:@"appversion"];
-    [userDefaultDictionary setObject:self.deviceid forKey:@"deviceid"];
-    [userDefaultDictionary setObject:self.phone forKey:@"phone"];
-    [userDefaultDictionary setObject:self.password forKey:@"password"];
-    [userDefaultDictionary setObject:self.push_token forKey:@"push_token"];
-    [userDefaultDictionary setObject:self.coin forKey:@"coin"];
-    [userDefaultDictionary setObject:self.captcha forKey:@"captcha"];
+    [userInfoDic setObject:self.resolution forKey:@"resolution"];
+    [userInfoDic setObject:self.os forKey:@"os"];
+    [userInfoDic setObject:self.appversion forKey:@"appversion"];
+    [userInfoDic setObject:self.deviceid forKey:@"deviceid"];
+    [userInfoDic setObject:self.phone forKey:@"phone"];
+    [userInfoDic setObject:self.password forKey:@"password"];
     
-    return userDefaultDictionary;
+    return userInfoDic;
     
 }
 
