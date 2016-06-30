@@ -37,6 +37,8 @@
 		76B4B11E1D22942100B15AD2 /* PayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B4B11D1D22942100B15AD2 /* PayView.m */; };
 		76BAF2B21D1935AB00553696 /* GoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAF2B01D1935AB00553696 /* GoodsCollectionViewCell.m */; };
 		76BAF2B31D1935AB00553696 /* GoodsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BAF2B11D1935AB00553696 /* GoodsCollectionViewCell.xib */; };
+		76FE6C911D24C300009C740B /* SelectBuyTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE6C901D24C300009C740B /* SelectBuyTimes.m */; };
+		76FE6C931D24C318009C740B /* SelectBuytimes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76FE6C921D24C318009C740B /* SelectBuytimes.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,9 @@
 		76BAF2AF1D1935AB00553696 /* GoodsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsCollectionViewCell.h; sourceTree = "<group>"; };
 		76BAF2B01D1935AB00553696 /* GoodsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsCollectionViewCell.m; sourceTree = "<group>"; };
 		76BAF2B11D1935AB00553696 /* GoodsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsCollectionViewCell.xib; sourceTree = "<group>"; };
+		76FE6C8F1D24C300009C740B /* SelectBuyTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBuyTimes.h; sourceTree = "<group>"; };
+		76FE6C901D24C300009C740B /* SelectBuyTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBuyTimes.m; sourceTree = "<group>"; };
+		76FE6C921D24C318009C740B /* SelectBuytimes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectBuytimes.xib; sourceTree = "<group>"; };
 		CA116AEA8B6F229310F6F10E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -320,6 +325,9 @@
 				76B4B11A1D22940F00B15AD2 /* PayView.xib */,
 				76B4B11C1D22942100B15AD2 /* PayView.h */,
 				76B4B11D1D22942100B15AD2 /* PayView.m */,
+				76FE6C8F1D24C300009C740B /* SelectBuyTimes.h */,
+				76FE6C901D24C300009C740B /* SelectBuyTimes.m */,
+				76FE6C921D24C318009C740B /* SelectBuytimes.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -565,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				760A05E31D1D0D240001B234 /* GoodsDetailTableViewCell.xib in Resources */,
+				76FE6C931D24C318009C740B /* SelectBuytimes.xib in Resources */,
 				76B4B11B1D22940F00B15AD2 /* PayView.xib in Resources */,
 				29623E6D1CD0944800DEE393 /* Main.storyboard in Resources */,
 				76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */,
@@ -654,6 +663,7 @@
 				7609838F1D20D3DE0048AC46 /* GoodsDetailHeaderView.m in Sources */,
 				2985F6761CC094C600ED5DDA /* BaseViewController.m in Sources */,
 				2985F6791CC094FB00ED5DDA /* TabBarController.m in Sources */,
+				76FE6C911D24C300009C740B /* SelectBuyTimes.m in Sources */,
 				297512391D13F47000C8917E /* ShowOrdersViewController.m in Sources */,
 				76BAF2B21D1935AB00553696 /* GoodsCollectionViewCell.m in Sources */,
 				76037CCF1CBF8B4F00D72AA7 /* main.m in Sources */,

@@ -47,6 +47,7 @@
         [alert addAction:cancelAction];
         [self presentViewController:alert animated:YES completion:nil];
     }else{
+        
         NSLog(@"调用Ping++sdk进入支付渠道进行交易");
         //    NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:@"ios",@"uid",@"xf",@"nickname",@"男",@"gender",@"http://www.baidu.com",@"avatar",@"1",@"logintype",@"1080*800",@"resolution",@"ios9",@"os",@"v1.0",@"appversion",@"123456",@"deviceid", nil];
         NSString *amount = @"1";
@@ -70,6 +71,12 @@
                                                  if ([result isEqualToString:@"success"]) {
                                                      // 支付成功
                                                      NSLog(@"good! pay complete");
+                                                     [[DataService sharedClient] POST:
+                                                      //@"http://192.168.0.111:8889/pay/appReqController"
+                                                      @"http://123.56.181.65:8889/pay/appWebhooks"
+                                                                           parameters:charge
+                                                                           completion:^(id response, NSError *error) {
+                                                                           }];
                                                  } else {
                                                      // 支付失败或取消
                                                      NSLog(@"Error: code=%lu msg=%@", error.code, [error getMsg]);

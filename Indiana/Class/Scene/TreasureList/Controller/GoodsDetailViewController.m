@@ -12,8 +12,13 @@
 #import "DataService.h"
 #import "Pingpp.h"
 #import "GoodsPayViewController.h"
+#import "SelectBuyTimes.h"
 
 @interface GoodsDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    SelectBuyTimes *selectView;
+}
+
 @property (weak, nonatomic) IBOutlet UITableView *goodsDetailTableView;
 
 
@@ -47,14 +52,19 @@
     [joinView addSubview:separatorView];
     
     
+    
+    
 }
 
 - (void)clickJoinButton:(UIButton *)sender{
     NSLog(@"join pay");
-    self.hidesBottomBarWhenPushed = YES;
-    GoodsPayViewController *GoodsPayVC = [[GoodsPayViewController alloc]init];
-    //[self.navigationController showViewController:GoodsPayVC sender:nil];
-    [self.navigationController pushViewController:GoodsPayVC animated:YES];
+//    self.hidesBottomBarWhenPushed = YES;
+//    GoodsPayViewController *GoodsPayVC = [[GoodsPayViewController alloc]init];
+//    //[self.navigationController showViewController:GoodsPayVC sender:nil];
+//    [self.navigationController pushViewController:GoodsPayVC animated:YES];
+    
+    selectView = [[SelectBuyTimes alloc]init];
+    [self.view addSubview:selectView];
     
 
 }

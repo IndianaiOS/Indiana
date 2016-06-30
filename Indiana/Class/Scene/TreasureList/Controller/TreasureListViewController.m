@@ -24,6 +24,7 @@
     UIButton *higtBtn;
     UIButton *lowBtn;
     UIView *redView;
+    UICollectionReusableView *reusableview;
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *goodsListCollection;
@@ -56,7 +57,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 2;
+    return 10;
 }
 
 
@@ -73,29 +74,31 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionReusableView *reusableview = nil;
-    
-    if (kind == UICollectionElementKindSectionHeader){
-        
-        HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"goodsHeaderView" forIndexPath:indexPath];
-        int x = self.view.frame.size.width/5;
+    //UICollectionReusableView *reusableview = nil;
+    if(!reusableview){
+        if (kind == UICollectionElementKindSectionHeader){
+            
+            HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"goodsHeaderView" forIndexPath:indexPath];
+            int x = self.view.frame.size.width/5;
 
-        NSArray *arr = @[@"最新",@"最快",@"最热",@"高价",@"低价"];
-        for (int i= 0; i<5; i++) {
-            UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
-            btn.tag = 100+i;
-            btn.frame = CGRectMake(x*i, 0, x, 40);
-            [btn setTitle:arr[i] forState:(UIControlStateNormal)];
-            [btn addTarget:self action:@selector(clickBtn:) forControlEvents:(UIControlEventTouchUpInside)];
-            [headerView.goodsTagView addSubview:btn];
+            NSArray *arr = @[@"最新",@"最快",@"最热",@"高价",@"低价"];
+            for (int i= 0; i<5; i++) {
+                UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
+                btn.tag = 100+i;
+                btn.frame = CGRectMake(x*i, 0, x, 40);
+                [btn setTitle:arr[i] forState:(UIControlStateNormal)];
+                [btn addTarget:self action:@selector(clickBtn:) forControlEvents:(UIControlEventTouchUpInside)];
+                [headerView.goodsTagView addSubview:btn];
+            }
+
+            redView = [[UIView alloc]initWithFrame:(CGRectMake(0, 36, x, 4))];
+            redView.backgroundColor = [UIColor redColor];
+            [headerView.goodsTagView addSubview:redView];
+
+            
+            reusableview = headerView;
+            
         }
-        redView = [[UIView alloc]initWithFrame:(CGRectMake(0, 36, x, 4))];
-        redView.backgroundColor = [UIColor redColor];
-        [headerView.goodsTagView addSubview:redView];
-        
-        
-        reusableview = headerView;
-        
     }
     return reusableview;
 }
