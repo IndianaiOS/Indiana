@@ -17,6 +17,7 @@
 		2985F66B1CC094A800ED5DDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985F65C1CC094A800ED5DDA /* AppDelegate.m */; };
 		2985F6761CC094C600ED5DDA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985F6751CC094C600ED5DDA /* BaseViewController.m */; };
 		2985F6791CC094FB00ED5DDA /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985F6781CC094FB00ED5DDA /* TabBarController.m */; };
+		5505E23E1D2559AA00769B3C /* GoodsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E23D1D2559AA00769B3C /* GoodsListModel.m */; };
 		76037CCF1CBF8B4F00D72AA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CCE1CBF8B4F00D72AA7 /* main.m */; };
 		76037CDA1CBF8B4F00D72AA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76037CD91CBF8B4F00D72AA7 /* Assets.xcassets */; };
 		76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76037CDB1CBF8B4F00D72AA7 /* LaunchScreen.storyboard */; };
@@ -79,6 +80,8 @@
 		2985F6771CC094FB00ED5DDA /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		2985F6781CC094FB00ED5DDA /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		459905CD53B2FB9E55E4B624 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5505E23C1D2559AA00769B3C /* GoodsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsListModel.h; sourceTree = "<group>"; };
+		5505E23D1D2559AA00769B3C /* GoodsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsListModel.m; sourceTree = "<group>"; };
 		76037CCA1CBF8B4F00D72AA7 /* Indiana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Indiana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76037CCE1CBF8B4F00D72AA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		76037CD91CBF8B4F00D72AA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 			children = (
 				76454F611D24FEB0004840E4 /* GoodsModel.h */,
 				76454F621D24FEB0004840E4 /* GoodsModel.m */,
+				5505E23C1D2559AA00769B3C /* GoodsListModel.h */,
+				5505E23D1D2559AA00769B3C /* GoodsListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				297512331D13F3F800C8917E /* LatestResultViewController.m in Sources */,
 				76B4B11E1D22942100B15AD2 /* PayView.m in Sources */,
 				7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */,
+				5505E23E1D2559AA00769B3C /* GoodsListModel.m in Sources */,
 				2975123C1D13F48900C8917E /* ShoppingListsViewController.m in Sources */,
 				760F02471D1BDF2500E1561C /* GoodsDetailViewController.m in Sources */,
 				76454F631D24FEB0004840E4 /* GoodsModel.m in Sources */,

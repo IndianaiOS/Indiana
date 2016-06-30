@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
+#import "GoodsListModel.h"
 
-@interface GoodsModel : NSObject
+@interface GoodsModel : MTLModel <MTLJSONSerializing>
+
 @property(nonatomic,strong)NSString *scheduleId;
 @property(nonatomic,strong)NSString *scheduleNo;
 @property(nonatomic,strong)NSString *goodsId;
@@ -32,5 +35,14 @@
 @property(nonatomic,strong)NSString *allNumber;
 @property(nonatomic,strong)NSString *nextFlag;
 @property(nonatomic,strong)NSString *indexImages;
+
+//列表
++ (NSURLSessionDataTask *)GETUrl:(NSString *)url
+                           block:(void (^)(GoodsListModel *goodsList,
+                                           NSError *error))completion;
+
+//详情
+- (NSURLSessionDataTask *)detailsblock:(void (^)(GoodsModel *goodsModel,
+                                                 NSError *error))completion;
 
 @end

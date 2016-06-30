@@ -10,12 +10,11 @@
 #import "GoodsCollectionViewCell.h"
 #import "HeaderCollectionReusableView.h"
 #import "GoodsDetailViewController.h"
-#import "DataService.h"
-#import "AFNetworking.h"
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import "Pingpp.h"
 
+#import "GoodsModel.h"
 
 @interface TreasureListViewController (){
     UIButton *hotBtn;
@@ -50,10 +49,17 @@
     [self.goodsListCollection registerNib:[UINib nibWithNibName:@"GoodsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"goodsListCell"];
     
     [self.goodsListCollection registerNib:[UINib nibWithNibName:@"HeaderCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"goodsHeaderView"];
+    [self data];
     
-    
-
 }
+
+- (void)data {
+    [GoodsModel GETUrl:@""
+                 block:^(GoodsListModel *goodsList, NSError *error) {
+                     NSLog(@"%@",goodsList.goodsList);
+                 }];
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(self.view.frame.size.width/2-0.5, (self.view.frame.size.width/2-0.5)*220/187);
 }
@@ -68,18 +74,18 @@
     static NSString *collectionCellID = @"goodsListCell";
     GoodsCollectionViewCell *cell = [self.goodsListCollection dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
     
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"label",@"1",@"state",@"1",@"pageNumber",@"10",@"pageSize", nil];
-    [[DataService sharedClient] GET:@"http://192.168.0.103:8888/api/v1/schedule" parameters:dic completion:^(id response, NSError *error, NSDictionary *header) {
-        if (response) {
-            dataDic = [response objectForKey:@"data"];
-            NSArray *dataArr = [dataDic objectForKey:@"schedulePage"];
-            
-        
-    //NSDictionary *dataDic = [response objectForKey:@"data"];
-    cell.goodsListNameLabel.text = [dataArr[indexPath.row] objectForKey:@"goodsName"];
-    cell.goodsListImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dataArr[indexPath.row] objectForKey:@"indexImages"]]]];
-        }
-    }];
+//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"label",@"1",@"state",@"1",@"pageNumber",@"10",@"pageSize", nil];
+//    [[DataService sharedClient] GET:@"http://192.168.0.103:8888/api/v1/schedule" parameters:dic completion:^(id response, NSError *error, NSDictionary *header) {
+//        if (response) {
+//            dataDic = [response objectForKey:@"data"];
+//            NSArray *dataArr = [dataDic objectForKey:@"schedulePage"];
+//            
+//        
+//    //NSDictionary *dataDic = [response objectForKey:@"data"];
+//    cell.goodsListNameLabel.text = [dataArr[indexPath.row] objectForKey:@"goodsName"];
+//    cell.goodsListImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dataArr[indexPath.row] objectForKey:@"indexImages"]]]];
+//        }
+//    }];
     
     
     return cell;
