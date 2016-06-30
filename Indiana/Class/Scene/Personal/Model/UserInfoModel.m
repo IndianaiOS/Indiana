@@ -49,18 +49,18 @@ static NSString *const phoneRegisterUrl = @"phoneRegister";
             }];
 }
 
-- (NSURLSessionDataTask *)phoneRegisterCAPTCHABlock:(void (^)(UserInfoModel *userInfoModel,
-                                                       NSError *error))completion {
+- (NSURLSessionDataTask *)phoneRegisterCAPTCHABlock:(void (^)(NSString * code,
+                                                              NSError *error))completion; {
     //TODO: 只传手机号
-    NSDictionary *parameters = [NSDictionary dictionaryWithDictionary:[self dictionaryObject]];
+    NSDictionary *parameters = @{@"phone":self.phone};
     return [[DataService sharedClient]
             POST:[self url:phoneRegisterCAPTCHAUrl]
             parameters:parameters
             completion:^(id response, NSError *error) {
-//                TODO: UserInfoModel *userInfo = [MTLJSONAdapter modelOfClass:[UserInfoModel class]
-//                                                    fromJSONDictionary:response
-//                                                                 error:&error];
-//                completion(userInfo, error);
+                NSDictionary * data = response[@"data"];
+                NSString * code = data[@"code"];
+                completion(code, error);
+
             }];
 }
 

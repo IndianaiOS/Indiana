@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
-            timestampString = "488795723.688002"
+            timestampString = "488954705.995895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-footViewQQLoginBtnAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
-            timestampString = "488795723.688002"
+            timestampString = "488954705.995895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-footViewWeiXinLoginBtnAction:"
             landmarkType = "5">
          </BreakpointContent>

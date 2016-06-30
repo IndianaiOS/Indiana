@@ -34,6 +34,6 @@
 - (NSURLSessionDataTask *)phoneRegisterBlock:(void (^)(UserInfoModel *userInfoModel,
                                                        NSError *error))completion;
 //验证码
-- (NSURLSessionDataTask *)phoneRegisterCAPTCHABlock:(void (^)(UserInfoModel *userInfoModel,
+- (NSURLSessionDataTask *)phoneRegisterCAPTCHABlock:(void (^)(NSString * code,
                                                               NSError *error))completion;
 @end
