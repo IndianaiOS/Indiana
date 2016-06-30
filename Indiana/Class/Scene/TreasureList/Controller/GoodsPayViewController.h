@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GoodsPayViewController : UIViewController
-
+@property(nonatomic,weak)NSString *buyTimes;
 @end

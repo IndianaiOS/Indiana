@@ -25,6 +25,7 @@
     UIButton *lowBtn;
     UIView *redView;
     UICollectionReusableView *reusableview;
+    NSDictionary *dataDic;
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *goodsListCollection;
@@ -50,6 +51,7 @@
     
     [self.goodsListCollection registerNib:[UINib nibWithNibName:@"HeaderCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"goodsHeaderView"];
     
+    
 
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -57,7 +59,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return 2;
 }
 
 
@@ -65,12 +67,23 @@
     
     static NSString *collectionCellID = @"goodsListCell";
     GoodsCollectionViewCell *cell = [self.goodsListCollection dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
-    //cell.goodsListNameLabel.text = @"12234447878";
+    
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"label",@"1",@"state",@"1",@"pageNumber",@"10",@"pageSize", nil];
+    [[DataService sharedClient] GET:@"http://192.168.0.103:8888/api/v1/schedule" parameters:dic completion:^(id response, NSError *error, NSDictionary *header) {
+        if (response) {
+            dataDic = [response objectForKey:@"data"];
+            NSArray *dataArr = [dataDic objectForKey:@"schedulePage"];
+            
+        
+    //NSDictionary *dataDic = [response objectForKey:@"data"];
+    cell.goodsListNameLabel.text = [dataArr[indexPath.row] objectForKey:@"goodsName"];
+    cell.goodsListImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dataArr[indexPath.row] objectForKey:@"indexImages"]]]];
+        }
+    }];
     
     
     return cell;
 };
-
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {

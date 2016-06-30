@@ -32,6 +32,7 @@
 		760F023C1D1BAC6100E1561C /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760F023A1D1BAC6100E1561C /* HeaderCollectionReusableView.xib */; };
 		760F02471D1BDF2500E1561C /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760F02461D1BDF2500E1561C /* GoodsDetailViewController.m */; };
 		7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7613CF0C1CCDFC2F00195D22 /* DataService.m */; };
+		76454F631D24FEB0004840E4 /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76454F621D24FEB0004840E4 /* GoodsModel.m */; };
 		764E7AD71D228F5300FC24CB /* GoodsPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764E7AD61D228F5300FC24CB /* GoodsPayViewController.m */; };
 		76B4B11B1D22940F00B15AD2 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76B4B11A1D22940F00B15AD2 /* PayView.xib */; };
 		76B4B11E1D22942100B15AD2 /* PayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B4B11D1D22942100B15AD2 /* PayView.m */; };
@@ -104,6 +105,8 @@
 		760F02461D1BDF2500E1561C /* GoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailViewController.m; sourceTree = "<group>"; };
 		7613CF0B1CCDFC2F00195D22 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		7613CF0C1CCDFC2F00195D22 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		76454F611D24FEB0004840E4 /* GoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
+		76454F621D24FEB0004840E4 /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
 		764E7AD51D228F5300FC24CB /* GoodsPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsPayViewController.h; sourceTree = "<group>"; };
 		764E7AD61D228F5300FC24CB /* GoodsPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsPayViewController.m; sourceTree = "<group>"; };
 		76B4B11A1D22940F00B15AD2 /* PayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayView.xib; sourceTree = "<group>"; };
@@ -303,6 +306,8 @@
 		2975122F1D13F3B400C8917E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76454F611D24FEB0004840E4 /* GoodsModel.h */,
+				76454F621D24FEB0004840E4 /* GoodsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 				7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */,
 				2975123C1D13F48900C8917E /* ShoppingListsViewController.m in Sources */,
 				760F02471D1BDF2500E1561C /* GoodsDetailViewController.m in Sources */,
+				76454F631D24FEB0004840E4 /* GoodsModel.m in Sources */,
 				7609838F1D20D3DE0048AC46 /* GoodsDetailHeaderView.m in Sources */,
 				2985F6761CC094C600ED5DDA /* BaseViewController.m in Sources */,
 				2985F6791CC094FB00ED5DDA /* TabBarController.m in Sources */,

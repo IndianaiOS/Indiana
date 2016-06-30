@@ -189,6 +189,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="buyTimesLabel" destination="2UH-XP-bic" id="GCV-Lu-9aj"/>
                 <outlet property="confirmPayButton" destination="QkE-nM-4id" id="QvX-k6-Rat"/>
                 <outlet property="selectPayChannelButton" destination="EEm-jC-Ycy" id="FMF-Ob-gN3"/>
             </connections>

@@ -11,5 +11,6 @@
 @interface PayView : UIView
 @property (weak, nonatomic) IBOutlet UIButton *selectPayChannelButton;
 @property (weak, nonatomic) IBOutlet UIButton *confirmPayButton;
+@property (weak, nonatomic) IBOutlet UILabel *buyTimesLabel;
 
 @end

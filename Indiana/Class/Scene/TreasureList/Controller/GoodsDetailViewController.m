@@ -14,7 +14,7 @@
 #import "GoodsPayViewController.h"
 #import "SelectBuyTimes.h"
 
-@interface GoodsDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface GoodsDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     SelectBuyTimes *selectView;
 }
@@ -51,24 +51,63 @@
     separatorView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [joinView addSubview:separatorView];
     
-    
-    
+    selectView = [[SelectBuyTimes alloc]init];
+    selectView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view addSubview:selectView];
+    [selectView.goToPay addTarget:self action:@selector(clickGoToPay:) forControlEvents:(UIControlEventTouchUpInside)];
+    selectView.selectBuyTimesTextField.delegate = self;
     
 }
 
 - (void)clickJoinButton:(UIButton *)sender{
     NSLog(@"join pay");
-//    self.hidesBottomBarWhenPushed = YES;
-//    GoodsPayViewController *GoodsPayVC = [[GoodsPayViewController alloc]init];
-//    //[self.navigationController showViewController:GoodsPayVC sender:nil];
-//    [self.navigationController pushViewController:GoodsPayVC animated:YES];
-    
-    selectView = [[SelectBuyTimes alloc]init];
-    [self.view addSubview:selectView];
-    
 
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        // 设置view弹出来的位置
+        
+        selectView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        
+    }];
+    
 }
 
+- (void)clickGoToPay:(UIButton *)sender{
+    //[selectView removeFromSuperview];
+    selectView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+    [selectView.selectBuyTimesTextField resignFirstResponder];
+    self.hidesBottomBarWhenPushed = YES;
+    GoodsPayViewController *GoodsPayVC = [[GoodsPayViewController alloc]init];
+    GoodsPayVC.buyTimes = selectView.selectBuyTimesTextField.text;
+    //[self.navigationController showViewController:GoodsPayVC sender:nil];
+    [self.navigationController pushViewController:GoodsPayVC animated:YES];
+    
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        // 设置view弹出来的位置
+        
+        selectView.frame = CGRectMake(0, -216, self.view.frame.size.width, self.view.frame.size.height);
+        
+    }];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        // 设置view弹出来的位置
+        
+        selectView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        
+    }];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [selectView.selectBuyTimesTextField resignFirstResponder];
+}
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
 //    return 393;
 //}

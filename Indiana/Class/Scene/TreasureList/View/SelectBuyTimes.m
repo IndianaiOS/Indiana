@@ -15,10 +15,42 @@
     self = [super initWithFrame:frame];
     if (self) {
         // add subviews
-        NSArray *view = [[NSBundle mainBundle] loadNibNamed:@"PayView" owner:self options:nil];
+        NSArray *view = [[NSBundle mainBundle] loadNibNamed:@"SelectBuytimes" owner:self options:nil];
         self = [view objectAtIndex:0];
+        self.selectBuyTimesTextField.keyboardType = UIKeyboardTypeNumberPad;
     }
     return self;
+}
+
+- (IBAction)clickMinusButton:(id)sender {
+    if ([self.selectBuyTimesTextField.text isEqualToString:@"1"]) {
+        
+    }else{
+        NSString *times = [NSString stringWithFormat:@"%d",[self.selectBuyTimesTextField.text intValue]-1];
+        self.selectBuyTimesTextField.text = times;
+    }
+    
+}
+- (IBAction)clickAddButton:(id)sender {
+    if ([self.selectBuyTimesTextField.text isEqualToString:@""]) {
+        NSString *times = @"1";
+        self.selectBuyTimesTextField.text = times;
+    }else{
+        NSString *times = [NSString stringWithFormat:@"%d",[self.selectBuyTimesTextField.text intValue]+1];
+        self.selectBuyTimesTextField.text = times;
+    }
+}
+- (IBAction)clickButton10:(id)sender {
+    self.selectBuyTimesTextField.text = @"10";
+}
+- (IBAction)clickButton50:(id)sender {
+    self.selectBuyTimesTextField.text = @"50";
+}
+- (IBAction)clickButton100:(id)sender {
+    self.selectBuyTimesTextField.text = @"100";
+}
+- (IBAction)clickBuyAllTimes:(id)sender {
+    
 }
 
 /*

@@ -33,6 +33,8 @@
     [payView.selectPayChannelButton addTarget:self action:@selector(clickSelectButton:) forControlEvents:(UIControlEventTouchUpInside)];
     [payView.confirmPayButton addTarget:self action:@selector(clickConfirmPayButton:) forControlEvents:(UIControlEventTouchUpInside)];
     
+    payView.buyTimesLabel.text = [NSString stringWithFormat:@"%@夺宝币",self.buyTimes];
+    
 }
 
 - (void)clickSelectButton:(UIButton *)sender{
@@ -58,7 +60,7 @@
         GoodsPayViewController *__weak weakself = self;
         [[DataService sharedClient] POST:
          //@"http://192.168.0.111:8889/pay/appReqController"
-         @"http://123.56.181.65:8889/pay/appReqController"
+         @"http://123.56.181.65:8888/pay/appReqController"
                               parameters:dic
                               completion:^(id response, NSError *error) {
                                   if (response) {
