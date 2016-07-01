@@ -13,7 +13,7 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import "Pingpp.h"
-
+#import "DataService.h"
 #import "GoodsModel.h"
 
 @interface TreasureListViewController (){
@@ -54,10 +54,24 @@
 }
 
 - (void)data {
-    [GoodsModel GETUrl:@""
-                 block:^(GoodsListModel *goodsList, NSError *error) {
-                     NSLog(@"%@",goodsList.goodsList);
-                 }];
+//    [GoodsModel GETUrl:@""
+//            parameters:nil
+//                 block:^(GoodsListModel *goodsList, NSError *error) {
+//                
+//            }];
+    
+    
+//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"label",@"1",@"state",@"1",@"pageNumber",@"10",@"pageSize", nil];
+    [[DataService sharedClient] GET:@"http://192.168.0.103:8888/api/v1/schedule?label=0&state=0&pageNumber=1&pageSize=10" parameters:nil completion:^(id response, NSError *error, NSDictionary *header) {
+//        if (response) {
+//            dataDic = [response objectForKey:@"data"];
+//            NSArray *dataArr = [dataDic objectForKey:@"schedulePage"];
+//            
+//            
+//            //NSDictionary *dataDic = [response objectForKey:@"data"];
+//            
+//        }
+    }];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{

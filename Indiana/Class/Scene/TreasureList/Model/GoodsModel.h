@@ -38,6 +38,7 @@
 
 //列表
 + (NSURLSessionDataTask *)GETUrl:(NSString *)url
+                      parameters:(NSDictionary *)parameters
                            block:(void (^)(GoodsListModel *goodsList,
                                            NSError *error))completion;
 

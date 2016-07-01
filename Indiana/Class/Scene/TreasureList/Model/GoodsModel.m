@@ -9,7 +9,7 @@
 #import "GoodsModel.h"
 #import "DataService.h"
 
-static NSString *const goodsListUrl = @"http://192.168.0.103:8888/api/v1/schedule";//?label=0&state=0&pageNumber=1&pageSize=10";
+static NSString *const goodsListUrl = @"http://192.168.0.103:8888/api/v1/schedule?";//label=0&state=0&pageNumber=1&pageSize=10";
 static NSString *const goodsDetailUrl = @"http://192.168.0.103:8888/api/v1/schedule/{scheduleId}?sign=0";
 
 @implementation GoodsModel
@@ -19,14 +19,12 @@ static NSString *const goodsDetailUrl = @"http://192.168.0.103:8888/api/v1/sched
 }
 
 + (NSURLSessionDataTask *)GETUrl:(NSString *)url
+                      parameters:(NSDictionary *)parameters
                            block:(void (^)(GoodsListModel *goodsList,
                                            NSError *error))completion {
-    NSDictionary *parameters = @{@"label":@"1",
-                                 @"state":@"1",
-                            @"pageNumber":@"1",
-                              @"pageSize":@"10"};
-    return [[DataService sharedClient] GET:goodsListUrl
-                                parameters:parameters
+ 
+    return [[DataService sharedClient] GET:@"http://192.168.0.103:8888/api/v1/schedule?label=0&state=0&pageNumber=1&pageSize=10"//[GoodsModel url:asa]
+                                parameters:@{}
                                 completion:^(id response, NSError *error, NSDictionary *header) {
                                     
                                     GoodsListModel *goodsList =
@@ -51,6 +49,18 @@ static NSString *const goodsDetailUrl = @"http://192.168.0.103:8888/api/v1/sched
                                 }];
 }
 
++ (NSString *)url:(NSDictionary *)parameters {
+    NSDictionary *asa = @{@"label":@"1",
+                          @"state":@"1",
+                          @"pageNumber":@"1",
+                          @"pageSize":@"10"};
+    NSArray * keys = parameters.allKeys;
+    NSString * url = [NSString stringWithFormat:@"%@",goodsListUrl];
+    for (NSString * key in keys) {
+        url = [url stringByAppendingFormat:@"%@=%@&",key,parameters[key]];
+    }
+    return [url substringToIndex:[url length]-1];
+}
 
 
 @end
