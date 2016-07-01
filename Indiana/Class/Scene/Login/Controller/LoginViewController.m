@@ -10,6 +10,8 @@
 #import "LbTfCell.h"
 #import "ForgetPwdCell.h"
 #import "LoginFooterView.h"
+#import "LoginModel.h"
+#import "UserInfoModel.h"
 
 static NSString *const lbTfCellIdentifier = @"lbTfCell";
 static NSString *const forgetPwdCellIdentifier = @"forgetPwdCell";
@@ -17,6 +19,8 @@ static NSString *const loginFooterViewIdentifier = @"loginFooterView";
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UserInfoModel *userInfo;
+
 @end
 
 @implementation LoginViewController
@@ -25,6 +29,7 @@ static NSString *const loginFooterViewIdentifier = @"loginFooterView";
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.userInfo = [[UserInfoModel alloc] init];
     [self tableViewRegister];
     
 }
@@ -60,23 +65,73 @@ static NSString *const loginFooterViewIdentifier = @"loginFooterView";
     
     LoginFooterView *footView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:loginFooterViewIdentifier];
     
+    [footView.QQLoginBtn addTarget:self action:@selector(footViewQQLoginBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [footView.weiXinLoginBtn addTarget:self action:@selector(footViewWeiXinLoginBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [footView.registerButton addTarget:self action:@selector(footViewRegisterButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [footView.loginButton addTarget:self action:@selector(footViewLoginButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
     return footView;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 1) {
+    if (indexPath.row == 0) {
         LbTfCell *cell = [tableView dequeueReusableCellWithIdentifier:lbTfCellIdentifier];
         cell.titleLabel.text = NSLocalizedString(@"手机号", nil);
         cell.textField.placeholder = NSLocalizedString(@"请输入手机号", nil);
+        cell.textField.tag = 100;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
         return cell;
         
     } else {
         ForgetPwdCell *cell = [tableView dequeueReusableCellWithIdentifier:forgetPwdCellIdentifier];
-        
+        cell.textField.tag = 101;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
         return cell;
         
+    }
+    
+}
+
+#pragma mark - buttonAction
+- (void)footViewQQLoginBtnAction:(UIButton *)button {
+    LoginModel * loginModel = [[LoginModel alloc] init];
+    [loginModel QQLogin:self];
+}
+
+- (void)footViewWeiXinLoginBtnAction:(UIButton *)button {
+    LoginModel * loginModel = [[LoginModel alloc] init];
+    [loginModel weiXinLogin:self];
+}
+
+- (void)footViewLoginButtonAction:(UIButton *)button {
+    self.userInfo.logintype = LOGIN_TYPE_PHONE;
+    [self.userInfo loginBlock:^(UserInfoModel *userInfoModel, NSError *error) {
+        //TODO:保存数据
+    }];
+}
+
+- (void)footViewRegisterButtonAction:(UIButton *)button {
+
+    
+}
+
+#pragma mark - textField
+- (void)textFieldEditChanged:(NSNotification *)obj {
+    UITextField *textField = (UITextField *)obj.object;
+    switch (textField.tag) {
+        case 100:{
+            self.userInfo.phone = textField.text;
+        }
+            break;
+        case 101:{
+            self.userInfo.password = textField.text;
+        }
+            break;
+
+        default:
+            break;
     }
     
 }

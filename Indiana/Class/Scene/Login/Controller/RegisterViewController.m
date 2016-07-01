@@ -19,7 +19,8 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
 @interface RegisterViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) UserInfoModel * userInfo;
+@property (strong, nonatomic) UserInfoModel *userInfo;
+@property (strong, nonatomic) NSString *secondPwd;
 
 @end
 
@@ -66,7 +67,7 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
     RegisterFooterView *footView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:registerFooterViewIdentifier];
     [footView.QQLoginBtn addTarget:self action:@selector(footViewQQLoginBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [footView.weiXinLoginBtn addTarget:self action:@selector(footViewWeiXinLoginBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [footView.registerButton addTarget:self action:@selector(selector) forControlEvents:UIControlEventTouchUpInside];
+    [footView.registerButton addTarget:self action:@selector(footViewRegisterButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     return footView;
     
 }
@@ -77,7 +78,7 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
         VerifyCodeCell *cell = [tableView dequeueReusableCellWithIdentifier:verifyCodeCellIdentifier];
         [cell.getVerifyCodeButton addTarget:self action:@selector(getVerifyCodeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-        cell.textField.tag = 103;
+        cell.textField.tag = 101;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
         return cell;
 
@@ -95,14 +96,14 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
             case 2:{
                 cell.titleLabel.text = NSLocalizedString(@"密码", nil);
                 cell.textField.placeholder = NSLocalizedString(@"请输入6-20位登录密码", nil);
-                cell.textField.tag = 101;
+                cell.textField.tag = 102;
                 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
             }
                 break;
             case 3:{
                 cell.titleLabel.text = NSLocalizedString(@"确认密码", nil);
                 cell.textField.placeholder = NSLocalizedString(@"请再次输入密码", nil);
-                cell.textField.tag = 102;
+                cell.textField.tag = 103;
                 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
             }
                 break;
@@ -139,8 +140,14 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
     }];
 }
 
-- (void)footViewRegisterButton:(UIButton *)button {
-    
+- (void)footViewRegisterButtonAction:(UIButton *)button {
+    [self comparePassword];
+    [self.userInfo phoneRegisterBlock:^(UserInfoModel *userInfoModel, NSError *error) {
+        //TODO:保存个人信息
+        NSLog(@"%@",userInfoModel);
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 #pragma mark - textField
@@ -160,7 +167,7 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
         }
             break;
         case 103:{
-            [self comparePassword:textField.text];
+            self.secondPwd = textField.text;
         }
             break;
         default:
@@ -170,8 +177,8 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
 }
 
 //比较两次密码
-- (void)comparePassword:(NSString *)text {
-    if (![self.userInfo.password isEqualToString:text]) {
+- (void)comparePassword {
+    if (![self.userInfo.password isEqualToString:self.secondPwd]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"两次密码不一致" preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancelAction];

@@ -9,6 +9,8 @@
 #import "LoginModel.h"
 #import "UMSocial.h"
 
+#import "UserInfoModel.h"
+
 @implementation LoginModel
 
 - (void)QQLogin:(UIViewController *)viewController {
@@ -20,10 +22,20 @@
         
         if (response.responseCode == UMSResponseCodeSuccess) {
             
-            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+//            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
-            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
+            NSDictionary * thirdPlatformUserProfile = response.thirdPlatformUserProfile;
             
+            UserInfoModel *userInfo = [[UserInfoModel alloc] init];
+            userInfo.uid = snsAccount.usid;
+            userInfo.nickname = snsAccount.userName;
+            userInfo.avatar = snsAccount.iconURL;
+            userInfo.logintype = LOGIN_TYPE_QQ;
+            userInfo.gender = thirdPlatformUserProfile[@"gender"];
+            
+            [userInfo loginBlock:^(UserInfoModel *userInfoModel, NSError *error) {
+                //TODO:持久化
+            }];
         }});
 }
 
@@ -34,9 +46,19 @@
         
         if (response.responseCode == UMSResponseCodeSuccess) {
             
-            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+//            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
-            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
+            
+            UserInfoModel *userInfo = [[UserInfoModel alloc] init];
+            userInfo.uid = snsAccount.usid;
+            userInfo.nickname = snsAccount.userName;
+            userInfo.avatar = snsAccount.iconURL;
+            userInfo.logintype = LOGIN_TYPE_QQ;
+            userInfo.gender = @"";
+            
+            [userInfo loginBlock:^(UserInfoModel *userInfoModel, NSError *error) {
+                //TODO:持久化
+            }];
             
         }
         

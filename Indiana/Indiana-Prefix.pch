@@ -21,4 +21,9 @@
 #pragma mark - header
 #import "DataService.h"
 
+#pragma mark - 登录方式
+#define LOGIN_TYPE_QQ @"1"
+#define LOGIN_TYPE_WEIXIN @"2"
+#define LOGIN_TYPE_PHONE @"3"
+
 #endif /* Indiana_Prefix_pch */
