@@ -17,10 +17,14 @@ static NSString *const lbTfCellIdentifier = @"lbTfCell";
 static NSString *const verifyCodeCellIdentifier = @"verifyCodeCell";
 static NSString *const registerFooterViewIdentifier = @"registerFooterView";
 @interface RegisterViewController ()
-
+{
+    int _secondsCountDown; //倒计时总时长
+    NSTimer *_countDownTimer;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UserInfoModel *userInfo;
 @property (strong, nonatomic) NSString *secondPwd;
+@property (strong, nonatomic) VerifyCodeCell *verifyCell;
 
 @end
 
@@ -75,12 +79,12 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 1) {
-        VerifyCodeCell *cell = [tableView dequeueReusableCellWithIdentifier:verifyCodeCellIdentifier];
-        [cell.getVerifyCodeButton addTarget:self action:@selector(getVerifyCodeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-        cell.textField.tag = 101;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
-        return cell;
+        self.verifyCell = [tableView dequeueReusableCellWithIdentifier:verifyCodeCellIdentifier];
+        [self.verifyCell.getVerifyCodeButton addTarget:self action:@selector(getVerifyCodeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        self.verifyCell.textField.keyboardType = UIKeyboardTypeNumberPad;
+        self.verifyCell.textField.tag = 101;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:self.verifyCell.textField];
+        return self.verifyCell;
 
     } else {
         LbTfCell *cell = [tableView dequeueReusableCellWithIdentifier:lbTfCellIdentifier];
@@ -129,6 +133,15 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
 
 - (void)getVerifyCodeButtonAction:(UIButton *)button {
     //TODO: 倒计时
+    self.verifyCell.getVerifyCodeButton.userInteractionEnabled = NO;
+    //设置倒计时总时长
+    _secondsCountDown = 60;//60秒倒计时
+    //开始倒计时
+    _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES]; //启动倒计时后会每秒钟调用一次方法 timeFireMethod
+    
+    //设置倒计时显示的时间
+//    [self.verifyCell.getVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新发送（%d）",_secondsCountDown] forState:UIControlStateNormal];
+
     //TODO: 判断是否填写phone
     
     //获取验证码
@@ -144,10 +157,25 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
     [self comparePassword];
     [self.userInfo phoneRegisterBlock:^(UserInfoModel *userInfoModel, NSError *error) {
         //TODO:保存个人信息
-        NSLog(@"%@",userInfoModel);
+        //保存数据
+        [LocaldData saveListData:userInfoModel];
     }];
     [self dismissViewControllerAnimated:YES completion:nil];
 
+}
+
+-(void)timeFireMethod{
+    //倒计时-1
+    _secondsCountDown--;
+    //修改倒计时标签现实内容
+    [self.verifyCell.getVerifyCodeButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"重新发送(%d)", nil),_secondsCountDown] forState:UIControlStateNormal];
+    //当倒计时到0时，做需要的操作，比如验证码过期不能提交
+    if(_secondsCountDown==0){
+        [_countDownTimer invalidate];
+        [self.verifyCell.getVerifyCodeButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"获取验证码", nil)] forState:UIControlStateNormal];
+        self.verifyCell.getVerifyCodeButton.userInteractionEnabled = NO;
+
+    }
 }
 
 #pragma mark - textField

@@ -108,8 +108,12 @@ static NSString *const loginFooterViewIdentifier = @"loginFooterView";
 - (void)footViewLoginButtonAction:(UIButton *)button {
     self.userInfo.logintype = LOGIN_TYPE_PHONE;
     [self.userInfo loginBlock:^(UserInfoModel *userInfoModel, NSError *error) {
-        //TODO:保存数据
+        //保存数据
+        [LocaldData saveListData:userInfoModel];
+        [super dismissViewControllerAnimated:YES completion:nil];
+
     }];
+    
 }
 
 - (void)footViewRegisterButtonAction:(UIButton *)button {

@@ -34,7 +34,9 @@
             userInfo.gender = thirdPlatformUserProfile[@"gender"];
             
             [userInfo loginBlock:^(UserInfoModel *userInfoModel, NSError *error) {
-                //TODO:持久化
+                //持久化
+                //保存数据
+                [LocaldData saveListData:userInfoModel];
             }];
         }});
 }
@@ -57,7 +59,9 @@
             userInfo.gender = @"";
             
             [userInfo loginBlock:^(UserInfoModel *userInfoModel, NSError *error) {
-                //TODO:持久化
+                //持久化
+                //保存数据
+                [LocaldData saveListData:userInfoModel];
             }];
             
         }

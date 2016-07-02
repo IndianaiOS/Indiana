@@ -14,12 +14,15 @@
 
 #pragma mark - 网络访问地址
 //developement
-#define SERVER_URL  @"http://192.168.0.110:8888/api/v1/"
+//#define SERVER_URL @"http://192.168.0.110:8888/api/v1/"
+//外网
+#define SERVER_URL @"http://123.56.181.65:8888/"
 //production
 //#define SERVER_URL  @""
 
 #pragma mark - header
 #import "DataService.h"
+#import "LocaldData.h"
 
 #pragma mark - 登录方式
 #define LOGIN_TYPE_QQ @"1"

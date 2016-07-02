@@ -19,7 +19,6 @@
                         <segue destination="loq-gC-kol" kind="relationship" relationship="viewControllers" id="EfA-DB-hmL"/>
                         <segue destination="uov-PA-BZx" kind="relationship" relationship="viewControllers" id="RjE-Lv-t8d"/>
                         <segue destination="kCI-DE-Zdk" kind="relationship" relationship="viewControllers" id="k7i-j5-1XS"/>
-                        <segue destination="ZNo-zx-V9I" kind="relationship" relationship="viewControllers" id="haf-6S-L5w"/>
                         <segue destination="XNY-qX-aZB" kind="relationship" relationship="viewControllers" id="loR-NR-DTH"/>
                     </connections>
                 </tabBarController>
@@ -31,7 +30,7 @@
         <scene sceneID="AZo-UU-UPI">
             <objects>
                 <navigationController id="loq-gC-kol" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="夺宝" id="QBn-bT-F5g"/>
+                    <tabBarItem key="tabBarItem" title="夺宝" image="tab_treasureList_pre" selectedImage="tab_treasureList_nor" id="QBn-bT-F5g"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lpX-Nb-ADg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -67,7 +66,7 @@
         <scene sceneID="qpF-K7-RTZ">
             <objects>
                 <navigationController id="kCI-DE-Zdk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="最新揭晓" id="Q2j-iO-V7T"/>
+                    <tabBarItem key="tabBarItem" title="最新揭晓" image="tab_latestResult_pre" selectedImage="tab_latestResult_nor" id="Q2j-iO-V7T"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LDq-wb-ESn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -103,7 +102,7 @@
         <scene sceneID="kPx-SJ-b8k">
             <objects>
                 <navigationController id="uov-PA-BZx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="晒单" id="Zo0-xH-wmp"/>
+                    <tabBarItem key="tabBarItem" title="晒单" image="tab_showOrders_pre" selectedImage="tab_showOrders_nor" id="Zo0-xH-wmp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3bO-vO-sVv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -137,7 +136,7 @@
         <scene sceneID="kGn-Vs-3WV">
             <objects>
                 <navigationController navigationBarHidden="YES" id="XNY-qX-aZB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" id="L2D-wz-In4"/>
+                    <tabBarItem key="tabBarItem" title="我" image="tab_personal_pre" selectedImage="tab_personal_nor" id="L2D-wz-In4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IWQ-O8-R7n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -159,7 +158,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZYk-y4-O4y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qg6-OL-ZoU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -278,4 +277,14 @@
             <point key="canvasLocation" x="-2188.5" y="1638.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_latestResult_nor" width="21" height="21"/>
+        <image name="tab_latestResult_pre" width="21" height="21"/>
+        <image name="tab_personal_nor" width="21" height="22"/>
+        <image name="tab_personal_pre" width="21" height="22"/>
+        <image name="tab_showOrders_nor" width="24" height="20"/>
+        <image name="tab_showOrders_pre" width="24" height="20"/>
+        <image name="tab_treasureList_nor" width="22" height="20"/>
+        <image name="tab_treasureList_pre" width="22" height="20"/>
+    </resources>
 </document>

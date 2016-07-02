@@ -12,6 +12,7 @@
 		2953F43F1D18D6C400CDCDBF /* PersonalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2953F43D1D18D6C400CDCDBF /* PersonalCell.m */; };
 		2953F4401D18D6C400CDCDBF /* PersonalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2953F43E1D18D6C400CDCDBF /* PersonalCell.xib */; };
 		29623E6D1CD0944800DEE393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29623E6B1CD0944800DEE393 /* Main.storyboard */; };
+		29665F291D27901D00122B9A /* LocaldData.m in Sources */ = {isa = PBXBuildFile; fileRef = 29665F281D27901D00122B9A /* LocaldData.m */; };
 		296A44FA1D23760B00D6223F /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 296A44F91D23760B00D6223F /* UserInfoModel.m */; };
 		297133061D1D2BE40086BF2E /* LoginRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297132FC1D1D2BE40086BF2E /* LoginRootViewController.m */; };
 		297133071D1D2BE40086BF2E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297132FE1D1D2BE40086BF2E /* LoginViewController.m */; };
@@ -76,6 +77,8 @@
 		2953F43D1D18D6C400CDCDBF /* PersonalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCell.m; sourceTree = "<group>"; };
 		2953F43E1D18D6C400CDCDBF /* PersonalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
 		29623E6C1CD0944800DEE393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29665F271D27901D00122B9A /* LocaldData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocaldData.h; sourceTree = "<group>"; };
+		29665F281D27901D00122B9A /* LocaldData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocaldData.m; sourceTree = "<group>"; };
 		296A44F81D23760B00D6223F /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
 		296A44F91D23760B00D6223F /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
 		296A44FC1D23D92000D6223F /* Indiana-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Indiana-Prefix.pch"; sourceTree = "<group>"; };
@@ -532,6 +535,8 @@
 			children = (
 				7613CF0B1CCDFC2F00195D22 /* DataService.h */,
 				7613CF0C1CCDFC2F00195D22 /* DataService.m */,
+				29665F271D27901D00122B9A /* LocaldData.h */,
+				29665F281D27901D00122B9A /* LocaldData.m */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -734,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29665F291D27901D00122B9A /* LocaldData.m in Sources */,
 				297133211D1D3E6D0086BF2E /* VerifyCodeCell.m in Sources */,
 				297133061D1D2BE40086BF2E /* LoginRootViewController.m in Sources */,
 				2953F43F1D18D6C400CDCDBF /* PersonalCell.m in Sources */,
