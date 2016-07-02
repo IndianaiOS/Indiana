@@ -50,8 +50,8 @@
                         </constraints>
                         <color key="progressTintColor" red="1" green="0.82688143380000001" blue="0.38366202119999998" alpha="1" colorSpace="calibratedRGB"/>
                     </progressView>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-F0-Nh4">
-                        <rect key="frame" x="113" y="188" width="62" height="24"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-F0-Nh4">
+                        <rect key="frame" x="115" y="188" width="62" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="62" id="YJ3-k7-r4i"/>
                             <constraint firstAttribute="height" constant="24" id="pre-FJ-Xfz"/>
@@ -97,6 +97,7 @@
                 <outlet property="goodsListImageView" destination="NUB-G9-tgV" id="ydJ-SJ-XUn"/>
                 <outlet property="goodsListNameLabel" destination="SZt-T8-qoK" id="wCs-EI-bwD"/>
                 <outlet property="goodsListProgressLabel" destination="zaR-xx-VU9" id="a14-iq-fHw"/>
+                <outlet property="goodsListProgressView" destination="6a4-j6-dQf" id="pfX-3F-yJX"/>
             </connections>
             <point key="canvasLocation" x="379.5" y="239"/>
         </collectionViewCell>

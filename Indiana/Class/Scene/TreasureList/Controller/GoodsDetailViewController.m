@@ -13,6 +13,7 @@
 #import "Pingpp.h"
 #import "GoodsPayViewController.h"
 #import "SelectBuyTimes.h"
+#import "GoodsModel.h"
 
 @interface GoodsDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
@@ -35,7 +36,8 @@
     
     [self setExtraCellLineHidden:self.goodsDetailTableView];
     [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"GoodsDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"goodsDetailCell"];
-    self.goodsDetailTableView.tableHeaderView = [[GoodsDetailHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 393)];
+    //self.goodsDetailTableView.tableHeaderView = [[GoodsDetailHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 393)];
+    
     UIView *joinView = [[UIView alloc]initWithFrame:(CGRectMake(0, self.view.frame.size.height-60, self.view.frame.size.width, 60))];
     joinView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:joinView];
@@ -57,6 +59,15 @@
     [selectView.goToPay addTarget:self action:@selector(clickGoToPay:) forControlEvents:(UIControlEventTouchUpInside)];
     selectView.selectBuyTimesTextField.delegate = self;
     
+    [self data];
+    
+}
+
+- (void)data {
+    [self.goodsModel detailsblock:^(GoodsModel *goodsModel, NSError *error) {
+        self.goodsModel = goodsModel;
+        [self.goodsDetailTableView reloadData];
+    }];
 }
 
 - (void)clickJoinButton:(UIButton *)sender{
@@ -108,14 +119,17 @@
 {
     [selectView.selectBuyTimesTextField resignFirstResponder];
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return 393;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    GoodsDetailHeaderView *headerView = [[GoodsDetailHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 393)];
-//    return headerView;
-//}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 393;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    GoodsDetailHeaderView *headerView = [[GoodsDetailHeaderView alloc]init];
+    [headerView headerView:headerView model:self.goodsModel];
+    
+    return headerView;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 60;

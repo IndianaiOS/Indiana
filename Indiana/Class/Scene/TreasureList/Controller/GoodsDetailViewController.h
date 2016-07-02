@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GoodsModel;
 
 @interface GoodsDetailViewController : UIViewController
+
+@property (strong, nonatomic)GoodsModel *goodsModel;
+
 
 @end

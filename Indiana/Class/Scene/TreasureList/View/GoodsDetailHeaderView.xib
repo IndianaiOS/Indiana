@@ -43,10 +43,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期号：20165083" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6P-MX-DcP">
-                    <rect key="frame" x="10" y="290" width="89" height="17"/>
+                    <rect key="frame" x="10" y="290" width="150" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="bCa-Ni-2NB"/>
-                        <constraint firstAttribute="width" constant="89" id="w4V-a8-AZb"/>
+                        <constraint firstAttribute="width" constant="150" id="w4V-a8-AZb"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,6 +130,14 @@
                 <constraint firstAttribute="trailing" secondItem="J4v-ID-g4e" secondAttribute="trailing" id="wlf-xc-BKD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="goodsDetailAllNumber" destination="ll0-TD-kVv" id="HMa-IB-Wb5"/>
+                <outlet property="goodsDetailImageView" destination="m5i-st-wcr" id="Ild-88-Ulk"/>
+                <outlet property="goodsDetailNameLabel" destination="sTW-jt-ue6" id="3TI-Kt-q2O"/>
+                <outlet property="goodsDetailNumberLabel" destination="H6P-MX-DcP" id="MqS-ob-H8q"/>
+                <outlet property="goodsDetailProgressView" destination="kHN-U4-QOR" id="PTS-7W-0KC"/>
+                <outlet property="goodsDetailSurplusNumber" destination="um1-Rn-PLA" id="eaV-ni-dWq"/>
+            </connections>
         </view>
     </objects>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import "GoodsDetailHeaderView.h"
+#import "GoodsModel.h"
 
 @implementation GoodsDetailHeaderView
 
@@ -20,6 +21,15 @@
     }
     return self;
 }
+
+- (void)headerView:(GoodsDetailHeaderView *)headerView model:(GoodsModel *)goods {
+    self.goodsDetailNameLabel.text = goods.goodsName;
+    self.goodsDetailNumberLabel.text = [NSString stringWithFormat:@"期号：%@",goods.scheduleNo];
+    self.goodsDetailAllNumber.text = [NSString stringWithFormat:@"总需：%@",goods.copies];
+    self.goodsDetailSurplusNumber.text = [NSString stringWithFormat:@"剩余：%@",goods.nowCopies];
+    [self.goodsDetailProgressView setProgress:[goods.nowCopies floatValue]/[goods.copies floatValue] animated:YES];
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

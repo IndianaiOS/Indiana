@@ -16,6 +16,9 @@
 #import "DataService.h"
 #import "GoodsModel.h"
 
+static NSString *const collectionCellID = @"goodsListCell";
+static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
+
 @interface TreasureListViewController (){
     UIButton *hotBtn;
     UIButton *fastBtn;
@@ -28,7 +31,8 @@
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *goodsListCollection;
-
+@property (strong, nonatomic) NSArray *goodsListArray;
+@property (strong, nonatomic) NSMutableDictionary *parameters;
 @end
 
 @implementation TreasureListViewController
@@ -46,32 +50,33 @@
     self.goodsListCollection.delegate = self;
     self.goodsListCollection.dataSource =self;
     
-    [self.goodsListCollection registerNib:[UINib nibWithNibName:@"GoodsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"goodsListCell"];
+    [self.goodsListCollection registerNib:[UINib nibWithNibName:@"GoodsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:collectionCellID];
     
     [self.goodsListCollection registerNib:[UINib nibWithNibName:@"HeaderCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"goodsHeaderView"];
-    [self data];
+    self.parameters = [NSMutableDictionary dictionaryWithDictionary:@{@"label":@"1",
+                                 @"state":@"1",
+                                 @"pageNumber":@"1",
+                                 @"pageSize":@"10"}];
+    [self data:self.parameters];
     
 }
 
-- (void)data {
-//    [GoodsModel GETUrl:@""
-//            parameters:nil
-//                 block:^(GoodsListModel *goodsList, NSError *error) {
-//                
-//            }];
+- (void)parametersKey:(NSString *)key value:(NSString *)value {
+    [self.parameters removeObjectForKey:key];
+    [self.parameters setObject:value forKey:key];
+}
+
+- (void)data:(NSDictionary *)parameters {
     
+
+    [GoodsModel GETUrl:@""
+            parameters:parameters
+                 block:^(GoodsListModel *goodsList, NSError *error) {
+                     self.goodsListArray = goodsList.schedulePage;
+                     [self.goodsListCollection reloadData];
+            }];
     
-//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"label",@"1",@"state",@"1",@"pageNumber",@"10",@"pageSize", nil];
-    [[DataService sharedClient] GET:@"http://192.168.0.103:8888/api/v1/schedule?label=0&state=0&pageNumber=1&pageSize=10" parameters:nil completion:^(id response, NSError *error, NSDictionary *header) {
-//        if (response) {
-//            dataDic = [response objectForKey:@"data"];
-//            NSArray *dataArr = [dataDic objectForKey:@"schedulePage"];
-//            
-//            
-//            //NSDictionary *dataDic = [response objectForKey:@"data"];
-//            
-//        }
-    }];
+
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -79,27 +84,16 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 2;
+    return self.goodsListArray.count;
 }
 
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *collectionCellID = @"goodsListCell";
     GoodsCollectionViewCell *cell = [self.goodsListCollection dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
-    
-//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"label",@"1",@"state",@"1",@"pageNumber",@"10",@"pageSize", nil];
-//    [[DataService sharedClient] GET:@"http://192.168.0.103:8888/api/v1/schedule" parameters:dic completion:^(id response, NSError *error, NSDictionary *header) {
-//        if (response) {
-//            dataDic = [response objectForKey:@"data"];
-//            NSArray *dataArr = [dataDic objectForKey:@"schedulePage"];
-//            
-//        
-//    //NSDictionary *dataDic = [response objectForKey:@"data"];
-//    cell.goodsListNameLabel.text = [dataArr[indexPath.row] objectForKey:@"goodsName"];
-//    cell.goodsListImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dataArr[indexPath.row] objectForKey:@"indexImages"]]]];
-//        }
-//    }];
+
+    GoodsModel * goods = self.goodsListArray[indexPath.row];
+    [cell cell:cell model:goods];
     
     
     return cell;
@@ -111,7 +105,7 @@
     if(!reusableview){
         if (kind == UICollectionElementKindSectionHeader){
             
-            HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"goodsHeaderView" forIndexPath:indexPath];
+            HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerCollectionReusableViewID forIndexPath:indexPath];
             int x = self.view.frame.size.width/5;
 
             NSArray *arr = @[@"最新",@"最快",@"最热",@"高价",@"低价"];
@@ -177,24 +171,32 @@
     [redView setFrame:frame];
     [UIView commitAnimations];
     if (sender.tag == 100) {
-        
+        [self parametersKey:@"label" value:@"3"];
+        [self data:self.parameters];
     }else if (sender.tag == 101){
-        
+        [self parametersKey:@"label" value:@"2"];
+        [self data:self.parameters];
     }else if (sender.tag == 102){
-        
+        [self parametersKey:@"label" value:@"1"];
+        [self data:self.parameters];
     }else if (sender.tag == 103){
-        
+        [self parametersKey:@"label" value:@"4"];
+        [self data:self.parameters];
     }else if (sender.tag == 104){
-        
+        [self parametersKey:@"label" value:@"5"];
+        [self data:self.parameters];
     }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     self.hidesBottomBarWhenPushed = YES;
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"GoodsDetail" bundle:[NSBundle mainBundle]];
-    GoodsDetailViewController * GoodsDetailVC = (GoodsDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"goodsDetailViewController"];
-    //[self.navigationController showViewController:GoodsDetailVC sender:nil];
-    [self.navigationController pushViewController:GoodsDetailVC animated:YES];
+    GoodsDetailViewController * goodsDetailVC = (GoodsDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"goodsDetailViewController"];
+    
+    goodsDetailVC.goodsModel = self.goodsListArray[indexPath.row];
+    [self.navigationController showViewController:goodsDetailVC sender:nil];
+    
+    
     
 }
 

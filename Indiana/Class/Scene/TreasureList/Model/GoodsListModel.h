@@ -11,7 +11,7 @@
 
 @interface GoodsListModel : MTLModel<MTLJSONSerializing>
 
-@property(strong, nonatomic) NSMutableArray *goodsList;
+@property(strong, nonatomic) NSMutableArray *schedulePage;
 
 
 @end

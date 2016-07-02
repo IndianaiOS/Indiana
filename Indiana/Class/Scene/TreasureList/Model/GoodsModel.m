@@ -9,8 +9,8 @@
 #import "GoodsModel.h"
 #import "DataService.h"
 
-static NSString *const goodsListUrl = @"http://192.168.0.103:8888/api/v1/schedule?";//label=0&state=0&pageNumber=1&pageSize=10";
-static NSString *const goodsDetailUrl = @"http://192.168.0.103:8888/api/v1/schedule/{scheduleId}?sign=0";
+static NSString *const goodsListUrl = @"http://123.56.181.65:8888/api/v1/schedule?";//label=0&state=0&pageNumber=1&pageSize=10";
+static NSString *const goodsDetailUrl = @"http://123.56.181.65:8888/api/v1/schedule/%@?sign=1";//http://123.56.181.65:8888/api/v1/schedule/A1?sign=1
 
 @implementation GoodsModel
 
@@ -22,14 +22,15 @@ static NSString *const goodsDetailUrl = @"http://192.168.0.103:8888/api/v1/sched
                       parameters:(NSDictionary *)parameters
                            block:(void (^)(GoodsListModel *goodsList,
                                            NSError *error))completion {
- 
-    return [[DataService sharedClient] GET:@"http://192.168.0.103:8888/api/v1/schedule?label=0&state=0&pageNumber=1&pageSize=10"//[GoodsModel url:asa]
+  
+    
+    return [[DataService sharedClient] GET:[GoodsModel url:parameters]
                                 parameters:@{}
                                 completion:^(id response, NSError *error, NSDictionary *header) {
                                     
                                     GoodsListModel *goodsList =
                                     [MTLJSONAdapter modelOfClass:[GoodsListModel class]
-                                              fromJSONDictionary:response
+                                              fromJSONDictionary:response[@"data"]
                                                            error:&error];
                                     completion(goodsList, error);
                                     
@@ -39,21 +40,19 @@ static NSString *const goodsDetailUrl = @"http://192.168.0.103:8888/api/v1/sched
 //详情
 - (NSURLSessionDataTask *)detailsblock:(void (^)(GoodsModel *goodsModel,
                                                  NSError *error))completion {
-    return [[DataService sharedClient] GET:goodsDetailUrl
+    return [[DataService sharedClient] GET:[self detailUrl]
                                 parameters:@{}
                                 completion:^(id response, NSError *error, NSDictionary *header) {
+                                    NSDictionary *data = response[@"data"];
                                     GoodsModel *goods = [MTLJSONAdapter modelOfClass:[GoodsModel class]
-                                                                  fromJSONDictionary:response//response[@"object"]
+                                                                  fromJSONDictionary:data[@"schedule"]
                                                                                error:&error];
                                     completion(goods, error);
                                 }];
 }
 
 + (NSString *)url:(NSDictionary *)parameters {
-    NSDictionary *asa = @{@"label":@"1",
-                          @"state":@"1",
-                          @"pageNumber":@"1",
-                          @"pageSize":@"10"};
+    
     NSArray * keys = parameters.allKeys;
     NSString * url = [NSString stringWithFormat:@"%@",goodsListUrl];
     for (NSString * key in keys) {
@@ -62,5 +61,9 @@ static NSString *const goodsDetailUrl = @"http://192.168.0.103:8888/api/v1/sched
     return [url substringToIndex:[url length]-1];
 }
 
+- (NSString *)detailUrl {
+    NSString * url = [goodsDetailUrl stringByReplacingOccurrencesOfString:@"%@" withString:self.scheduleId];
+    return url;
+}
 
 @end

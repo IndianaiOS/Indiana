@@ -15,8 +15,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedClient = [[DataService alloc] init];
-        _sharedClient.requestSerializer = [AFJSONRequestSerializer serializer];//声明请求的数据格式
-        _sharedClient.responseSerializer = [AFHTTPResponseSerializer serializer];//声明响应的数据格式
         
     });
     

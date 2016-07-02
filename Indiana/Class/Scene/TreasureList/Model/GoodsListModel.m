@@ -14,7 +14,7 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{};
 }
-+ (NSValueTransformer *)goodsListJSONTransformer {
++ (NSValueTransformer *)schedulePageJSONTransformer {
     return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[GoodsModel class]];
 }
 
