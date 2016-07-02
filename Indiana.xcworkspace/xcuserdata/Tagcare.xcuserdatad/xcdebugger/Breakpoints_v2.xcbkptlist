@@ -100,12 +100,12 @@
                   moduleName = "Indiana"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/DataSource/DataService.m"
-                  timestampString = "489143902.042346"
+                  timestampString = "489147925.100932"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
                   endingLineNumber = "37"
-                  offsetFromSymbolStart = "124">
+                  offsetFromSymbolStart = "125">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -115,12 +115,12 @@
                   moduleName = "Indiana"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/DataSource/DataService.m"
-                  timestampString = "489143902.042445"
+                  timestampString = "489147925.101084"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
                   endingLineNumber = "37"
-                  offsetFromSymbolStart = "56">
+                  offsetFromSymbolStart = "42">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -130,12 +130,12 @@
                   moduleName = "Indiana"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/DataSource/DataService.m"
-                  timestampString = "489143902.042524"
+                  timestampString = "489147925.101177"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
                   endingLineNumber = "37"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "29">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -145,12 +145,12 @@
                   moduleName = "Indiana"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/DataSource/DataService.m"
-                  timestampString = "489143902.042602"
+                  timestampString = "489147925.10126"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
                   endingLineNumber = "38"
-                  offsetFromSymbolStart = "88">
+                  offsetFromSymbolStart = "75">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -12,6 +12,7 @@
 #import "UMSocial.h"
 #import "UMSocialQQHandler.h"
 #import "UMSocialWechatHandler.h"
+#import "Pingpp.h"
 
 #define UmengAppkey @"57725d0467e58e361e001606"
 
@@ -26,7 +27,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     [self checkNetwork];
     //设置友盟社会化组件appkey
@@ -67,7 +67,7 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:networkInfo preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancelAction];
-        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+        //[self.window.rootViewController presentViewController:alert animated:YES completion:nil];
     }];
     
     [manger startMonitoring];
@@ -103,6 +103,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+    BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
+    return canHandleURL;
 }
 
 @end

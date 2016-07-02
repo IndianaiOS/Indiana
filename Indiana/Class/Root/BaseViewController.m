@@ -20,7 +20,7 @@ static const CGFloat MJDuration = 2.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
     NSDictionary * dict = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
     self.navigationController.navigationBar.titleTextAttributes = dict;
     // Do any additional setup after loading the view.
