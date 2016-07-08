@@ -80,8 +80,13 @@ static const CGFloat MJDuration = 2.0;
     dispatch_after(
                    dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)),
                    dispatch_get_main_queue(), ^{
+                      
+                       if ([self.delegate respondsToSelector:@selector(reloadNewData)]) {
+                           
+                           [self.delegate reloadNewData];
+                       }
                        // 刷新表格
-                       [self.baseTableView reloadData];
+//                       [self.baseTableView reloadData];
                        
                        // 拿到当前的下拉刷新控件，结束刷新状态
                        [self.baseTableView.mj_header endRefreshing];
@@ -93,8 +98,14 @@ static const CGFloat MJDuration = 2.0;
     
     // 模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if ([self.delegate respondsToSelector:@selector(reloadMoreData)]) {
+            
+            [self.delegate reloadMoreData];
+        }
+        
         // 刷新表格
-        [self.baseTableView reloadData];
+//        [self.baseTableView reloadData];
         // 拿到当前的上拉刷新控件，结束刷新状态
         [self.baseTableView.mj_footer endRefreshing];
     });

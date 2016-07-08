@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LoginViewControllerDelegate <NSObject>
+
+- (void)dismissViewformLogin;
+- (void)showRegisterView;
+
+@end
+
 @interface LoginViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
+@property (assign, nonatomic)id<LoginViewControllerDelegate> delegate;
 @end

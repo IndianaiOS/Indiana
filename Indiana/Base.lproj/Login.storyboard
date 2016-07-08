@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="nYT-Aw-Tba">
             <objects>
-                <navigationController id="FJx-7b-pHZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationController" id="FJx-7b-pHZ" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GuG-ch-35I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -25,7 +25,7 @@
         <!--Login Root View Controller-->
         <scene sceneID="4Vg-gY-mu8">
             <objects>
-                <viewController id="tjU-Bo-YGS" customClass="LoginRootViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginRootViewController" id="tjU-Bo-YGS" customClass="LoginRootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XTm-2Q-FG3"/>
                         <viewControllerLayoutGuide type="bottom" id="RnF-iM-eOM"/>
@@ -55,6 +55,9 @@
                             </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segment" destination="LWT-5I-Gsf" id="4RA-Ow-UfN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jkp-Qg-T8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

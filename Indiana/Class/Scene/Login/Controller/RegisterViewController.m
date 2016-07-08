@@ -101,6 +101,8 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
                 cell.titleLabel.text = NSLocalizedString(@"密码", nil);
                 cell.textField.placeholder = NSLocalizedString(@"请输入6-20位登录密码", nil);
                 cell.textField.tag = 102;
+                cell.textField.keyboardType = UIKeyboardTypeASCIICapable;
+                cell.textField.secureTextEntry = YES;
                 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
             }
                 break;
@@ -108,6 +110,8 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
                 cell.titleLabel.text = NSLocalizedString(@"确认密码", nil);
                 cell.textField.placeholder = NSLocalizedString(@"请再次输入密码", nil);
                 cell.textField.tag = 103;
+                cell.textField.secureTextEntry = YES;
+                cell.textField.keyboardType = UIKeyboardTypeASCIICapable;
                 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
             }
                 break;
@@ -124,43 +128,62 @@ static NSString *const registerFooterViewIdentifier = @"registerFooterView";
 - (void)footViewQQLoginBtnAction:(UIButton *)button {
     LoginModel * loginModel = [[LoginModel alloc] init];
     [loginModel QQLogin:self];
+    if ([self.delegate respondsToSelector:@selector(dismissViewformRegister)]) {
+        
+        [self.delegate dismissViewformRegister];
+    }
 }
 
 - (void)footViewWeiXinLoginBtnAction:(UIButton *)button {
     LoginModel * loginModel = [[LoginModel alloc] init];
     [loginModel weiXinLogin:self];
+    
+    if ([self.delegate respondsToSelector:@selector(dismissViewformRegister)]) {
+        
+        [self.delegate dismissViewformRegister];
+    }
 }
 
 - (void)getVerifyCodeButtonAction:(UIButton *)button {
-    //TODO: 倒计时
-    self.verifyCell.getVerifyCodeButton.userInteractionEnabled = NO;
-    //设置倒计时总时长
-    _secondsCountDown = 60;//60秒倒计时
-    //开始倒计时
-    _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES]; //启动倒计时后会每秒钟调用一次方法 timeFireMethod
+    if ([self.userInfo.phone isEqualToString:@""]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"请输入手机号!", nil) preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+      
+    } else{
+        //倒计时
+        self.verifyCell.getVerifyCodeButton.userInteractionEnabled = NO;
+        //设置倒计时总时长
+        _secondsCountDown = 60;//60秒倒计时
+        //开始倒计时
+        _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES]; //启动倒计时后会每秒钟调用一次方法 timeFireMethod
+        
+        //TODO: 判断是否填写phone
+        
+        //获取验证码
+        [self.userInfo phoneRegisterCAPTCHABlock:^(NSString *code, NSError *error) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:code preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }];
+    }
     
-    //设置倒计时显示的时间
-//    [self.verifyCell.getVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新发送（%d）",_secondsCountDown] forState:UIControlStateNormal];
-
-    //TODO: 判断是否填写phone
     
-    //获取验证码
-    [self.userInfo phoneRegisterCAPTCHABlock:^(NSString *code, NSError *error) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:code preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
-        [alert addAction:cancelAction];
-        [self presentViewController:alert animated:YES completion:nil];
-    }];
 }
 
 - (void)footViewRegisterButtonAction:(UIButton *)button {
     [self comparePassword];
     [self.userInfo phoneRegisterBlock:^(UserInfoModel *userInfoModel, NSError *error) {
-        //TODO:保存个人信息
-        //保存数据
+        //保存个人信息
         [LocaldData saveListData:userInfoModel];
+        
+        if ([self.delegate respondsToSelector:@selector(dismissViewformRegister)]) {
+            
+            [self.delegate dismissViewformRegister];
+        }
     }];
-    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 

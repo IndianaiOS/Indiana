@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol RegisterViewControllerDelegate <NSObject>
+
+- (void)dismissViewformRegister;
+
+@end
 @interface RegisterViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+@property (assign, nonatomic)id<RegisterViewControllerDelegate> delegate;
+
 
 @end

@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Scene/TreasureList/Model/GoodsModel.m"
-            timestampString = "489065053.029395"
+            filePath = "Indiana/Class/Scene/Login/Controller/LoginViewController.m"
+            timestampString = "489488818.036141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "+GETUrl:parameters:block:"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-footViewLoginButtonAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Scene/TreasureList/Model/GoodsModel.m"
-            timestampString = "489065053.029395"
+            filePath = "Indiana/Class/Scene/Personal/Model/UserInfoModel.m"
+            timestampString = "489313388.276896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "+GETUrl:parameters:block:"
+            landmarkName = "-loginBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,74 +83,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/DataSource/DataService.m"
-            timestampString = "489064439.064036"
+            filePath = "Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
+            timestampString = "489488818.036141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-GET:parameters:completion:"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "-footViewRegisterButtonAction:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__41-[DataService GET:parameters:completion:]_block_invoke"
+                  symbolName = "-[RegisterViewController footViewRegisterButtonAction:]"
                   moduleName = "Indiana"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/DataSource/DataService.m"
-                  timestampString = "489147925.100932"
+                  urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
+                  timestampString = "489580516.784918"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "125">
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "62">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_"
+                  symbolName = "__55-[RegisterViewController footViewRegisterButtonAction:]_block_invoke"
                   moduleName = "Indiana"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/DataSource/DataService.m"
-                  timestampString = "489147925.101084"
+                  urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
+                  timestampString = "489580516.785091"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "42">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_"
-                  moduleName = "Indiana"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/DataSource/DataService.m"
-                  timestampString = "489147925.101177"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "29">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[DataService GET:parameters:completion:]_block_invoke.8"
-                  moduleName = "Indiana"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/DataSource/DataService.m"
-                  timestampString = "489147925.10126"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "75">
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -161,13 +131,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m"
-            timestampString = "489064773.000708"
+            filePath = "Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
+            timestampString = "489488818.036141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "-GET:parameters:progress:success:failure:"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "-footViewRegisterButtonAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -177,12 +147,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Scene/TreasureList/Controller/TreasureListViewController.m"
-            timestampString = "489066021.524377"
+            filePath = "Indiana/Class/Scene/Personal/Model/UserInfoModel.m"
+            timestampString = "489485820.439652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66">
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-phoneRegisterBlock:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -191,13 +163,141 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Scene/Login/Controller/LoginViewController.m"
-            timestampString = "489140111.078305"
+            filePath = "Indiana/Class/Scene/Personal/Model/UserInfoModel.m"
+            timestampString = "489485829.122165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-footViewLoginButtonAction:"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-phoneRegisterBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/DataSource/LocaldData.m"
+            timestampString = "489487614.769944"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "+saveListData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Scene/Personal/Controller/PersonalViewController.m"
+            timestampString = "489489748.833677"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Root/Tools.m"
+            timestampString = "489565667.570212"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "+timestampSwitchTime:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Root/BaseViewController.m"
+            timestampString = "489573426.125233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-headerRereshing"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Root/BaseViewController.m"
+            timestampString = "489573427.977124"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-fooderRereshing"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Root/BaseViewController.m"
+            timestampString = "489573538.281426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-loadNewData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Scene/Personal/Controller/RechargeRecordViewController.m"
+            timestampString = "489580491.989366"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-data"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Scene/Personal/Controller/RechargeRecordViewController.m"
+            timestampString = "489580491.989366"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-data"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

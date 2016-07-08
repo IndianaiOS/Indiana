@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "UIScrollView+EmptyDataSet.h"
 
+@protocol BaseViewControllerReloadDataDelegate <NSObject>
+
+- (void)reloadNewData;
+- (void)reloadMoreData;
+
+@end
+
 @interface BaseViewController : UIViewController<DZNEmptyDataSetDelegate,DZNEmptyDataSetSource>
 
-@property(nonatomic, strong)UITableView * baseTableView;
+@property (nonatomic, strong)UITableView * baseTableView;
+@property (assign, nonatomic)id<BaseViewControllerReloadDataDelegate>delegate;
 
 /**
  *  下拉刷新、上拉加载更过

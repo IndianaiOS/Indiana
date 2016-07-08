@@ -8,12 +8,16 @@
 
 #import "PersonalViewController.h"
 #import "PersonalCell.h"
+#import "PersonalHeaderView.h"
+#import "LoginRootViewController.h"
+#import "RechargeRecordViewController.h"
 
 static NSString *const personalCellIdentifier = @"personalCell";
+static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
 
 @interface PersonalViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tabelView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -21,10 +25,25 @@ static NSString *const personalCellIdentifier = @"personalCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabelView.delegate = self;
-    self.tabelView.dataSource = self;
-    [self.tabelView registerNib:[UINib nibWithNibName:@"PersonalCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:personalCellIdentifier];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self tableViewRegister];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+    self.navigationController.navigationBarHidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+
+}
+
+- (void)tableViewRegister {
+    [self.tableView registerNib:[UINib nibWithNibName:@"PersonalCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:personalCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"PersonalHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:personalHeaderViewIdentifier];
+    self.tableView.tableFooterView = [[UIView alloc]init];
+
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -36,9 +55,23 @@ static NSString *const personalCellIdentifier = @"personalCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 1) {
-        return 8;
+        return 0;
     }
-    return 0;
+    return 210;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        UserInfoModel *user = [LocaldData achieveListDataType];
+        PersonalHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:personalHeaderViewIdentifier];
+        [headerView personalheaderView:headerView model:user];
+        [headerView.loginBtn addTarget:self
+                                action:@selector(headerViewLoginBtnAction:)
+                      forControlEvents:UIControlEventTouchUpInside];
+        return headerView;
+    }
+    return nil;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,6 +110,51 @@ static NSString *const personalCellIdentifier = @"personalCell";
     return cell;
     
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+        
+    }else {
+        switch (indexPath.row) {
+            case 0:{
+                
+            }
+                break;
+            case 1:{
+                RechargeRecordViewController * rechargeRecordVC = [[RechargeRecordViewController alloc] initWithNibName:@"RechargeRecordViewController" bundle:nil];
+                [self.navigationController showViewController:rechargeRecordVC sender:nil];
+            }
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+    }
+
+
+}
+
+#define mark - button Action
+- (void)headerViewLoginBtnAction:(UIButton *)btn {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]];
+    
+    LoginRootViewController *loginRootVC = (LoginRootViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginRootViewController"];
+    UINavigationController *loginRootNC = [[UINavigationController alloc] initWithRootViewController:loginRootVC];
+    [self presentViewController:loginRootNC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

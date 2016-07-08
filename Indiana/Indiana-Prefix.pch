@@ -14,7 +14,10 @@
 
 #pragma mark - 网络访问地址
 //developement
+//局域网
 //#define SERVER_URL @"http://192.168.0.110:8888/api/v1/"
+//充值记录
+#define SERVER_URL_RECHARGE @"http://192.168.0.111:8889/"
 //外网
 #define SERVER_URL @"http://123.56.181.65:8888/"
 //production
@@ -23,6 +26,11 @@
 #pragma mark - header
 #import "DataService.h"
 #import "LocaldData.h"
+#import <Mantle/Mantle.h>
+#import "UserInfoModel.h"
+#import "UIImageView+WebCache.h"
+#import "BaseViewController.h"
+#import "Tools.h"
 
 #pragma mark - 登录方式
 #define LOGIN_TYPE_QQ @"1"

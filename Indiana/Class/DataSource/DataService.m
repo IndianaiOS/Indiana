@@ -34,8 +34,10 @@
                   if (responseObject) {
                       completion(responseObject, nil, nil);
                   }
+                  NSLog(@"task.state %ld",(long)task.state);
+
               } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                  NSLog(@"%ld",(long)task.state);
+                  NSLog(@"task.state %ld",(long)task.state);
               }];
     
 }
@@ -52,8 +54,10 @@
                    if (responseObject) {
                        completion(responseObject, nil);
                    }
+                    NSLog(@"task.state %ld",(long)task.state);
                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                    completion(nil, error);
+                    NSLog(@"task.state %ld",(long)task.state);
                }];
 
 }

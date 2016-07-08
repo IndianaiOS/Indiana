@@ -10,10 +10,11 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 
-@interface LoginRootViewController ()
+@interface LoginRootViewController ()<LoginViewControllerDelegate,RegisterViewControllerDelegate>
 
 @property (strong, nonatomic)LoginViewController *loginVC;
 @property (strong, nonatomic)RegisterViewController *registerVC;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 
 @end
 
@@ -28,7 +29,9 @@
 - (void)setupSubviews {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]];
     self.loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+    self.loginVC.delegate = self;
     self.registerVC = (RegisterViewController *)[storyboard instantiateViewControllerWithIdentifier:@"registerViewController"];
+    self.registerVC.delegate = self;
     [self.view addSubview:self.registerVC.view];
 }
 
@@ -53,6 +56,20 @@
     }else if ([sender selectedSegmentIndex] == 1){
         [self showLoginVC];
     }
+}
+
+#define mark - delegate
+- (void)dismissViewformLogin {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)showRegisterView {
+    [self showRegisterVC];
+    self.segment.selectedSegmentIndex = 0;
+}
+
+- (void)dismissViewformRegister {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

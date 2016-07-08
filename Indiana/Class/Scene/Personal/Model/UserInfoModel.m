@@ -8,9 +8,9 @@
 
 #import "UserInfoModel.h"
 
-static NSString *const loginUrl = @"login";
-static NSString *const phoneRegisterCAPTCHAUrl = @"phoneRegisterCAPTCHA";
-static NSString *const phoneRegisterUrl = @"phoneRegister";
+static NSString *const loginUrl = @"api/v1/login";
+static NSString *const phoneRegisterCAPTCHAUrl = @"api/v1/phoneRegisterCAPTCHA";
+static NSString *const phoneRegisterUrl = @"api/v1/phoneRegister";
 
 @implementation UserInfoModel
 
@@ -32,6 +32,7 @@ static NSString *const phoneRegisterUrl = @"phoneRegister";
             POST:[self url:loginUrl]
             parameters:parameters
             completion:^(id response, NSError *error) {
+                NSLog(@"response %@",response);
                 UserInfoModel *userInfo = [MTLJSONAdapter modelOfClass:[UserInfoModel class]
                                             fromJSONDictionary:response[@"data"]
                                                          error:&error];

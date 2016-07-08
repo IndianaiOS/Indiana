@@ -9,8 +9,6 @@
 #import "GoodsCollectionViewCell.h"
 #import "GoodsModel.h"
 
-#import "UIImageView+WebCache.h"
-
 @implementation GoodsCollectionViewCell
 
 - (void)awakeFromNib {

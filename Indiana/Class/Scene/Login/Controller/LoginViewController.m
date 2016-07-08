@@ -87,6 +87,8 @@ static NSString *const loginFooterViewIdentifier = @"loginFooterView";
     } else {
         ForgetPwdCell *cell = [tableView dequeueReusableCellWithIdentifier:forgetPwdCellIdentifier];
         cell.textField.tag = 101;
+        cell.textField.secureTextEntry = YES;
+        cell.textField.keyboardType = UIKeyboardTypeASCIICapable;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:cell.textField];
         return cell;
         
@@ -98,26 +100,46 @@ static NSString *const loginFooterViewIdentifier = @"loginFooterView";
 - (void)footViewQQLoginBtnAction:(UIButton *)button {
     LoginModel * loginModel = [[LoginModel alloc] init];
     [loginModel QQLogin:self];
+    if ([self.delegate respondsToSelector:@selector(dismissViewformLogin)]) {
+        
+        [self.delegate dismissViewformLogin];
+    }
 }
 
 - (void)footViewWeiXinLoginBtnAction:(UIButton *)button {
     LoginModel * loginModel = [[LoginModel alloc] init];
     [loginModel weiXinLogin:self];
+    if ([self.delegate respondsToSelector:@selector(dismissViewformLogin)]) {
+        
+        [self.delegate dismissViewformLogin];
+    }
 }
 
 - (void)footViewLoginButtonAction:(UIButton *)button {
     self.userInfo.logintype = LOGIN_TYPE_PHONE;
     [self.userInfo loginBlock:^(UserInfoModel *userInfoModel, NSError *error) {
-        //保存数据
-        [LocaldData saveListData:userInfoModel];
-        [super dismissViewControllerAnimated:YES completion:nil];
+       
+        if (!error) {
+            //保存数据
+            [LocaldData saveListData:userInfoModel];
+            
+            if ([self.delegate respondsToSelector:@selector(dismissViewformLogin)]) {
+                
+                [self.delegate dismissViewformLogin];
+            }
 
+        }
+        NSLog(@"%@",error);
+        
     }];
     
 }
 
 - (void)footViewRegisterButtonAction:(UIButton *)button {
 
+    if ([self.delegate respondsToSelector:@selector(showRegisterView)]) {
+        [self.delegate showRegisterView];
+    }
     
 }
 
