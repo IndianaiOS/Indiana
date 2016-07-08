@@ -101,8 +101,10 @@ static NSString *const loginFooterViewIdentifier = @"loginFooterView";
     LoginModel * loginModel = [[LoginModel alloc] init];
     [loginModel QQLogin:self];
     if ([self.delegate respondsToSelector:@selector(dismissViewformLogin)]) {
-        
-        [self.delegate dismissViewformLogin];
+        UserInfoModel *user = [LocaldData achieveListDataType];
+        if (user != nil) {
+            [self.delegate dismissViewformLogin];
+        }
     }
 }
 

@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Indiana/Class/Scene/Login/Model/LoginModel.m"
-            timestampString = "489134972.836063"
+            timestampString = "489657575.442271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-weiXinLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Indiana/Class/Scene/Login/Controller/LoginViewController.m"
-            timestampString = "489488818.036141"
+            timestampString = "489662567.750904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "-footViewLoginButtonAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,12 +100,12 @@
                   moduleName = "Indiana"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
-                  timestampString = "489580516.784918"
+                  timestampString = "489662568.951526"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "178"
                   endingLineNumber = "178"
-                  offsetFromSymbolStart = "62">
+                  offsetFromSymbolStart = "80">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -115,12 +115,12 @@
                   moduleName = "Indiana"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
-                  timestampString = "489580516.785091"
+                  timestampString = "489662568.951626"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "178"
                   endingLineNumber = "178"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -179,38 +179,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/DataSource/LocaldData.m"
-            timestampString = "489487614.769944"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "+saveListData:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Scene/Personal/Controller/PersonalViewController.m"
-            timestampString = "489489748.833677"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Indiana/Class/Root/Tools.m"
             timestampString = "489565667.570212"
             startingColumnNumber = "9223372036854775807"
@@ -227,13 +195,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Root/BaseViewController.m"
-            timestampString = "489573426.125233"
+            filePath = "Indiana/Class/Scene/Login/Controller/LoginViewController.m"
+            timestampString = "489657387.042647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-headerRereshing"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-footViewQQLoginBtnAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -243,13 +211,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Root/BaseViewController.m"
-            timestampString = "489573427.977124"
+            filePath = "Indiana/Class/Scene/Login/Controller/RegisterViewController.m"
+            timestampString = "489657516.260354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-fooderRereshing"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "-footViewQQLoginBtnAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -259,13 +227,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Root/BaseViewController.m"
-            timestampString = "489573538.281426"
+            filePath = "Indiana/Class/Scene/Login/Model/LoginModel.m"
+            timestampString = "489657522.70735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-loadNewData"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-QQLogin:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -275,13 +243,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Scene/Personal/Controller/RechargeRecordViewController.m"
-            timestampString = "489580491.989366"
+            filePath = "Indiana/Class/Scene/Login/Model/LoginModel.m"
+            timestampString = "489657651.183155"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-data"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "-QQLogin:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -291,13 +259,125 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Indiana/Class/Scene/Personal/Controller/RechargeRecordViewController.m"
-            timestampString = "489580491.989366"
+            filePath = "Indiana/Class/Scene/Login/Model/LoginModel.m"
+            timestampString = "489658044.722019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-data"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "-QQLogin:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Scene/Login/Model/LoginModel.m"
+            timestampString = "489658397.783324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-weiXinLogin:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoginModel weiXinLogin:]"
+                  moduleName = "Indiana"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/Scene/Login/Model/LoginModel.m"
+                  timestampString = "489662568.957036"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[LoginModel weiXinLogin:]_block_invoke"
+                  moduleName = "Indiana"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tagcare/Desktop/Indiana/Indiana/Class/Scene/Login/Model/LoginModel.m"
+                  timestampString = "489662568.957133"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Scene/Login/Model/LoginModel.m"
+            timestampString = "489658399.063559"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-weiXinLogin:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Scene/Login/Model/LoginModel.m"
+            timestampString = "489658435.639901"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-weiXinLogin:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Scene/Login/Controller/LoginViewController.m"
+            timestampString = "489662592.173803"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-footViewQQLoginBtnAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Indiana/Class/Scene/Login/Controller/LoginViewController.m"
+            timestampString = "489662638.029547"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-footViewQQLoginBtnAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

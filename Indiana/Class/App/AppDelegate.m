@@ -78,7 +78,9 @@
 {
     BOOL result = [UMSocialSnsService handleOpenURL:url];
     if (result == FALSE) {
-        //调用其他SDK，例如支付宝SDK等
+        //调用其他SDK，例如支付宝SDK等 ping++跳转
+        BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
+        return canHandleURL;
     }
     return result;
 }
@@ -105,11 +107,5 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)app
-            openURL:(NSURL *)url
-            options:(NSDictionary *)options {
-    BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
-    return canHandleURL;
-}
 
 @end
