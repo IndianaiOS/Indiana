@@ -11,10 +11,12 @@
 #import "GoodsDetailViewController.h"
 #import "DataService.h"
 #import "PingPP.h"
+#import "PayService.h"
 
 @interface GoodsPayViewController ()
 {
     PayView *payView;
+    UIAlertController *resultAlert;
 }
 
 @end
@@ -35,6 +37,8 @@
     
     payView.buyTimesLabel.text = [NSString stringWithFormat:@"%@夺宝币",self.buyTimes];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeUser:) name:@"paySuccessOrNo" object:nil];
+    
 }
 
 - (void)clickSelectButton:(UIButton *)sender{
@@ -52,44 +56,29 @@
         
         NSLog(@"调用Ping++sdk进入支付渠道进行交易");
         //    NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:@"ios",@"uid",@"xf",@"nickname",@"男",@"gender",@"http://www.baidu.com",@"avatar",@"1",@"logintype",@"1080*800",@"resolution",@"ios9",@"os",@"v1.0",@"appversion",@"123456",@"deviceid", nil];
-        NSString *amount = @"1";
+        NSString *amount = @"1";//self.buyTimes;
         NSString *client_ip = @"127.0.0.2";
         NSString *channel =@"wx";
         NSString *user_id = @"ios";
         NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:amount,@"amount",client_ip,@"client_ip",channel,@"channel",user_id,@"user_id", nil];
-        GoodsPayViewController *__weak weakself = self;
-        [[DataService sharedClient] POST:
-         //@"http://192.168.0.111:8889/pay/appReqController"
-         @"http://123.56.181.65:8888/pay/appReqController"
-                              parameters:dic
-                              completion:^(id response, NSError *error) {
-                                  if (response) {
-                                      NSLog(@"response:%@",response);
-                                      NSString *charge = response;
-                                      [Pingpp createPayment:charge
-                                             viewController:weakself
-                                               appURLScheme:@"Indiana"
-                                             withCompletion:^(NSString *result, PingppError *error) {
-                                                 if ([result isEqualToString:@"success"]) {
-                                                     // 支付成功
-                                                     NSLog(@"good! pay complete");
-                                                     [[DataService sharedClient] POST:
-                                                      //@"http://192.168.0.111:8889/pay/appReqController"
-                                                      @"http://123.56.181.65:8889/pay/appWebhooks"
-                                                                           parameters:charge
-                                                                           completion:^(id response, NSError *error) {
-                                                                           }];
-                                                 } else {
-                                                     // 支付失败或取消
-                                                     NSLog(@"Error: code=%lu msg=%@", error.code, [error getMsg]);
-                                                 }
-                                             }];
-                                  }
-                                  else{
-                                      NSLog(@"error:%@",error);
-                                  }
-                              }];
+        //GoodsPayViewController *__weak weakself = self;
+        PayService *payService = [[PayService alloc]init];
+        [payService payUserPingPP:dic block:^(PayService *payModel) {
+            [payService pingPay];
+        }];
     }
+}
+
+- (void)noticeUser:(id)sender{
+    resultAlert = [UIAlertController alertControllerWithTitle:@"提示" message:@"支付成功" preferredStyle:(UIAlertControllerStyleAlert)];
+    //UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+    //[alert addAction:cancelAction];
+    [self presentViewController:resultAlert animated:YES completion:nil];
+    [NSTimer scheduledTimerWithTimeInterval:1.5f target:self selector:@selector(performDismiss:) userInfo:nil repeats:NO];
+}
+
+- (void)performDismiss:(id)sender{
+    [self dismissViewControllerAnimated:resultAlert completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

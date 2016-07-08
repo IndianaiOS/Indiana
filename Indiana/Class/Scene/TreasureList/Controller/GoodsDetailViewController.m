@@ -33,7 +33,6 @@
     self.goodsDetailTableView.delegate = self;
     self.goodsDetailTableView.dataSource = self;
     
-    
     [self setExtraCellLineHidden:self.goodsDetailTableView];
     [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"GoodsDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"goodsDetailCell"];
     //self.goodsDetailTableView.tableHeaderView = [[GoodsDetailHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 393)];
@@ -58,8 +57,17 @@
     [self.view addSubview:selectView];
     [selectView.goToPay addTarget:self action:@selector(clickGoToPay:) forControlEvents:(UIControlEventTouchUpInside)];
     selectView.selectBuyTimesTextField.delegate = self;
+    [selectView.buyAllTimes addTarget:self action:@selector(clickBuyAllTimes:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [self data];
+    
+}
+
+- (void)clickBuyAllTimes:(UIButton *)sender{
+    [self.goodsModel detailsblock:^(GoodsModel *goodsModel, NSError *error) {
+        self.goodsModel = goodsModel;
+        selectView.selectBuyTimesTextField.text = [NSString stringWithFormat:@"%@",self.goodsModel.nowCopies];
+    }];
     
 }
 
@@ -85,13 +93,18 @@
 
 - (void)clickGoToPay:(UIButton *)sender{
     //[selectView removeFromSuperview];
-    selectView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
-    [selectView.selectBuyTimesTextField resignFirstResponder];
-    self.hidesBottomBarWhenPushed = YES;
-    GoodsPayViewController *GoodsPayVC = [[GoodsPayViewController alloc]init];
-    GoodsPayVC.buyTimes = selectView.selectBuyTimesTextField.text;
-    //[self.navigationController showViewController:GoodsPayVC sender:nil];
-    [self.navigationController pushViewController:GoodsPayVC animated:YES];
+    if (selectView.selectBuyTimesTextField.text) {
+        selectView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+        [selectView.selectBuyTimesTextField resignFirstResponder];
+        self.hidesBottomBarWhenPushed = YES;
+        GoodsPayViewController *GoodsPayVC = [[GoodsPayViewController alloc]init];
+        GoodsPayVC.buyTimes = selectView.selectBuyTimesTextField.text;
+        //[self.navigationController showViewController:GoodsPayVC sender:nil];
+        [self.navigationController pushViewController:GoodsPayVC animated:YES];
+    }else{
+        //不允许进行下一步
+    }
+    
     
 }
 

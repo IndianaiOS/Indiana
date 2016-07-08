@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SelectBuyTimesDelegate <NSObject>
+
+- (void)buyAllTimes;
+
+@end
+
 @interface SelectBuyTimes : UIView
+
 @property (weak, nonatomic) IBOutlet UITextField *selectBuyTimesTextField;
 @property (weak, nonatomic) IBOutlet UIButton *minusButton;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;

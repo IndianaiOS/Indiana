@@ -49,9 +49,7 @@
 - (IBAction)clickButton100:(id)sender {
     self.selectBuyTimesTextField.text = @"100";
 }
-- (IBAction)clickBuyAllTimes:(id)sender {
-    
-}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

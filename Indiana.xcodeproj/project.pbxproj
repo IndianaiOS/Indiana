@@ -60,6 +60,8 @@
 		760F023C1D1BAC6100E1561C /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760F023A1D1BAC6100E1561C /* HeaderCollectionReusableView.xib */; };
 		760F02471D1BDF2500E1561C /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760F02461D1BDF2500E1561C /* GoodsDetailViewController.m */; };
 		7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7613CF0C1CCDFC2F00195D22 /* DataService.m */; };
+		763405531D2A11400033DF4F /* PayService.m in Sources */ = {isa = PBXBuildFile; fileRef = 763405521D2A11400033DF4F /* PayService.m */; };
+		763405561D2A65890033DF4F /* LastResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 763405551D2A65890033DF4F /* LastResultView.m */; };
 		76454F631D24FEB0004840E4 /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76454F621D24FEB0004840E4 /* GoodsModel.m */; };
 		764E7AD71D228F5300FC24CB /* GoodsPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764E7AD61D228F5300FC24CB /* GoodsPayViewController.m */; };
 		76B4B11B1D22940F00B15AD2 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76B4B11A1D22940F00B15AD2 /* PayView.xib */; };
@@ -175,6 +177,10 @@
 		760F02461D1BDF2500E1561C /* GoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailViewController.m; sourceTree = "<group>"; };
 		7613CF0B1CCDFC2F00195D22 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		7613CF0C1CCDFC2F00195D22 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		763405511D2A11400033DF4F /* PayService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayService.h; sourceTree = "<group>"; };
+		763405521D2A11400033DF4F /* PayService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayService.m; sourceTree = "<group>"; };
+		763405541D2A65890033DF4F /* LastResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastResultView.h; sourceTree = "<group>"; };
+		763405551D2A65890033DF4F /* LastResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastResultView.m; sourceTree = "<group>"; };
 		76454F611D24FEB0004840E4 /* GoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
 		76454F621D24FEB0004840E4 /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
 		764E7AD51D228F5300FC24CB /* GoodsPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsPayViewController.h; sourceTree = "<group>"; };
@@ -436,6 +442,8 @@
 				760F02461D1BDF2500E1561C /* GoodsDetailViewController.m */,
 				764E7AD51D228F5300FC24CB /* GoodsPayViewController.h */,
 				764E7AD61D228F5300FC24CB /* GoodsPayViewController.m */,
+				763405511D2A11400033DF4F /* PayService.h */,
+				763405521D2A11400033DF4F /* PayService.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -472,6 +480,8 @@
 				76FE6C8F1D24C300009C740B /* SelectBuyTimes.h */,
 				76FE6C901D24C300009C740B /* SelectBuyTimes.m */,
 				76FE6C921D24C318009C740B /* SelectBuytimes.xib */,
+				763405541D2A65890033DF4F /* LastResultView.h */,
+				763405551D2A65890033DF4F /* LastResultView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -821,6 +831,7 @@
 				29665F291D27901D00122B9A /* LocaldData.m in Sources */,
 				297133211D1D3E6D0086BF2E /* VerifyCodeCell.m in Sources */,
 				297133061D1D2BE40086BF2E /* LoginRootViewController.m in Sources */,
+				763405531D2A11400033DF4F /* PayService.m in Sources */,
 				2953F43F1D18D6C400CDCDBF /* PersonalCell.m in Sources */,
 				29665F2A1D27CB0D00122B9A /* LatestResultViewController.m in Sources */,
 				2975BA8E1D221CE90077448E /* ForgetPwdCell.m in Sources */,
@@ -828,6 +839,7 @@
 				76B4B11E1D22942100B15AD2 /* PayView.m in Sources */,
 				7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */,
 				5505E23E1D2559AA00769B3C /* GoodsListModel.m in Sources */,
+				763405561D2A65890033DF4F /* LastResultView.m in Sources */,
 				2975123C1D13F48900C8917E /* ShoppingListsViewController.m in Sources */,
 				2975BA891D221C210077448E /* LbTfCell.m in Sources */,
 				296A44FA1D23760B00D6223F /* UserInfoModel.m in Sources */,

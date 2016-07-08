@@ -15,11 +15,12 @@
 #import "Pingpp.h"
 #import "DataService.h"
 #import "GoodsModel.h"
+#import "LastResultView.h"
 
 static NSString *const collectionCellID = @"goodsListCell";
 static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
 
-@interface TreasureListViewController (){
+@interface TreasureListViewController ()<HeaderCollectionReusableViewDelegate>{
     UIButton *hotBtn;
     UIButton *fastBtn;
     UIButton *newBtn;
@@ -28,11 +29,16 @@ static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
     UIView *redView;
     UICollectionReusableView *reusableview;
     NSDictionary *dataDic;
+    LastResultView *lastViewOne;
+    LastResultView *lastViewTwo;
+    LastResultView *lastViewThree;
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *goodsListCollection;
 @property (strong, nonatomic) NSArray *goodsListArray;
 @property (strong, nonatomic) NSMutableDictionary *parameters;
+@property (strong, nonatomic) NSArray *lastResultArray;
+@property (strong, nonatomic) GoodsModel *goodsModel;
 @end
 
 @implementation TreasureListViewController
@@ -52,12 +58,36 @@ static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
     
     [self.goodsListCollection registerNib:[UINib nibWithNibName:@"GoodsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:collectionCellID];
     
-    [self.goodsListCollection registerNib:[UINib nibWithNibName:@"HeaderCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"goodsHeaderView"];
-    self.parameters = [NSMutableDictionary dictionaryWithDictionary:@{@"label":@"1",
+    [self.goodsListCollection registerNib:[UINib nibWithNibName:@"HeaderCollectionReusableView" bundle:nil]forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"goodsHeaderView"];
+    
+    self.parameters = [NSMutableDictionary dictionaryWithDictionary:@{@"label":@"3",
                                  @"state":@"1",
                                  @"pageNumber":@"1",
                                  @"pageSize":@"10"}];
     [self data:self.parameters];
+    
+    NSDictionary *lastResultDic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"label",
+                                   @"2",@"state",
+                                   @"1",@"pageNumber",
+                                   @"10",@"pageSize", nil];
+    [self dataLastResult:lastResultDic];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:1467169592000];
+    NSLog(@"1296035591  = %@",confromTimesp);
+    NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
+    NSLog(@"confromTimespStr =  %@",confromTimespStr);
+    
+}
+
+- (void)dataLastResult:(NSDictionary *)dic{
+    [GoodsModel GETUrl:@""
+            parameters:dic
+                 block:^(GoodsListModel *goodsList, NSError *error) {
+                     self.lastResultArray = goodsList.schedulePage;
+                     NSLog(@"success");
+                     [self.goodsListCollection reloadData];
+                 }];
     
 }
 
@@ -101,31 +131,17 @@ static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    //UICollectionReusableView *reusableview = nil;
-    if(!reusableview){
-        if (kind == UICollectionElementKindSectionHeader){
-            
-            HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerCollectionReusableViewID forIndexPath:indexPath];
-            int x = self.view.frame.size.width/5;
+    if (kind == UICollectionElementKindSectionHeader){
+        
+        
+        
+        HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerCollectionReusableViewID forIndexPath:indexPath];
+        [headerView headerView:headerView model:self.lastResultArray];
+        headerView.delegate = self;
+        reusableview = headerView;
+        
+        
 
-            NSArray *arr = @[@"最新",@"最快",@"最热",@"高价",@"低价"];
-            for (int i= 0; i<5; i++) {
-                UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
-                btn.tag = 100+i;
-                btn.frame = CGRectMake(x*i, 0, x, 40);
-                [btn setTitle:arr[i] forState:(UIControlStateNormal)];
-                [btn addTarget:self action:@selector(clickBtn:) forControlEvents:(UIControlEventTouchUpInside)];
-                [headerView.goodsTagView addSubview:btn];
-            }
-
-            redView = [[UIView alloc]initWithFrame:(CGRectMake(0, 36, x, 4))];
-            redView.backgroundColor = [UIColor redColor];
-            [headerView.goodsTagView addSubview:redView];
-
-            
-            reusableview = headerView;
-            
-        }
     }
     return reusableview;
 }
@@ -161,32 +177,7 @@ static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
     
     return address;
 }
-- (void)clickBtn:(UIButton *)sender{
-    
-    //动画
-    int x = self.view.frame.size.width/5;
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.2];
-    CGRect frame = CGRectMake((sender.tag-100)*x, 36, x, 4);
-    [redView setFrame:frame];
-    [UIView commitAnimations];
-    if (sender.tag == 100) {
-        [self parametersKey:@"label" value:@"3"];
-        [self data:self.parameters];
-    }else if (sender.tag == 101){
-        [self parametersKey:@"label" value:@"2"];
-        [self data:self.parameters];
-    }else if (sender.tag == 102){
-        [self parametersKey:@"label" value:@"1"];
-        [self data:self.parameters];
-    }else if (sender.tag == 103){
-        [self parametersKey:@"label" value:@"4"];
-        [self data:self.parameters];
-    }else if (sender.tag == 104){
-        [self parametersKey:@"label" value:@"5"];
-        [self data:self.parameters];
-    }
-}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     self.hidesBottomBarWhenPushed = YES;
@@ -202,6 +193,42 @@ static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     return CGSizeMake(375, 426);
+}
+
+- (void)touchBtnTag:(NSInteger)tag {
+
+    switch (tag) {
+        case 100:
+        {
+            [self parametersKey:@"label" value:@"3"];
+            [self data:self.parameters];
+        }
+            break;
+        case 101:
+        {
+            [self parametersKey:@"label" value:@"2"];
+            [self data:self.parameters];
+        }
+            break;
+        case 102:
+            [self parametersKey:@"label" value:@"1"];
+            [self data:self.parameters];
+            break;
+        case 103:
+        {
+            [self parametersKey:@"label" value:@"4"];
+            [self data:self.parameters];
+        }
+            break;
+        case 104:
+        {
+            [self parametersKey:@"label" value:@"5"];
+            [self data:self.parameters];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 

@@ -17,16 +17,23 @@
 //#define SERVER_URL @"http://192.168.0.110:8888/api/v1/"
 //外网
 #define SERVER_URL @"http://123.56.181.65:8888/"
+#define PAY_URL @"http://123.5w6.181.65:8889/pay/appReqController"
+#define PAY_VALIDATE_URL @"http://123.56.181.65:8889/pay/appWebhooks"
 //production
 //#define SERVER_URL  @""
 
 #pragma mark - header
 #import "DataService.h"
 #import "LocaldData.h"
+#import "UIImageView+WebCache.h"
 
 #pragma mark - 登录方式
 #define LOGIN_TYPE_QQ @"1"
 #define LOGIN_TYPE_WEIXIN @"2"
 #define LOGIN_TYPE_PHONE @"3"
+
+#pragma mark - 屏幕长宽
+#define SCREENWIDTH CGRectGetWidth([UIScreen mainScreen].bounds)
+#define SCREENHEIGHT CGRectGetHeight([UIScreen mainScreen].bounds)
 
 #endif /* Indiana_Prefix_pch */

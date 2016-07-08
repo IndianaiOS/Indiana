@@ -35,6 +35,7 @@
 @property(nonatomic,strong)NSString *allNumber;
 @property(nonatomic,strong)NSString *nextFlag;
 @property(nonatomic,strong)NSString *indexImages;
+@property(nonatomic,strong)NSString *infoImages;
 
 //列表
 + (NSURLSessionDataTask *)GETUrl:(NSString *)url
