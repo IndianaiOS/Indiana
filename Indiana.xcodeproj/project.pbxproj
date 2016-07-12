@@ -54,6 +54,13 @@
 		298887861D2D05E90008DD14 /* RechargeRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 298887851D2D05E90008DD14 /* RechargeRecordModel.m */; };
 		298887891D2D0D340008DD14 /* RechargeRecordListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 298887881D2D0D340008DD14 /* RechargeRecordListModel.m */; };
 		5505E23E1D2559AA00769B3C /* GoodsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E23D1D2559AA00769B3C /* GoodsListModel.m */; };
+		5505E2421D3365AE00769B3C /* OrdersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E2401D3365AE00769B3C /* OrdersListViewController.m */; };
+		5505E2461D3365CD00769B3C /* OrdersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E2451D3365CD00769B3C /* OrdersModel.m */; };
+		5505E2491D3365E600769B3C /* OrdersListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E2481D3365E600769B3C /* OrdersListModel.m */; };
+		5505E24B1D336DF000769B3C /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5505E24A1D336DF000769B3C /* Orders.storyboard */; };
+		5505E24E1D33742000769B3C /* OrdersHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E24D1D33742000769B3C /* OrdersHeaderView.m */; };
+		5505E2551D3374B000769B3C /* OrdersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E2531D3374B000769B3C /* OrdersCell.m */; };
+		5505E2561D3374B000769B3C /* OrdersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5505E2541D3374B000769B3C /* OrdersCell.xib */; };
 		76037CCF1CBF8B4F00D72AA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76037CCE1CBF8B4F00D72AA7 /* main.m */; };
 		76037CDA1CBF8B4F00D72AA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76037CD91CBF8B4F00D72AA7 /* Assets.xcassets */; };
 		76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76037CDB1CBF8B4F00D72AA7 /* LaunchScreen.storyboard */; };
@@ -173,6 +180,18 @@
 		459905CD53B2FB9E55E4B624 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5505E23C1D2559AA00769B3C /* GoodsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsListModel.h; sourceTree = "<group>"; };
 		5505E23D1D2559AA00769B3C /* GoodsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsListModel.m; sourceTree = "<group>"; };
+		5505E23F1D3365AE00769B3C /* OrdersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersListViewController.h; sourceTree = "<group>"; };
+		5505E2401D3365AE00769B3C /* OrdersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersListViewController.m; sourceTree = "<group>"; };
+		5505E2441D3365CD00769B3C /* OrdersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersModel.h; sourceTree = "<group>"; };
+		5505E2451D3365CD00769B3C /* OrdersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersModel.m; sourceTree = "<group>"; };
+		5505E2471D3365E600769B3C /* OrdersListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersListModel.h; sourceTree = "<group>"; };
+		5505E2481D3365E600769B3C /* OrdersListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersListModel.m; sourceTree = "<group>"; };
+		5505E24A1D336DF000769B3C /* Orders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
+		5505E24C1D33742000769B3C /* OrdersHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersHeaderView.h; sourceTree = "<group>"; };
+		5505E24D1D33742000769B3C /* OrdersHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersHeaderView.m; sourceTree = "<group>"; };
+		5505E2521D3374B000769B3C /* OrdersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersCell.h; sourceTree = "<group>"; };
+		5505E2531D3374B000769B3C /* OrdersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersCell.m; sourceTree = "<group>"; };
+		5505E2541D3374B000769B3C /* OrdersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrdersCell.xib; sourceTree = "<group>"; };
 		76037CCA1CBF8B4F00D72AA7 /* Indiana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Indiana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76037CCE1CBF8B4F00D72AA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		76037CD91CBF8B4F00D72AA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -355,6 +374,8 @@
 				2988877F1D2CFA750008DD14 /* RechargeRecordViewController.h */,
 				298887801D2CFA750008DD14 /* RechargeRecordViewController.m */,
 				298887811D2CFA750008DD14 /* RechargeRecordViewController.xib */,
+				5505E23F1D3365AE00769B3C /* OrdersListViewController.h */,
+				5505E2401D3365AE00769B3C /* OrdersListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -368,6 +389,10 @@
 				298887851D2D05E90008DD14 /* RechargeRecordModel.m */,
 				298887871D2D0D330008DD14 /* RechargeRecordListModel.h */,
 				298887881D2D0D340008DD14 /* RechargeRecordListModel.m */,
+				5505E2441D3365CD00769B3C /* OrdersModel.h */,
+				5505E2451D3365CD00769B3C /* OrdersModel.m */,
+				5505E2471D3365E600769B3C /* OrdersListModel.h */,
+				5505E2481D3365E600769B3C /* OrdersListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,6 +409,11 @@
 				2988877A1D2CFA410008DD14 /* RechargeRecordCell.h */,
 				2988877B1D2CFA410008DD14 /* RechargeRecordCell.m */,
 				2988877C1D2CFA410008DD14 /* RechargeRecordCell.xib */,
+				5505E24C1D33742000769B3C /* OrdersHeaderView.h */,
+				5505E24D1D33742000769B3C /* OrdersHeaderView.m */,
+				5505E2521D3374B000769B3C /* OrdersCell.h */,
+				5505E2531D3374B000769B3C /* OrdersCell.m */,
+				5505E2541D3374B000769B3C /* OrdersCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,6 +637,7 @@
 				29623E6B1CD0944800DEE393 /* Main.storyboard */,
 				291A53B41D1A881E00F201F7 /* Login.storyboard */,
 				760A05E41D1D36E80001B234 /* GoodsDetail.storyboard */,
+				5505E24A1D336DF000769B3C /* Orders.storyboard */,
 				76037CDE1CBF8B4F00D72AA7 /* Info.plist */,
 				76037CCD1CBF8B4F00D72AA7 /* Supporting Files */,
 			);
@@ -772,7 +803,9 @@
 				760A05E31D1D0D240001B234 /* GoodsDetailTableViewCell.xib in Resources */,
 				2988877E1D2CFA410008DD14 /* RechargeRecordCell.xib in Resources */,
 				76FE6C931D24C318009C740B /* SelectBuytimes.xib in Resources */,
+				5505E24B1D336DF000769B3C /* Orders.storyboard in Resources */,
 				76B4B11B1D22940F00B15AD2 /* PayView.xib in Resources */,
+				5505E2561D3374B000769B3C /* OrdersCell.xib in Resources */,
 				29623E6D1CD0944800DEE393 /* Main.storyboard in Resources */,
 				2953F4401D18D6C400CDCDBF /* PersonalCell.xib in Resources */,
 				297133221D1D3E6D0086BF2E /* VerifyCodeCell.xib in Resources */,
@@ -870,8 +903,11 @@
 				760F023B1D1BAC6100E1561C /* HeaderCollectionReusableView.m in Sources */,
 				2958F7871D2A5BF400E318A7 /* PersonalHeaderView.m in Sources */,
 				295AC3DA1D2DF52600A7BC93 /* Tools.m in Sources */,
+				5505E2421D3365AE00769B3C /* OrdersListViewController.m in Sources */,
 				76B4B11E1D22942100B15AD2 /* PayView.m in Sources */,
 				7613CF0D1CCDFC2F00195D22 /* DataService.m in Sources */,
+				5505E2491D3365E600769B3C /* OrdersListModel.m in Sources */,
+				5505E24E1D33742000769B3C /* OrdersHeaderView.m in Sources */,
 				5505E23E1D2559AA00769B3C /* GoodsListModel.m in Sources */,
 				298887821D2CFA750008DD14 /* RechargeRecordViewController.m in Sources */,
 				2975123C1D13F48900C8917E /* ShoppingListsViewController.m in Sources */,
@@ -887,10 +923,12 @@
 				2985F6791CC094FB00ED5DDA /* TabBarController.m in Sources */,
 				76FE6C911D24C300009C740B /* SelectBuyTimes.m in Sources */,
 				297512391D13F47000C8917E /* ShowOrdersViewController.m in Sources */,
+				5505E2551D3374B000769B3C /* OrdersCell.m in Sources */,
 				76BAF2B21D1935AB00553696 /* GoodsCollectionViewCell.m in Sources */,
 				76037CCF1CBF8B4F00D72AA7 /* main.m in Sources */,
 				297512361D13F44A00C8917E /* TreasureListViewController.m in Sources */,
 				2975BA9A1D222B040077448E /* LoginFooterView.m in Sources */,
+				5505E2461D3365CD00769B3C /* OrdersModel.m in Sources */,
 				29665F2C1D27CB0D00122B9A /* PersonalViewController.m in Sources */,
 				2988877D1D2CFA410008DD14 /* RechargeRecordCell.m in Sources */,
 				29665F2B1D27CB0D00122B9A /* AppDelegate.m in Sources */,

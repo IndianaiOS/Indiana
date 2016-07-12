@@ -11,6 +11,7 @@
 #import "PersonalHeaderView.h"
 #import "LoginRootViewController.h"
 #import "RechargeRecordViewController.h"
+#import "OrdersListViewController.h"
 
 static NSString *const personalCellIdentifier = @"personalCell";
 static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
@@ -130,6 +131,11 @@ static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
     }else {
         switch (indexPath.row) {
             case 0:{
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Orders" bundle:[NSBundle mainBundle]];
+                OrdersListViewController *ordersVC = (OrdersListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"ordersListViewController"];
+                UINavigationController *ordersNC = [[UINavigationController alloc] initWithRootViewController:ordersVC];
+
+                [self.navigationController showViewController:ordersNC sender:nil];
                 
             }
                 break;

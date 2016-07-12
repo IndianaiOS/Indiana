@@ -41,7 +41,7 @@ static NSString *const rechargeRecordCellIdentifier = @"rechargeRecordCell";
 - (void)setupSubviews {
     self.baseTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.view addSubview:self.baseTableView];
-    [self.baseTableView registerNib:[UINib nibWithNibName:@"RechargeRecordCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"rechargeRecordCell"];
+    [self.baseTableView registerNib:[UINib nibWithNibName:@"RechargeRecordCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:rechargeRecordCellIdentifier];
     self.baseTableView.delegate = self;
     self.baseTableView.dataSource = self;
     super.delegate = self;
