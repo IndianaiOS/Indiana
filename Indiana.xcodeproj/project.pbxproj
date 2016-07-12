@@ -68,6 +68,9 @@
 		76B4B11E1D22942100B15AD2 /* PayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B4B11D1D22942100B15AD2 /* PayView.m */; };
 		76BAF2B21D1935AB00553696 /* GoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAF2B01D1935AB00553696 /* GoodsCollectionViewCell.m */; };
 		76BAF2B31D1935AB00553696 /* GoodsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BAF2B11D1935AB00553696 /* GoodsCollectionViewCell.xib */; };
+		76F867401D34D37C00029BF6 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F8673F1D34D37C00029BF6 /* OrderListModel.m */; };
+		76F867431D34D38800029BF6 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F867421D34D38800029BF6 /* OrderModel.m */; };
+		76F867461D34E4D200029BF6 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F867451D34E4D200029BF6 /* OrderListViewController.m */; };
 		76FE6C911D24C300009C740B /* SelectBuyTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE6C901D24C300009C740B /* SelectBuyTimes.m */; };
 		76FE6C931D24C318009C740B /* SelectBuytimes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76FE6C921D24C318009C740B /* SelectBuytimes.xib */; };
 /* End PBXBuildFile section */
@@ -191,6 +194,12 @@
 		76BAF2AF1D1935AB00553696 /* GoodsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsCollectionViewCell.h; sourceTree = "<group>"; };
 		76BAF2B01D1935AB00553696 /* GoodsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsCollectionViewCell.m; sourceTree = "<group>"; };
 		76BAF2B11D1935AB00553696 /* GoodsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsCollectionViewCell.xib; sourceTree = "<group>"; };
+		76F8673E1D34D37C00029BF6 /* OrderListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
+		76F8673F1D34D37C00029BF6 /* OrderListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
+		76F867411D34D38800029BF6 /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
+		76F867421D34D38800029BF6 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
+		76F867441D34E4D200029BF6 /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
+		76F867451D34E4D200029BF6 /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
 		76FE6C8F1D24C300009C740B /* SelectBuyTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBuyTimes.h; sourceTree = "<group>"; };
 		76FE6C901D24C300009C740B /* SelectBuyTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBuyTimes.m; sourceTree = "<group>"; };
 		76FE6C921D24C318009C740B /* SelectBuytimes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectBuytimes.xib; sourceTree = "<group>"; };
@@ -444,6 +453,8 @@
 				764E7AD61D228F5300FC24CB /* GoodsPayViewController.m */,
 				763405511D2A11400033DF4F /* PayService.h */,
 				763405521D2A11400033DF4F /* PayService.m */,
+				76F867441D34E4D200029BF6 /* OrderListViewController.h */,
+				76F867451D34E4D200029BF6 /* OrderListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -455,6 +466,10 @@
 				76454F621D24FEB0004840E4 /* GoodsModel.m */,
 				5505E23C1D2559AA00769B3C /* GoodsListModel.h */,
 				5505E23D1D2559AA00769B3C /* GoodsListModel.m */,
+				76F8673E1D34D37C00029BF6 /* OrderListModel.h */,
+				76F8673F1D34D37C00029BF6 /* OrderListModel.m */,
+				76F867411D34D38800029BF6 /* OrderModel.h */,
+				76F867421D34D38800029BF6 /* OrderModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -853,6 +868,7 @@
 				2985F6791CC094FB00ED5DDA /* TabBarController.m in Sources */,
 				76FE6C911D24C300009C740B /* SelectBuyTimes.m in Sources */,
 				297512391D13F47000C8917E /* ShowOrdersViewController.m in Sources */,
+				76F867461D34E4D200029BF6 /* OrderListViewController.m in Sources */,
 				76BAF2B21D1935AB00553696 /* GoodsCollectionViewCell.m in Sources */,
 				76037CCF1CBF8B4F00D72AA7 /* main.m in Sources */,
 				297512361D13F44A00C8917E /* TreasureListViewController.m in Sources */,
@@ -860,7 +876,9 @@
 				29665F2C1D27CB0D00122B9A /* PersonalViewController.m in Sources */,
 				29665F2B1D27CB0D00122B9A /* AppDelegate.m in Sources */,
 				2975BA971D2228430077448E /* RegisterFooterView.m in Sources */,
+				76F867431D34D38800029BF6 /* OrderModel.m in Sources */,
 				764E7AD71D228F5300FC24CB /* GoodsPayViewController.m in Sources */,
+				76F867401D34D37C00029BF6 /* OrderListModel.m in Sources */,
 				760A05E21D1D0D240001B234 /* GoodsDetailTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

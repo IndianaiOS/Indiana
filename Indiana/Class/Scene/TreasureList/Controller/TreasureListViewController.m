@@ -78,6 +78,7 @@ static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
     NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
     NSLog(@"confromTimespStr =  %@",confromTimespStr);
     
+    [self setupRefresh];
 }
 
 - (void)dataLastResult:(NSDictionary *)dic{
