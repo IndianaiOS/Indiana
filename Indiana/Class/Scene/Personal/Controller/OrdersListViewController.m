@@ -26,6 +26,7 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
     [super viewDidLoad];
     self.title = NSLocalizedString(@"全部订单", nil);
     self.tabBarController.tabBar.hidden = YES;
+    self.navigationController.navigationBarHidden = NO;
     [self setupSubviews];
     self.winningOrdersListArray = [NSMutableArray arrayWithCapacity:5];
     self.parameters =[NSMutableDictionary dictionaryWithDictionary:@{@"state":@"1",
@@ -37,10 +38,9 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
 }
 
 - (void)setupSubviews {
-    self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self.view addSubview:self.tableView];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"OrdersCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ordersCellIdentifier];
-    [self.tableView registerNib:[UINib nibWithNibName:@"OrdersHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:ordersHeaderViewIdentifier];
+    [self.tableView registerClass:[OrdersHeaderView class] forHeaderFooterViewReuseIdentifier:ordersHeaderViewIdentifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -65,7 +65,7 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200;
+    return 165;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,13 +79,13 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-
-    return 45;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//
+//    return 45;
+//}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-        OrdersHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ordersHeaderViewIdentifier];
+    OrdersHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ordersHeaderViewIdentifier];
     
         return headerView;
     

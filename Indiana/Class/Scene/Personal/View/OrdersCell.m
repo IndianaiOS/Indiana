@@ -18,10 +18,10 @@
 
 - (void)ordersCell:(OrdersCell *)cell model:(OrdersModel *)model {
 //    cell.goodsImage
-    cell.goodsNameLabel.text = model.goodsName;
-    cell.scheduleNoLabel.text = model.scheduleNo;
-    cell.joinCountLabel.text = model.joinCount;
-    [cell.winnerBtn setTitle:model.userName forState:UIControlStateNormal];
+//    cell.goodsNameLabel.text = model.goodsName;
+//    cell.scheduleNoLabel.text = model.scheduleNo;
+//    cell.joinCountLabel.text = model.joinCount;
+//    [cell.winnerBtn setTitle:model.userName forState:UIControlStateNormal];
     
 }
 
