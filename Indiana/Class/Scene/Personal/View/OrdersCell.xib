@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwd-eW-DFy">
@@ -19,6 +19,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvW-cy-Xru">
                                 <rect key="frame" x="10" y="8" width="96" height="96"/>
+                                <color key="backgroundColor" red="1" green="0.71716458901927793" blue="0.56457426085942375" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="cac-Mm-yjw"/>
                                     <constraint firstAttribute="width" constant="96" id="mAb-de-eev"/>
@@ -81,7 +82,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drv-PB-fKk">
-                        <rect key="frame" x="0.0" y="112.5" width="375" height="52"/>
+                        <rect key="frame" x="0.0" y="113" width="375" height="52"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获奖者：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TQ-pM-QeG">
                                 <rect key="frame" x="20" y="19" width="56" height="20"/>
@@ -99,6 +100,9 @@
                                 <state key="normal" title="再次购买">
                                     <color key="titleColor" red="1" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buyAgainButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Reg-QG-LeL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lro-eu-gjg">
                                 <rect key="frame" x="76" y="19" width="200" height="20"/>
@@ -128,7 +132,7 @@
                 <constraints>
                     <constraint firstItem="lwd-eW-DFy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="I7q-h5-eyf"/>
                     <constraint firstItem="drv-PB-fKk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cV3-ew-Tps"/>
-                    <constraint firstAttribute="bottom" secondItem="drv-PB-fKk" secondAttribute="bottom" id="iUR-nd-cHm"/>
+                    <constraint firstAttribute="bottom" secondItem="drv-PB-fKk" secondAttribute="bottom" constant="-1" id="iUR-nd-cHm"/>
                     <constraint firstAttribute="trailing" secondItem="drv-PB-fKk" secondAttribute="trailing" id="iuK-8V-E9M"/>
                     <constraint firstAttribute="trailing" secondItem="lwd-eW-DFy" secondAttribute="trailing" id="uFE-kz-4GJ"/>
                     <constraint firstItem="lwd-eW-DFy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uJk-Kd-Aig"/>

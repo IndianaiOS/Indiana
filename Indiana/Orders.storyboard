@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AOG-k8-pb4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AOG-k8-pb4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -47,8 +47,11 @@
                                                 <constraint firstAttribute="height" constant="42" id="4cm-w7-SDb"/>
                                             </constraints>
                                             <state key="normal" title="中奖">
-                                                <color key="titleColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleColor" red="1" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="winningButtonAction:" destination="ft7-Fe-Dwn" eventType="touchUpInside" id="q83-2Y-nBF"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDg-81-vky">
                                             <rect key="frame" x="125" y="0.0" width="125" height="42"/>
@@ -58,6 +61,9 @@
                                             <state key="normal" title="进行中">
                                                 <color key="titleColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="goingButtonAction:" destination="ft7-Fe-Dwn" eventType="touchUpInside" id="3fc-TU-cqv"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVw-LB-Vbx">
                                             <rect key="frame" x="250" y="0.0" width="125" height="42"/>
@@ -67,20 +73,37 @@
                                             <state key="normal" title="已揭晓">
                                                 <color key="titleColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="announceButtonAction:" destination="ft7-Fe-Dwn" eventType="touchUpInside" id="CXk-TQ-obj"/>
+                                            </connections>
                                         </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="led-ox-tvE">
+                                            <rect key="frame" x="0.0" y="42" width="125" height="3"/>
+                                            <color key="backgroundColor" red="1" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="fhL-EB-6Nj" firstAttribute="top" secondItem="ft7-Fe-Dwn" secondAttribute="top" id="5OU-31-Mvz"/>
+                                        <constraint firstItem="led-ox-tvE" firstAttribute="leading" secondItem="ft7-Fe-Dwn" secondAttribute="leading" id="7su-JI-KCA"/>
                                         <constraint firstItem="CVw-LB-Vbx" firstAttribute="leading" secondItem="vDg-81-vky" secondAttribute="trailing" id="AIO-Ha-dCl"/>
                                         <constraint firstItem="vDg-81-vky" firstAttribute="width" secondItem="CVw-LB-Vbx" secondAttribute="width" id="C95-MJ-HQa"/>
                                         <constraint firstItem="fhL-EB-6Nj" firstAttribute="width" secondItem="vDg-81-vky" secondAttribute="width" id="DMO-fA-hDH"/>
                                         <constraint firstItem="CVw-LB-Vbx" firstAttribute="top" secondItem="ft7-Fe-Dwn" secondAttribute="top" id="NlR-Br-sAs"/>
                                         <constraint firstItem="vDg-81-vky" firstAttribute="top" secondItem="ft7-Fe-Dwn" secondAttribute="top" id="VZd-RS-gDp"/>
                                         <constraint firstItem="fhL-EB-6Nj" firstAttribute="leading" secondItem="ft7-Fe-Dwn" secondAttribute="leading" id="ZTf-MN-qjI"/>
+                                        <constraint firstItem="led-ox-tvE" firstAttribute="top" secondItem="fhL-EB-6Nj" secondAttribute="bottom" id="ZX1-rq-SnZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="led-ox-tvE" secondAttribute="bottom" id="eA8-vh-SPE"/>
                                         <constraint firstItem="vDg-81-vky" firstAttribute="leading" secondItem="fhL-EB-6Nj" secondAttribute="trailing" id="iEa-kf-iFT"/>
+                                        <constraint firstItem="led-ox-tvE" firstAttribute="width" secondItem="fhL-EB-6Nj" secondAttribute="width" id="iVf-EZ-Y8v"/>
                                         <constraint firstAttribute="trailing" secondItem="CVw-LB-Vbx" secondAttribute="trailing" id="tgY-Q0-8fU"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="announceBtn" destination="CVw-LB-Vbx" id="TPa-uI-We4"/>
+                                        <outlet property="goingBtn" destination="vDg-81-vky" id="bJa-M3-Dxt"/>
+                                        <outlet property="redView" destination="led-ox-tvE" id="M88-am-Y6q"/>
+                                        <outlet property="winningBtn" destination="fhL-EB-6Nj" id="eIV-pZ-Yjo"/>
+                                    </connections>
                                 </view>
                             </tableView>
                         </subviews>

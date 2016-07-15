@@ -58,7 +58,7 @@
     }
 }
 
-#define mark - delegate
+#pragma mark - delegate
 - (void)dismissViewformLogin {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

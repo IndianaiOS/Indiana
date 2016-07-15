@@ -18,11 +18,14 @@
 
 - (void)ordersCell:(OrdersCell *)cell model:(OrdersModel *)model {
 //    cell.goodsImage
-//    cell.goodsNameLabel.text = model.goodsName;
-//    cell.scheduleNoLabel.text = model.scheduleNo;
-//    cell.joinCountLabel.text = model.joinCount;
-//    [cell.winnerBtn setTitle:model.userName forState:UIControlStateNormal];
+    cell.goodsNameLabel.text = model.goodsName;
+    cell.scheduleNoLabel.text = [NSString stringWithFormat:NSLocalizedString(@"期号：%@", nil),model.scheduleNo];
+    cell.joinCountLabel.text = [NSString stringWithFormat:NSLocalizedString(@"本期参与：%@人次", nil),model.joinCount];
+    [cell.winnerBtn setTitle:model.userName forState:UIControlStateNormal];
     
+}
+
+- (IBAction)buyAgainButtonAction:(id)sender {
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

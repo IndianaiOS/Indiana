@@ -18,4 +18,50 @@
 }
 */
 
+- (IBAction)winningButtonAction:(id)sender {
+
+    [self redViewAnimation:1];
+    [self.winningBtn setTitleColor:COLOR_RED forState:UIControlStateNormal];
+    [self.goingBtn setTitleColor:COLOR_BLACK forState:UIControlStateNormal];
+    [self.announceBtn setTitleColor:COLOR_BLACK forState:UIControlStateNormal];
+    
+    if ([self.delegate respondsToSelector:@selector(winningButton)]) {
+        
+        [self.delegate winningButton];
+    }
+
+}
+
+- (IBAction)goingButtonAction:(id)sender {
+    [self redViewAnimation:2];
+    [self.goingBtn setTitleColor:COLOR_RED forState:UIControlStateNormal];
+    [self.winningBtn setTitleColor:COLOR_BLACK forState:UIControlStateNormal];
+    [self.announceBtn setTitleColor:COLOR_BLACK forState:UIControlStateNormal];
+    
+    if ([self.delegate respondsToSelector:@selector(goingButton)]) {
+        
+        [self.delegate goingButton];
+    }
+}
+
+- (IBAction)announceButtonAction:(id)sender {
+    [self redViewAnimation:3];
+    [self.announceBtn setTitleColor:COLOR_RED forState:UIControlStateNormal];
+    [self.winningBtn setTitleColor:COLOR_BLACK forState:UIControlStateNormal];
+    [self.goingBtn setTitleColor:COLOR_BLACK forState:UIControlStateNormal];
+    
+    if ([self.delegate respondsToSelector:@selector(announceButton)]) {
+        
+        [self.delegate announceButton];
+    }
+}
+
+-(void)redViewAnimation:(int)a {
+    //动画
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.2];
+    CGRect frame = CGRectMake((a-1)*375/3, 42, 375/3, 3);//TODO:全局变量
+    [self.redView setFrame:frame];
+    [UIView commitAnimations];
+}
 @end

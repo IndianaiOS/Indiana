@@ -1085,7 +1085,8 @@
 			baseConfigurationReference = 459905CD53B2FB9E55E4B624 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yanhua Li (68V33RSFL7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yanhua Li (68V33RSFL7)";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Indiana/Indiana-Prefix.pch";
 				INFOPLIST_FILE = Indiana/Info.plist;
@@ -1093,6 +1094,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare2.Indiana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a47c3b9-da3f-4ab5-a808-550245a72158";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1103,7 +1105,8 @@
 			baseConfigurationReference = CA116AEA8B6F229310F6F10E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yanhua Li (68V33RSFL7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yanhua Li (68V33RSFL7)";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Indiana/Indiana-Prefix.pch";
 				INFOPLIST_FILE = Indiana/Info.plist;
@@ -1111,6 +1114,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare2.Indiana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a47c3b9-da3f-4ab5-a808-550245a72158";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol OrdersHeaderViewDelegate <NSObject>
+
+- (void)winningButton;
+- (void)goingButton;
+- (void)announceButton;
+
+@end
+
 @interface OrdersHeaderView : UITableViewHeaderFooterView
+
+@property (strong, nonatomic) IBOutlet UIButton *winningBtn;
+@property (strong, nonatomic) IBOutlet UIButton *goingBtn;
+@property (strong, nonatomic) IBOutlet UIButton *announceBtn;
+@property (strong, nonatomic) IBOutlet UIView *redView;
+
+@property (assign, nonatomic)id<OrdersHeaderViewDelegate> delegate;
 
 @end

@@ -37,4 +37,13 @@
 #define LOGIN_TYPE_WEIXIN @"2"
 #define LOGIN_TYPE_PHONE @"3"
 
+#pragma mark - 颜色
+#define COLOR_RED [UIColor colorWithRed:255/255.0 green:70/255.0 blue:70/255.0 alpha:1.0]
+#define COLOR_BLACK [UIColor colorWithRed:48/255.0 green:48/255.0 blue:48/255.0 alpha:1.0]
+
+#pragma mark - 订单状态
+#define ORDERS_STATE_WINNING @"1"//中奖订单
+#define ORDERS_STATE_GOING @"2"//进行中
+#define ORDERS_STATE_ANNOUNCE @"3"//已揭晓
+
 #endif /* Indiana_Prefix_pch */

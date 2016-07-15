@@ -14,10 +14,10 @@
 static NSString *const ordersCellIdentifier = @"ordersCell";
 static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
 
-@interface OrdersListViewController ()
+@interface OrdersListViewController ()<OrdersHeaderViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *winningOrdersListArray;
-@property (strong, nonatomic) NSMutableDictionary *parameters;
 @end
 
 @implementation OrdersListViewController
@@ -29,11 +29,8 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
     self.navigationController.navigationBarHidden = NO;
     [self setupSubviews];
     self.winningOrdersListArray = [NSMutableArray arrayWithCapacity:5];
-    self.parameters =[NSMutableDictionary dictionaryWithDictionary:@{@"state":@"1",
-                                                                     @"pageNumber":@"1",
-                                                                     @"pageSize":@"10"}];
     
-    [self data];
+    [self data:ORDERS_STATE_WINNING];
 
 }
 
@@ -46,10 +43,12 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
     
 }
 
-- (void)data {
-    
+- (void)data:(NSString *)state {
+    NSMutableDictionary *parameters =[NSMutableDictionary dictionaryWithDictionary:@{@"state":state,
+                                                                                @"pageNumber":@"1",
+                                                                                  @"pageSize":@"10"}];
     [OrdersModel GETUrl:@""
-             parameters:self.parameters
+             parameters:parameters
                   block:^(OrdersListModel *orderList, NSError *error) {
                       self.winningOrdersListArray = orderList.data;
                       [self.tableView reloadData];
@@ -79,16 +78,23 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
     
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//
-//    return 45;
-//}
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     OrdersHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ordersHeaderViewIdentifier];
+    headerView.delegate = self;
+    return headerView;
     
-        return headerView;
-    
+}
+
+- (void)winningButton {
+    [self data:ORDERS_STATE_WINNING];
+}
+
+- (void)goingButton {
+    [self data:ORDERS_STATE_GOING];
+}
+
+- (void)announceButton {
+    [self data:ORDERS_STATE_ANNOUNCE];
 }
 
 - (void)didReceiveMemoryWarning {
