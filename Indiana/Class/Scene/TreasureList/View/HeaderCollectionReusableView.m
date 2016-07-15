@@ -18,9 +18,9 @@
 }
 
 - (void)headerView:(HeaderCollectionReusableView *)headerView model:(NSArray *)modellist {
-    [self.firstLastResultView lastView:self.firstLastResultView model:modellist[0]];
-    [self.secondLastResultView lastView:self.secondLastResultView model:modellist[1]];
-    [self.thirdLastResultView lastView:self.thirdLastResultView model:modellist[2]];
+//    [self.firstLastResultView lastView:self.firstLastResultView model:modellist[0]];
+//    [self.secondLastResultView lastView:self.secondLastResultView model:modellist[1]];
+//    [self.thirdLastResultView lastView:self.thirdLastResultView model:modellist[2]];
 
     
 }

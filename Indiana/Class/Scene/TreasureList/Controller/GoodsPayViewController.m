@@ -36,6 +36,7 @@
     [payView.confirmPayButton addTarget:self action:@selector(clickConfirmPayButton:) forControlEvents:(UIControlEventTouchUpInside)];
     
     payView.buyTimesLabel.text = [NSString stringWithFormat:@"%@夺宝币",self.buyTimes];
+    payView.buyTimesCountLabel.text = [NSString stringWithFormat:@"总计：%@夺宝币",self.buyTimes];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeUser:) name:@"paySuccessOrNo" object:nil];
     

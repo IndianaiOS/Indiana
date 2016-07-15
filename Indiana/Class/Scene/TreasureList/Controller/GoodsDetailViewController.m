@@ -198,6 +198,22 @@
 //    return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *board=[UIStoryboard storyboardWithName:@"GoodsDetail"bundle:nil];
+    UIViewController *showListVC = [board instantiateViewControllerWithIdentifier:@"showListViewController"];
+    UIViewController *showResultVC = [board instantiateViewControllerWithIdentifier:@"showResultViewController"];
+    
+    if (indexPath.row == 0) {
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController showViewController:showListVC sender:nil];
+        
+    }else{
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController showViewController:showResultVC sender:nil];
+    }
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -71,6 +71,8 @@
 		76F867401D34D37C00029BF6 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F8673F1D34D37C00029BF6 /* OrderListModel.m */; };
 		76F867431D34D38800029BF6 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F867421D34D38800029BF6 /* OrderModel.m */; };
 		76F867461D34E4D200029BF6 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F867451D34E4D200029BF6 /* OrderListViewController.m */; };
+		76FA5CFE1D377F9400AB20B6 /* ShowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FA5CFD1D377F9400AB20B6 /* ShowListViewController.m */; };
+		76FA5D011D3781C800AB20B6 /* ShowResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FA5D001D3781C800AB20B6 /* ShowResultViewController.m */; };
 		76FE6C911D24C300009C740B /* SelectBuyTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE6C901D24C300009C740B /* SelectBuyTimes.m */; };
 		76FE6C931D24C318009C740B /* SelectBuytimes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76FE6C921D24C318009C740B /* SelectBuytimes.xib */; };
 /* End PBXBuildFile section */
@@ -200,6 +202,10 @@
 		76F867421D34D38800029BF6 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
 		76F867441D34E4D200029BF6 /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
 		76F867451D34E4D200029BF6 /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
+		76FA5CFC1D377F9400AB20B6 /* ShowListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowListViewController.h; sourceTree = "<group>"; };
+		76FA5CFD1D377F9400AB20B6 /* ShowListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowListViewController.m; sourceTree = "<group>"; };
+		76FA5CFF1D3781C800AB20B6 /* ShowResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowResultViewController.h; sourceTree = "<group>"; };
+		76FA5D001D3781C800AB20B6 /* ShowResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowResultViewController.m; sourceTree = "<group>"; };
 		76FE6C8F1D24C300009C740B /* SelectBuyTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBuyTimes.h; sourceTree = "<group>"; };
 		76FE6C901D24C300009C740B /* SelectBuyTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBuyTimes.m; sourceTree = "<group>"; };
 		76FE6C921D24C318009C740B /* SelectBuytimes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectBuytimes.xib; sourceTree = "<group>"; };
@@ -455,6 +461,10 @@
 				763405521D2A11400033DF4F /* PayService.m */,
 				76F867441D34E4D200029BF6 /* OrderListViewController.h */,
 				76F867451D34E4D200029BF6 /* OrderListViewController.m */,
+				76FA5CFC1D377F9400AB20B6 /* ShowListViewController.h */,
+				76FA5CFD1D377F9400AB20B6 /* ShowListViewController.m */,
+				76FA5CFF1D3781C800AB20B6 /* ShowResultViewController.h */,
+				76FA5D001D3781C800AB20B6 /* ShowResultViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -871,9 +881,11 @@
 				76F867461D34E4D200029BF6 /* OrderListViewController.m in Sources */,
 				76BAF2B21D1935AB00553696 /* GoodsCollectionViewCell.m in Sources */,
 				76037CCF1CBF8B4F00D72AA7 /* main.m in Sources */,
+				76FA5D011D3781C800AB20B6 /* ShowResultViewController.m in Sources */,
 				297512361D13F44A00C8917E /* TreasureListViewController.m in Sources */,
 				2975BA9A1D222B040077448E /* LoginFooterView.m in Sources */,
 				29665F2C1D27CB0D00122B9A /* PersonalViewController.m in Sources */,
+				76FA5CFE1D377F9400AB20B6 /* ShowListViewController.m in Sources */,
 				29665F2B1D27CB0D00122B9A /* AppDelegate.m in Sources */,
 				2975BA971D2228430077448E /* RegisterFooterView.m in Sources */,
 				76F867431D34D38800029BF6 /* OrderModel.m in Sources */,
