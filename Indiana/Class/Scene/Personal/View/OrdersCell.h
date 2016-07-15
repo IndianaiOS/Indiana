@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 @class OrdersModel;
 
+@protocol OrdersCellDelegate <NSObject>
+
+- (void)buyAgainButton;
+- (void)viewNumberButton;
+- (void)winnerButton;
+
+@end
+
 @interface OrdersCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *goodsImage;
@@ -16,6 +24,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *scheduleNoLabel;
 @property (strong, nonatomic) IBOutlet UILabel *joinCountLabel;
 @property (strong, nonatomic) IBOutlet UIButton *winnerBtn;
+
+@property (assign, nonatomic)id<OrdersCellDelegate>delegate;
 
 - (void)ordersCell:(OrdersCell *)cell model:(OrdersModel *)model;
 

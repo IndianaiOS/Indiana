@@ -14,8 +14,9 @@
 static NSString *const ordersCellIdentifier = @"ordersCell";
 static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
 
-@interface OrdersListViewController ()<OrdersHeaderViewDelegate>
+@interface OrdersListViewController ()<OrdersHeaderViewDelegate,OrdersCellDelegate>
 
+@property (weak, nonatomic) IBOutlet OrdersHeaderView *headerView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *winningOrdersListArray;
 @end
@@ -37,7 +38,8 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
 - (void)setupSubviews {
     
     [self.tableView registerNib:[UINib nibWithNibName:@"OrdersCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ordersCellIdentifier];
-    [self.tableView registerClass:[OrdersHeaderView class] forHeaderFooterViewReuseIdentifier:ordersHeaderViewIdentifier];
+    self.headerView.delegate = self;
+    self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -70,21 +72,16 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     OrdersCell *cell = [tableView dequeueReusableCellWithIdentifier:ordersCellIdentifier];
+    cell.delegate = self;
     OrdersModel *order = self.winningOrdersListArray[indexPath.row];
-
     [cell ordersCell:cell model:order];
+    
     return cell;
     
     
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    OrdersHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ordersHeaderViewIdentifier];
-    headerView.delegate = self;
-    return headerView;
-    
-}
-
+#pragma mark - delegate
 - (void)winningButton {
     [self data:ORDERS_STATE_WINNING];
 }
@@ -95,6 +92,18 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
 
 - (void)announceButton {
     [self data:ORDERS_STATE_ANNOUNCE];
+}
+
+- (void)buyAgainButton {
+    
+}
+
+- (void)viewNumberButton {
+    
+}
+
+- (void)winnerButton {
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -132,8 +132,7 @@ static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
         switch (indexPath.row) {
             case 0:{
                 UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Orders" bundle:[NSBundle mainBundle]];
-                OrdersListViewController *ordersVC = (OrdersListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"ordersListViewController"];
-                [self.navigationController showViewController:ordersVC sender:nil];
+                OrdersListViewController *ordersVC = (OrdersListViewController *)[storyboard instantiateViewControllerWithIdentifier:NSStringFromClass(OrdersListViewController.class)];                [self.navigationController showViewController:ordersVC sender:nil];
                 
             }
                 break;

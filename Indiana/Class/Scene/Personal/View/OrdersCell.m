@@ -26,6 +26,24 @@
 }
 
 - (IBAction)buyAgainButtonAction:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(buyAgainButton)]) {
+        
+        [self.delegate buyAgainButton];
+    }
+}
+
+- (IBAction)viewNumberButtonAction:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(viewNumberButton)]) {
+        
+        [self.delegate viewNumberButton];
+    }
+}
+
+- (IBAction)winnerButtonAction:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(winnerButton)]) {
+        
+        [self.delegate winnerButton];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

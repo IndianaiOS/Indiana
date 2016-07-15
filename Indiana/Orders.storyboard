@@ -25,7 +25,7 @@
         <!--Orders List View Controller-->
         <scene sceneID="TK0-E7-f8C">
             <objects>
-                <viewController storyboardIdentifier="ordersListViewController" id="igr-6T-DRh" customClass="OrdersListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrdersListViewController" id="igr-6T-DRh" customClass="OrdersListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LgQ-V2-tM3"/>
                         <viewControllerLayoutGuide type="bottom" id="yYe-Uh-pcW"/>
@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Kx-ja-k95">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Kx-ja-k95">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" restorationIdentifier="ordersHeaderView" id="ft7-Fe-Dwn" customClass="OrdersHeaderView">
@@ -118,6 +118,7 @@
                     <navigationItem key="navigationItem" id="P7P-qk-cTt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="headerView" destination="ft7-Fe-Dwn" id="cD4-JQ-NAD"/>
                         <outlet property="tableView" destination="8Kx-ja-k95" id="cWz-EH-stM"/>
                     </connections>
                 </viewController>

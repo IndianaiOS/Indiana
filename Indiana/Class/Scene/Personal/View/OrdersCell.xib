@@ -50,6 +50,9 @@
                                 <state key="normal" title="查看夺宝号">
                                     <color key="titleColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="viewNumberButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Lqi-FL-d8o"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vq7-kz-Myu">
                                 <rect key="frame" x="114" y="84" width="170" height="20"/>
@@ -110,6 +113,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="winnerButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="riD-Kj-Bmt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
