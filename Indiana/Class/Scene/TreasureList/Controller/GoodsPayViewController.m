@@ -71,6 +71,12 @@
 }
 
 - (void)noticeUser:(id)sender{
+    [[DataService sharedClient] POST:@"http://192.168.0.103:8888/api/v1/joinSchedule?payType=1&scheduleId=A1&count=1&push_token=123456789&generalId=1"
+                          parameters:@{}
+                          completion:^(id response, NSError *error) {
+                              NSString * 夺宝号 = [[[response objectForKey:@"data"] objectForKey:@"order"] objectForKey:@"numbers"];
+                              NSLog(@"%@",夺宝号);
+                          }];
     resultAlert = [UIAlertController alertControllerWithTitle:@"提示" message:@"支付成功" preferredStyle:(UIAlertControllerStyleAlert)];
     //UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
     //[alert addAction:cancelAction];
