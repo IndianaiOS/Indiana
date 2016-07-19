@@ -12,7 +12,7 @@
 @protocol OrdersCellDelegate <NSObject>
 
 - (void)buyAgainButton;
-- (void)viewNumberButton;
+- (void)viewNumberButton:(UIButton *)sender;
 - (void)winnerButton;
 
 @end
@@ -24,6 +24,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *scheduleNoLabel;
 @property (strong, nonatomic) IBOutlet UILabel *joinCountLabel;
 @property (strong, nonatomic) IBOutlet UIButton *winnerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *viewNumberBtn;
+@property (weak, nonatomic) IBOutlet UIButton *buyAgainBtn;
 
 @property (assign, nonatomic)id<OrdersCellDelegate>delegate;
 

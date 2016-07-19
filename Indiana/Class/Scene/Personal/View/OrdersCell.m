@@ -33,9 +33,9 @@
 }
 
 - (IBAction)viewNumberButtonAction:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(viewNumberButton)]) {
+    if ([self.delegate respondsToSelector:@selector(viewNumberButton:)]) {
         
-        [self.delegate viewNumberButton];
+        [self.delegate viewNumberButton:sender];
     }
 }
 

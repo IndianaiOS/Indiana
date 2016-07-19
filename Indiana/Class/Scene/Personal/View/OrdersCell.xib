@@ -145,10 +145,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buyAgainBtn" destination="BDq-Ax-WlG" id="oIG-EH-Fkd"/>
                 <outlet property="goodsImage" destination="rvW-cy-Xru" id="rmk-wl-zDN"/>
                 <outlet property="goodsNameLabel" destination="iPl-ZW-aRe" id="a0u-io-lCZ"/>
                 <outlet property="joinCountLabel" destination="Vq7-kz-Myu" id="Vfl-dd-kgO"/>
                 <outlet property="scheduleNoLabel" destination="Pf4-Y4-x2T" id="OTD-Ji-CeA"/>
+                <outlet property="viewNumberBtn" destination="YhC-To-a7j" id="QpP-iA-7WD"/>
                 <outlet property="winnerBtn" destination="lro-eu-gjg" id="SLZ-3r-U4J"/>
             </connections>
             <point key="canvasLocation" x="256.5" y="410.5"/>

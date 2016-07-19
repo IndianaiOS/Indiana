@@ -74,6 +74,7 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
     OrdersCell *cell = [tableView dequeueReusableCellWithIdentifier:ordersCellIdentifier];
     cell.delegate = self;
     OrdersModel *order = self.winningOrdersListArray[indexPath.row];
+    cell.viewNumberBtn.tag = 100+indexPath.row;
     [cell ordersCell:cell model:order];
     
     return cell;
@@ -98,8 +99,15 @@ static NSString *const ordersHeaderViewIdentifier = @"ordersHeaderView";
     
 }
 
-- (void)viewNumberButton {
+- (void)viewNumberButton:(UIButton *)sender {
+    OrdersModel * order = self.winningOrdersListArray[sender.tag-100];
+    NSString * message = [order.numbers stringByReplacingOccurrencesOfString:@" " withString:@"\n"];
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"夺宝号为：" message:message preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
 }
 
 - (void)winnerButton {
