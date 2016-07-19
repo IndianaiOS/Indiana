@@ -9,6 +9,8 @@
 #import "GoodsDetailHeaderView.h"
 #import "GoodsModel.h"
 
+#import "UIImageView+WebCache.h"
+
 @implementation GoodsDetailHeaderView
 
 - (id)initWithFrame:(CGRect)frame{
@@ -28,6 +30,13 @@
     self.goodsDetailAllNumber.text = [NSString stringWithFormat:@"总需：%@",goods.copies];
     self.goodsDetailSurplusNumber.text = [NSString stringWithFormat:@"剩余：%@",goods.nowCopies];
     [self.goodsDetailProgressView setProgress:[goods.nowCopies floatValue]/[goods.copies floatValue] animated:YES];
+    [self.goodsDetailImageView sd_setImageWithURL:[self imageUrl:goods.infoImages] placeholderImage:nil];
+}
+
+- (NSURL *)imageUrl:(NSString *)imageStr {
+    NSArray *imageArray = [imageStr componentsSeparatedByString:@","];
+    NSString * imageUrl = [NSString stringWithFormat:@"http://123.56.181.65:8888%@",imageArray[0]];
+    return [NSURL URLWithString:imageUrl];
 }
 
 

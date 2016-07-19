@@ -34,12 +34,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-5l-dM2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-5l-dM2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goodsDetailCell" id="r3N-Sh-e1e" customClass="GoodsDetailTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r3N-Sh-e1e" id="iDe-ib-Hw0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -67,6 +67,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUB-SW-WlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1937.5" y="219.5"/>
+        </scene>
+        <!--往期揭晓-->
+        <scene sceneID="Wwu-xe-oOb">
+            <objects>
+                <viewController storyboardIdentifier="showListViewController" title="往期揭晓" id="Foe-nM-Tda" customClass="ShowListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vKV-T7-O4r"/>
+                        <viewControllerLayoutGuide type="bottom" id="k27-YG-Kid"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="byL-lM-0cL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xSp-ci-25w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1351.5" y="82.5"/>
+        </scene>
+        <!--往期晒单-->
+        <scene sceneID="VQL-Ac-2Sf">
+            <objects>
+                <viewController storyboardIdentifier="showResultViewController" title="往期晒单" id="sZE-VV-Auu" customClass="ShowResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cbu-hE-tkj"/>
+                        <viewControllerLayoutGuide type="bottom" id="nxp-9F-qr3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="68b-pJ-kxU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHM-ju-EDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1351.5" y="824.5"/>
         </scene>
     </scenes>
 </document>

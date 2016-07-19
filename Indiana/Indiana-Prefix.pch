@@ -20,6 +20,8 @@
 #define SERVER_URL_RECHARGE @"http://192.168.0.111:8889/"
 //外网
 #define SERVER_URL @"http://123.56.181.65:8888/"
+#define PAY_URL @"http://123.5w6.181.65:8889/pay/appReqController"
+#define PAY_VALIDATE_URL @"http://123.56.181.65:8889/pay/appWebhooks"
 //production
 //#define SERVER_URL  @""
 
@@ -31,6 +33,7 @@
 #import "UIImageView+WebCache.h"
 #import "BaseViewController.h"
 #import "Tools.h"
+
 
 #pragma mark - 登录方式
 #define LOGIN_TYPE_QQ @"1"
@@ -45,5 +48,9 @@
 #define ORDERS_STATE_WINNING @"1"//中奖订单
 #define ORDERS_STATE_GOING @"2"//进行中
 #define ORDERS_STATE_ANNOUNCE @"3"//已揭晓
+
+#pragma mark - 屏幕长宽
+#define SCREENWIDTH CGRectGetWidth([UIScreen mainScreen].bounds)
+#define SCREENHEIGHT CGRectGetHeight([UIScreen mainScreen].bounds)
 
 #endif /* Indiana_Prefix_pch */
