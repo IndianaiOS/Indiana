@@ -9,8 +9,8 @@
 #import "GoodsModel.h"
 #import "DataService.h"
 
-static NSString *const goodsListUrl = @"http://123.56.181.65:8888/api/v1/schedule?";//label=0&state=0&pageNumber=1&pageSize=10";
-static NSString *const goodsDetailUrl = @"http://123.56.181.65:8888/api/v1/schedule/%@?sign=1";//http://123.56.181.65:8888/api/v1/schedule/A1?sign=1
+static NSString *const goodsListUrl = @"api/v1/schedule?";
+static NSString *const goodsDetailUrl = @"api/v1/schedule/%@?sign=1";                                                                                               
 
 @implementation GoodsModel
 
@@ -54,7 +54,7 @@ static NSString *const goodsDetailUrl = @"http://123.56.181.65:8888/api/v1/sched
 + (NSString *)url:(NSDictionary *)parameters {
     
     NSArray * keys = parameters.allKeys;
-    NSString * url = [NSString stringWithFormat:@"%@",goodsListUrl];
+    NSString * url = [NSString stringWithFormat:@"%@%@",SERVER_URL,goodsListUrl];
     for (NSString * key in keys) {
         url = [url stringByAppendingFormat:@"%@=%@&",key,parameters[key]];
     }
@@ -62,7 +62,8 @@ static NSString *const goodsDetailUrl = @"http://123.56.181.65:8888/api/v1/sched
 }
 
 - (NSString *)detailUrl {
-    NSString * url = [goodsDetailUrl stringByReplacingOccurrencesOfString:@"%@" withString:self.scheduleId];
+    NSString * url = [NSString stringWithFormat:@"%@%@",SERVER_URL,goodsDetailUrl];
+    url = [url stringByReplacingOccurrencesOfString:@"%@" withString:self.scheduleId];
     return url;
 }
 

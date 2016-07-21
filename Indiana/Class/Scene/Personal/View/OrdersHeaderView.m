@@ -60,7 +60,7 @@
     //动画
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.2];
-    CGRect frame = CGRectMake((a-1)*375/3, 42, 375/3, 3);//TODO:全局变量
+    CGRect frame = CGRectMake((a-1)*SCREENWIDTH/3, 42, SCREENWIDTH/3, 3);
     [self.redView setFrame:frame];
     [UIView commitAnimations];
 }

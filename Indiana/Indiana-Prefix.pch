@@ -18,9 +18,10 @@
 //#define SERVER_URL @"http://192.168.0.110:8888/api/v1/"
 //充值记录
 #define SERVER_URL_RECHARGE @"http://192.168.0.111:8889/"
+#define SERVER_URL_ORDER @""
 //外网
 #define SERVER_URL @"http://123.56.181.65:8888/"
-#define PAY_URL @"http://123.5w6.181.65:8889/pay/appReqController"
+#define PAY_URL @"http://123.56.181.65:8889/pay/appReqController"
 #define PAY_VALIDATE_URL @"http://123.56.181.65:8889/pay/appWebhooks"
 //production
 //#define SERVER_URL  @""
