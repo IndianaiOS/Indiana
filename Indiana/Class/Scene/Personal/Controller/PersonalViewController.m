@@ -16,7 +16,7 @@
 static NSString *const personalCellIdentifier = @"personalCell";
 static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
 
-@interface PersonalViewController ()
+@interface PersonalViewController ()<PersonalHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -69,6 +69,7 @@ static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
         [headerView.loginBtn addTarget:self
                                 action:@selector(headerViewLoginBtnAction:)
                       forControlEvents:UIControlEventTouchUpInside];
+        headerView.delegate = self;
         return headerView;
     }
     return nil;
@@ -141,7 +142,15 @@ static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
                 [self.navigationController showViewController:rechargeRecordVC sender:nil];
             }
                 break;
-            case 2:
+            case 2:{
+                UIImage *image = [UIImage imageNamed:@"icon"];
+                NSString * imageData = [Tools imageChangeBase64:image];
+                NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:@{@"imageData":imageData}];
+                [UserInfoModel uploadUserIconParameters:parameters
+                                                  block:^(NSString *code, NSError *error) {
+                                                      
+                                                  }];
+            }
                 break;
             default:
                 break;
@@ -159,6 +168,17 @@ static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
     UINavigationController *loginRootNC = [[UINavigationController alloc] initWithRootViewController:loginRootVC];
     [self presentViewController:loginRootNC animated:YES completion:nil];
 }
+
+- (void)changeUserIconTap {
+    UIImage *image = [UIImage imageNamed:@"icon"];
+    NSString * imageData = [Tools imageChangeBase64:image];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:@{@"imageData":imageData}];
+    [UserInfoModel uploadUserIconParameters:parameters
+                                      block:^(NSString *code, NSError *error) {
+        
+                                      }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

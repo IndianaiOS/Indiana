@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PersonalHeaderViewDelegate <NSObject>
+
+- (void)changeUserIconTap;
+
+@end
+
 @interface PersonalHeaderView : UITableViewHeaderFooterView
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -15,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *balancesLabel;
 @property (weak, nonatomic) IBOutlet UIButton *rechargeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+
+@property (assign, nonatomic)id<PersonalHeaderViewDelegate> delegate;
 
 
 - (void)personalheaderView:(PersonalHeaderView *)headerView model:(UserInfoModel *)model;

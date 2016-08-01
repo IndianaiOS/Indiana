@@ -44,8 +44,7 @@
 
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
                     parameters:(id)parameters
-                    completion:
-(void (^)(id response, NSError *error))completion {
+                    completion:(void (^)(id response, NSError *error))completion {
     
     return [super POST:URLString
             parameters:parameters
@@ -60,6 +59,21 @@
                     NSLog(@"task.state %ld",(long)task.state);
                }];
 
+}
+
+- (NSURLSessionDataTask *)PUT:(NSString *)URLString
+                   parameters:(id)parameters
+                   completion:(void (^)(id response, NSError *error))completion {
+    return [super PUT:URLString
+           parameters:parameters
+              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                  if (responseObject) {
+                      completion(responseObject, nil);
+                  }
+              } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                  completion(nil, error);
+              }];
+    
 }
 
 @end

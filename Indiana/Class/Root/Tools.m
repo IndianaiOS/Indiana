@@ -19,4 +19,13 @@
     return [formatter stringFromDate:date];
 }
 
++ (NSString *)imageChangeBase64:(UIImage *)image {
+    
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+    
+    NSString *imageDataString=[data base64EncodedStringWithOptions:0];
+    return imageDataString;
+    
+}
+
 @end

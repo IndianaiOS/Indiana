@@ -11,5 +11,6 @@
 @interface Tools : NSObject
 
 + (NSString *)timestampSwitchTime:(NSString *)timestamp;
++ (NSString *)imageChangeBase64:(UIImage *)image;
 
 @end

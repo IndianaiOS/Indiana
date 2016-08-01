@@ -33,6 +33,10 @@
 - (NSURLSessionDataTask *)phoneRegisterBlock:(void (^)(UserInfoModel *userInfoModel,
                                                        NSError *error))completion;
 //验证码
-- (NSURLSessionDataTask *)phoneRegisterCAPTCHABlock:(void (^)(NSString * code,
+- (NSURLSessionDataTask *)phoneRegisterCAPTCHABlock:(void (^)(NSString *code,
                                                               NSError *error))completion;
+//上传头像
++ (NSURLSessionDataTask *)uploadUserIconParameters:(NSMutableDictionary *)parameters
+                                             block:(void (^)(NSString *code,
+                                                             NSError *error))completion;
 @end

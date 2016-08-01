@@ -25,9 +25,18 @@
         [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.avatar] placeholderImage:nil];
         self.nickNameLabel.text = model.nickname;
         self.balancesLabel.text = [NSString stringWithFormat:@"余额：%@",model.coin];
+        
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeUserIconTapAtion:)];
+        [self.iconImageView addGestureRecognizer:tap];
     }
-
     
+}
+
+- (void)changeUserIconTapAtion:(UITapGestureRecognizer *)tap {
+    if ([self.delegate respondsToSelector:@selector(changeUserIconTap)]) {
+        
+        [self.delegate changeUserIconTap];
+    }
 }
 
 /*

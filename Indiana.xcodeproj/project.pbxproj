@@ -54,6 +54,7 @@
 		298887831D2CFA750008DD14 /* RechargeRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298887811D2CFA750008DD14 /* RechargeRecordViewController.xib */; };
 		298887861D2D05E90008DD14 /* RechargeRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 298887851D2D05E90008DD14 /* RechargeRecordModel.m */; };
 		298887891D2D0D340008DD14 /* RechargeRecordListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 298887881D2D0D340008DD14 /* RechargeRecordListModel.m */; };
+		298F8BE31D45FF00000A8791 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 298F8BE21D45FF00000A8791 /* icon.png */; };
 		5505E23E1D2559AA00769B3C /* GoodsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E23D1D2559AA00769B3C /* GoodsListModel.m */; };
 		5505E2421D3365AE00769B3C /* OrdersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E2401D3365AE00769B3C /* OrdersListViewController.m */; };
 		5505E2461D3365CD00769B3C /* OrdersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505E2451D3365CD00769B3C /* OrdersModel.m */; };
@@ -184,6 +185,7 @@
 		298887851D2D05E90008DD14 /* RechargeRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeRecordModel.m; sourceTree = "<group>"; };
 		298887871D2D0D330008DD14 /* RechargeRecordListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeRecordListModel.h; sourceTree = "<group>"; };
 		298887881D2D0D340008DD14 /* RechargeRecordListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeRecordListModel.m; sourceTree = "<group>"; };
+		298F8BE21D45FF00000A8791 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		459905CD53B2FB9E55E4B624 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5505E23C1D2559AA00769B3C /* GoodsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsListModel.h; sourceTree = "<group>"; };
 		5505E23D1D2559AA00769B3C /* GoodsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsListModel.m; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			children = (
 				2975123D1D13F49D00C8917E /* PersonalViewController.h */,
 				2975123E1D13F49D00C8917E /* PersonalViewController.m */,
+				298F8BE21D45FF00000A8791 /* icon.png */,
 				2988877F1D2CFA750008DD14 /* RechargeRecordViewController.h */,
 				298887801D2CFA750008DD14 /* RechargeRecordViewController.m */,
 				298887811D2CFA750008DD14 /* RechargeRecordViewController.xib */,
@@ -837,6 +840,7 @@
 				2971330A1D1D2BE40086BF2E /* RegisterFooterView.xib in Resources */,
 				298887831D2CFA750008DD14 /* RechargeRecordViewController.xib in Resources */,
 				2975BA8F1D221CE90077448E /* ForgetPwdCell.xib in Resources */,
+				298F8BE31D45FF00000A8791 /* icon.png in Resources */,
 				76037CDD1CBF8B4F00D72AA7 /* LaunchScreen.storyboard in Resources */,
 				2975BA941D221DEF0077448E /* LoginFooterView.xib in Resources */,
 				291A53B61D1A881E00F201F7 /* Login.storyboard in Resources */,

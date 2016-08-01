@@ -11,6 +11,8 @@
 static NSString *const loginUrl = @"api/v1/login";
 static NSString *const phoneRegisterCAPTCHAUrl = @"api/v1/phoneRegisterCAPTCHA";
 static NSString *const phoneRegisterUrl = @"api/v1/phoneRegister";
+static NSString *const userIconUrl = @"api/v1/userAvatar";
+
 
 @implementation UserInfoModel
 
@@ -29,7 +31,7 @@ static NSString *const phoneRegisterUrl = @"api/v1/phoneRegister";
     [parameters setObject:self.logintype forKey:@"logintype"];
 
     return [[DataService sharedClient]
-            POST:[self url:loginUrl]
+            POST:[UserInfoModel url:loginUrl]
             parameters:parameters
             completion:^(id response, NSError *error) {
                 NSLog(@"response %@",response);
@@ -47,7 +49,7 @@ static NSString *const phoneRegisterUrl = @"api/v1/phoneRegister";
     [parameters setObject:self.captcha forKey:@"captcha"];
     
     return [[DataService sharedClient]
-            POST:[self url:phoneRegisterUrl]
+            POST:[UserInfoModel url:phoneRegisterUrl]
             parameters:parameters
             completion:^(id response, NSError *error) {
                 UserInfoModel *userInfo = [MTLJSONAdapter modelOfClass:[UserInfoModel class]
@@ -61,7 +63,7 @@ static NSString *const phoneRegisterUrl = @"api/v1/phoneRegister";
                                                               NSError *error))completion; {
     NSDictionary *parameters = @{@"phone":self.phone};
     return [[DataService sharedClient]
-            POST:[self url:phoneRegisterCAPTCHAUrl]
+            POST:[UserInfoModel url:phoneRegisterCAPTCHAUrl]
             parameters:parameters
             completion:^(id response, NSError *error) {
                 NSDictionary * data = response[@"data"];
@@ -71,7 +73,21 @@ static NSString *const phoneRegisterUrl = @"api/v1/phoneRegister";
             }];
 }
 
-- (NSString *)url:(NSString *)str {
+//上传头像
++ (NSURLSessionDataTask *)uploadUserIconParameters:(NSMutableDictionary *)parameters
+                                             block:(void (^)(NSString *code,
+                                                             NSError *error))completion {
+//    imageData
+    [parameters setObject:@"123" forKey:@"push_token"];
+    return [[DataService sharedClient] PUT:[NSString stringWithFormat:@"http://192.168.0.111:8888/%@",userIconUrl]//[self url:userIconUrl]
+                                parameters:parameters
+                                completion:^(id response, NSError *error) {
+                                    
+                                }];
+ 
+}
+
++ (NSString *)url:(NSString *)str {
     NSString * url = [NSString stringWithFormat:@"%@%@",SERVER_URL,str];
     return url;
 }
