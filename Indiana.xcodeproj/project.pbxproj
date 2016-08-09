@@ -72,6 +72,7 @@
 		760A05E21D1D0D240001B234 /* GoodsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 760A05E01D1D0D240001B234 /* GoodsDetailTableViewCell.m */; };
 		760A05E31D1D0D240001B234 /* GoodsDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760A05E11D1D0D240001B234 /* GoodsDetailTableViewCell.xib */; };
 		760A05E51D1D36E80001B234 /* GoodsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760A05E41D1D36E80001B234 /* GoodsDetail.storyboard */; };
+		760B4FCB1D460475007B579B /* OtherOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4FCA1D460475007B579B /* OtherOrdersViewController.m */; };
 		760F023B1D1BAC6100E1561C /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 760F02391D1BAC6100E1561C /* HeaderCollectionReusableView.m */; };
 		760F023C1D1BAC6100E1561C /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760F023A1D1BAC6100E1561C /* HeaderCollectionReusableView.xib */; };
 		760F02471D1BDF2500E1561C /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760F02461D1BDF2500E1561C /* GoodsDetailViewController.m */; };
@@ -218,6 +219,8 @@
 		760A05E01D1D0D240001B234 /* GoodsDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailTableViewCell.m; sourceTree = "<group>"; };
 		760A05E11D1D0D240001B234 /* GoodsDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsDetailTableViewCell.xib; sourceTree = "<group>"; };
 		760A05E41D1D36E80001B234 /* GoodsDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoodsDetail.storyboard; sourceTree = "<group>"; };
+		760B4FC91D460475007B579B /* OtherOrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherOrdersViewController.h; sourceTree = "<group>"; };
+		760B4FCA1D460475007B579B /* OtherOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherOrdersViewController.m; sourceTree = "<group>"; };
 		760F02381D1BAC6100E1561C /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		760F02391D1BAC6100E1561C /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		760F023A1D1BAC6100E1561C /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -532,6 +535,8 @@
 				76FA5CFD1D377F9400AB20B6 /* ShowListViewController.m */,
 				76FA5CFF1D3781C800AB20B6 /* ShowResultViewController.h */,
 				76FA5D001D3781C800AB20B6 /* ShowResultViewController.m */,
+				760B4FC91D460475007B579B /* OtherOrdersViewController.h */,
+				760B4FCA1D460475007B579B /* OtherOrdersViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -936,6 +941,7 @@
 				29665F2A1D27CB0D00122B9A /* LatestResultViewController.m in Sources */,
 				298887891D2D0D340008DD14 /* RechargeRecordListModel.m in Sources */,
 				2975BA8E1D221CE90077448E /* ForgetPwdCell.m in Sources */,
+				760B4FCB1D460475007B579B /* OtherOrdersViewController.m in Sources */,
 				760F023B1D1BAC6100E1561C /* HeaderCollectionReusableView.m in Sources */,
 				2958F7871D2A5BF400E318A7 /* PersonalHeaderView.m in Sources */,
 				295AC3DA1D2DF52600A7BC93 /* Tools.m in Sources */,

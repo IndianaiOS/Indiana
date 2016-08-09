@@ -21,7 +21,8 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *goodsDetailTableView;
-
+@property (strong,nonatomic) NSDictionary *userDic;
+@property (strong,nonatomic) NSArray *userArr;
 
 @end
 
@@ -134,18 +135,27 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 393;
+    if (section == 0) {
+        return 393;
+    }
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    GoodsDetailHeaderView *headerView = [[GoodsDetailHeaderView alloc]init];
-    [headerView headerView:headerView model:self.goodsModel];
-    
-    return headerView;
+    if (section == 0) {
+        GoodsDetailHeaderView *headerView = [[GoodsDetailHeaderView alloc]init];
+        [headerView headerView:headerView model:self.goodsModel];
+        
+        return headerView;
+    }
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 60;
+    if (section == 1) {
+        return 60;
+    }
+    return 0;
 }
 
 //隐藏多余分割线
@@ -161,20 +171,46 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 2;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSArray *detailArray = [NSArray arrayWithObjects:@"往期揭晓",@"往期晒单", nil];
-    GoodsDetailTableViewCell * cell = [self.goodsDetailTableView dequeueReusableCellWithIdentifier:@"goodsDetailCell"];
-    cell.textLabel.text = detailArray[indexPath.row];
-    return cell;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 0) {
+        return 2;
+    }
+    if (section == 1) {
+        return 10;
+    }
+    return 1;
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    switch (indexPath.section) {
+        case 0:
+        {
+            NSArray *detailArray = [NSArray arrayWithObjects:@"往期揭晓",@"往期晒单", nil];
+            GoodsDetailTableViewCell * cell = [self.goodsDetailTableView dequeueReusableCellWithIdentifier:@"goodsDetailCell"];
+            cell.textLabel.text = detailArray[indexPath.row];
+            return cell;
+        }
+            break;
+        case 1:
+        {
+            //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+            }
+            return cell;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    return cell;
 //    NSArray *arr = [NSArray arrayWithObjects:@"up",@"dowm", nil];
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:arr[indexPath.section]];
 //    if ([arr[indexPath.section] isEqualToString:@"up"]) {
