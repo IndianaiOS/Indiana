@@ -74,6 +74,8 @@
 		760A05E21D1D0D240001B234 /* GoodsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 760A05E01D1D0D240001B234 /* GoodsDetailTableViewCell.m */; };
 		760A05E31D1D0D240001B234 /* GoodsDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760A05E11D1D0D240001B234 /* GoodsDetailTableViewCell.xib */; };
 		760A05E51D1D36E80001B234 /* GoodsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760A05E41D1D36E80001B234 /* GoodsDetail.storyboard */; };
+		760DDE181D5D66590058EF75 /* EverJoinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 760DDE161D5D66590058EF75 /* EverJoinTableViewCell.m */; };
+		760DDE191D5D66590058EF75 /* EverJoinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760DDE171D5D66590058EF75 /* EverJoinTableViewCell.xib */; };
 		760F023B1D1BAC6100E1561C /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 760F02391D1BAC6100E1561C /* HeaderCollectionReusableView.m */; };
 		760F023C1D1BAC6100E1561C /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760F023A1D1BAC6100E1561C /* HeaderCollectionReusableView.xib */; };
 		760F02471D1BDF2500E1561C /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760F02461D1BDF2500E1561C /* GoodsDetailViewController.m */; };
@@ -220,6 +222,9 @@
 		760A05E01D1D0D240001B234 /* GoodsDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailTableViewCell.m; sourceTree = "<group>"; };
 		760A05E11D1D0D240001B234 /* GoodsDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsDetailTableViewCell.xib; sourceTree = "<group>"; };
 		760A05E41D1D36E80001B234 /* GoodsDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoodsDetail.storyboard; sourceTree = "<group>"; };
+		760DDE151D5D66590058EF75 /* EverJoinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverJoinTableViewCell.h; sourceTree = "<group>"; };
+		760DDE161D5D66590058EF75 /* EverJoinTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EverJoinTableViewCell.m; sourceTree = "<group>"; };
+		760DDE171D5D66590058EF75 /* EverJoinTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EverJoinTableViewCell.xib; sourceTree = "<group>"; };
 		760F02381D1BAC6100E1561C /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		760F02391D1BAC6100E1561C /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		760F023A1D1BAC6100E1561C /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -567,6 +572,9 @@
 				76FE6C921D24C318009C740B /* SelectBuytimes.xib */,
 				763405541D2A65890033DF4F /* LastResultView.h */,
 				763405551D2A65890033DF4F /* LastResultView.m */,
+				760DDE151D5D66590058EF75 /* EverJoinTableViewCell.h */,
+				760DDE161D5D66590058EF75 /* EverJoinTableViewCell.m */,
+				760DDE171D5D66590058EF75 /* EverJoinTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -789,7 +797,7 @@
 				TargetAttributes = {
 					76037CC91CBF8B4F00D72AA7 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JVX8354953;
+						DevelopmentTeam = 6U7UH8838D;
 					};
 					76037CE21CBF8B4F00D72AA7 = {
 						CreatedOnToolsVersion = 7.2;
@@ -834,6 +842,7 @@
 				5505E24B1D336DF000769B3C /* Orders.storyboard in Resources */,
 				76B4B11B1D22940F00B15AD2 /* PayView.xib in Resources */,
 				5505E2561D3374B000769B3C /* OrdersCell.xib in Resources */,
+				760DDE191D5D66590058EF75 /* EverJoinTableViewCell.xib in Resources */,
 				29623E6D1CD0944800DEE393 /* Main.storyboard in Resources */,
 				2953F4401D18D6C400CDCDBF /* PersonalCell.xib in Resources */,
 				297133221D1D3E6D0086BF2E /* VerifyCodeCell.xib in Resources */,
@@ -955,6 +964,7 @@
 				76FE6C911D24C300009C740B /* SelectBuyTimes.m in Sources */,
 				297512391D13F47000C8917E /* ShowOrdersViewController.m in Sources */,
 				5505E2551D3374B000769B3C /* OrdersCell.m in Sources */,
+				760DDE181D5D66590058EF75 /* EverJoinTableViewCell.m in Sources */,
 				76F867461D34E4D200029BF6 /* OrderListViewController.m in Sources */,
 				76BAF2B21D1935AB00553696 /* GoodsCollectionViewCell.m in Sources */,
 				76037CCF1CBF8B4F00D72AA7 /* main.m in Sources */,
@@ -1119,16 +1129,16 @@
 			baseConfigurationReference = 459905CD53B2FB9E55E4B624 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yanhua Li (68V33RSFL7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yanhua Li (68V33RSFL7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Indiana/Indiana-Prefix.pch";
 				INFOPLIST_FILE = Indiana/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare2.Indiana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare.Indiana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a47c3b9-da3f-4ab5-a808-550245a72158";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1139,16 +1149,16 @@
 			baseConfigurationReference = CA116AEA8B6F229310F6F10E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yanhua Li (68V33RSFL7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yanhua Li (68V33RSFL7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Indiana/Indiana-Prefix.pch";
 				INFOPLIST_FILE = Indiana/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare2.Indiana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tagcare.Indiana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a47c3b9-da3f-4ab5-a808-550245a72158";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -14,6 +14,7 @@
 #import "GoodsPayViewController.h"
 #import "SelectBuyTimes.h"
 #import "GoodsModel.h"
+#import "EverJoinTableViewCell.h"
 
 @interface GoodsDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
@@ -34,7 +35,8 @@
     self.goodsDetailTableView.dataSource = self;
     
     [self setExtraCellLineHidden:self.goodsDetailTableView];
-    [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"GoodsDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"goodsDetailCell"];
+//    [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"GoodsDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"goodsDetailCell"];
+//    [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"EverJoinTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"everJoinCell"];
     //self.goodsDetailTableView.tableHeaderView = [[GoodsDetailHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 393)];
     
     UIView *joinView = [[UIView alloc]initWithFrame:(CGRectMake(0, self.view.frame.size.height-60, self.view.frame.size.width, 60))];
@@ -134,14 +136,21 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 393;
+    if (section == 0) {
+        return 393;
+    }
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    GoodsDetailHeaderView *headerView = [[GoodsDetailHeaderView alloc]init];
-    [headerView headerView:headerView model:self.goodsModel];
+    if (section == 0) {
+        GoodsDetailHeaderView *headerView = [[GoodsDetailHeaderView alloc]init];
+        [headerView headerView:headerView model:self.goodsModel];
+        
+        return headerView;
+    }
+    return nil;
     
-    return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -161,18 +170,50 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 2;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 0) {
+        return 2;
+    }
+    if (section == 1) {
+        return 10;
+    }
+    return 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSArray *detailArray = [NSArray arrayWithObjects:@"往期揭晓",@"往期晒单", nil];
-    GoodsDetailTableViewCell * cell = [self.goodsDetailTableView dequeueReusableCellWithIdentifier:@"goodsDetailCell"];
-    cell.textLabel.text = detailArray[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    switch (indexPath.section) {
+        case 0:
+        {
+            [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"GoodsDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"goodsDetailCell"];
+            NSArray *detailArray = [NSArray arrayWithObjects:@"往期揭晓",@"往期晒单", nil];
+            GoodsDetailTableViewCell * cell = [self.goodsDetailTableView dequeueReusableCellWithIdentifier:@"goodsDetailCell"];
+            cell.textLabel.text = detailArray[indexPath.row];
+            return cell;
+        }
+            break;
+        case 1:
+        {
+//            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//            if (cell == nil) {
+//                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+//                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//                cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+//            }
+//            return cell;
+//            NSArray *detailArray = [NSArray arrayWithObjects:@"往期揭晓",@"往期晒单", nil];
+            [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"EverJoinTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"everJoinCell"];
+            EverJoinTableViewCell * evercell = [self.goodsDetailTableView dequeueReusableCellWithIdentifier:@"everJoinCell"];
+            return evercell;
+        }
+            break;
+            
+        default:
+            break;
+    }
     return cell;
 
 //    NSArray *arr = [NSArray arrayWithObjects:@"up",@"dowm", nil];
@@ -198,19 +239,31 @@
 //    return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 44;
+    }else{
+        return 75;
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *board=[UIStoryboard storyboardWithName:@"GoodsDetail"bundle:nil];
     UIViewController *showListVC = [board instantiateViewControllerWithIdentifier:@"showListViewController"];
     UIViewController *showResultVC = [board instantiateViewControllerWithIdentifier:@"showResultViewController"];
-    
-    if (indexPath.row == 0) {
-        self.hidesBottomBarWhenPushed = YES;
-        [self.navigationController showViewController:showListVC sender:nil];
-        
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController showViewController:showListVC sender:nil];
+            
+        }else{
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController showViewController:showResultVC sender:nil];
+        }
     }else{
-        self.hidesBottomBarWhenPushed = YES;
-        [self.navigationController showViewController:showResultVC sender:nil];
+        
     }
+    
     
 }
 
