@@ -67,7 +67,7 @@ static NSString *const headerCollectionReusableViewID = @"goodsHeaderView";
     [self data:self.parameters];
     
     NSDictionary *lastResultDic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"label",
-                                   @"2",@"state",
+                                   @"3",@"state",
                                    @"1",@"pageNumber",
                                    @"10",@"pageSize", nil];
     [self dataLastResult:lastResultDic];

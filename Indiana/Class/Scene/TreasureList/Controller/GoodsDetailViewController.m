@@ -28,6 +28,10 @@
 
 @implementation GoodsDetailViewController
 
+- (void)viewWillDisappear:(BOOL)animated{
+    selectView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -184,7 +188,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     switch (indexPath.section) {
         case 0:
         {
@@ -214,7 +218,7 @@
         default:
             break;
     }
-    return cell;
+    return nil;
 
 //    NSArray *arr = [NSArray arrayWithObjects:@"up",@"dowm", nil];
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:arr[indexPath.section]];
@@ -247,10 +251,10 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *board=[UIStoryboard storyboardWithName:@"GoodsDetail"bundle:nil];
-    UIViewController *showListVC = [board instantiateViewControllerWithIdentifier:@"showListViewController"];
-    UIViewController *showResultVC = [board instantiateViewControllerWithIdentifier:@"showResultViewController"];
+    UIViewController *showListVC = [board instantiateViewControllerWithIdentifier:@"showEverResultViewController"];
+    UIViewController *showResultVC = [board instantiateViewControllerWithIdentifier:@"showEverOrdersViewController"];
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             self.hidesBottomBarWhenPushed = YES;
@@ -263,7 +267,6 @@
     }else{
         
     }
-    
     
 }
 

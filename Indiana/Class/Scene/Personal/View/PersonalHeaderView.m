@@ -8,7 +8,9 @@
 
 #import "PersonalHeaderView.h"
 
+
 @implementation PersonalHeaderView
+
 
 - (void)personalheaderView:(PersonalHeaderView *)headerView model:(UserInfoModel *)model {
     if (model.push_token == nil) {
@@ -27,16 +29,19 @@
         self.balancesLabel.text = [NSString stringWithFormat:@"余额：%@",model.coin];
         
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeUserIconTapAtion:)];
+        self.iconImageView.userInteractionEnabled = YES;
         [self.iconImageView addGestureRecognizer:tap];
     }
     
 }
 
 - (void)changeUserIconTapAtion:(UITapGestureRecognizer *)tap {
+
     if ([self.delegate respondsToSelector:@selector(changeUserIconTap)]) {
         
         [self.delegate changeUserIconTap];
     }
+    
 }
 
 /*

@@ -79,7 +79,7 @@ static NSString *const userIconUrl = @"api/v1/userAvatar";
                                                              NSError *error))completion {
 //    imageData
     [parameters setObject:@"123" forKey:@"push_token"];
-    return [[DataService sharedClient] PUT:[NSString stringWithFormat:@"http://192.168.0.111:8888/%@",userIconUrl]//[self url:userIconUrl]
+    return [[DataService sharedClient] PUT:[NSString stringWithFormat:@"http://192.168.0.133:8888/%@",userIconUrl]//[self url:userIconUrl]
                                 parameters:parameters
                                 completion:^(id response, NSError *error) {
                                     

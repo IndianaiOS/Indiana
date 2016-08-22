@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - AGImagePickerController (3.0.1)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -61,11 +62,13 @@ PODS:
   - SDWebImage/Core (3.7.5)
   - SWTableViewCell (0.3.7)
   - TPKeyboardAvoiding (1.2.11)
+  - TZImagePickerController (1.5.0)
   - UITableView+FDTemplateLayoutCell (1.4)
   - UMengSocialCOM (5.2.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
+  - AGImagePickerController (~> 3.0.1)
   - BlocksKit (~> 2.2.5)
   - Colours (~> 5.6.1)
   - DZNEmptyDataSet (~> 1.7.2)
@@ -79,11 +82,13 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7.3)
   - SWTableViewCell (~> 0.3.7)
   - TPKeyboardAvoiding (~> 1.2.11)
+  - TZImagePickerController (~> 1.5.0)
   - UITableView+FDTemplateLayoutCell (~> 1.4)
   - UMengSocialCOM (~> 5.2.1)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  AGImagePickerController: 5692ca7ec05b49cc96fa4ec55a4bc462fe909516
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Colours: 0afd4c3429656880fd4cff350ca3bf0ab86ca348
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
@@ -97,6 +102,7 @@ SPEC CHECKSUMS:
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
+  TZImagePickerController: d09eef6042852a9dd19224ae4e874f7430852a51
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
   UMengSocialCOM: 074c135ce349aa4c8848d3fb8458757bcb6ffb67
 

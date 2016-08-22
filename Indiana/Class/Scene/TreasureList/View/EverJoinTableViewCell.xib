@@ -81,7 +81,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="339.5" y="211"/>
+            <point key="canvasLocation" x="339" y="210.5"/>
         </tableViewCell>
     </objects>
 </document>

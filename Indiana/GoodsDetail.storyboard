@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -35,25 +35,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-5l-dM2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goodsDetailCell" id="r3N-Sh-e1e" customClass="GoodsDetailTableViewCell">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r3N-Sh-e1e" id="iDe-ib-Hw0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e5s-5l-dM2" firstAttribute="top" secondItem="Uka-NV-lyU" secondAttribute="top" id="2fq-nr-kOO"/>
-                            <constraint firstItem="1V8-E6-E1J" firstAttribute="top" secondItem="e5s-5l-dM2" secondAttribute="bottom" id="hgh-En-Vo5"/>
+                            <constraint firstItem="1V8-E6-E1J" firstAttribute="top" secondItem="e5s-5l-dM2" secondAttribute="bottom" constant="60" id="hgh-En-Vo5"/>
                             <constraint firstAttribute="trailing" secondItem="e5s-5l-dM2" secondAttribute="trailing" id="uOE-8j-Pih"/>
                             <constraint firstItem="e5s-5l-dM2" firstAttribute="leading" secondItem="Uka-NV-lyU" secondAttribute="leading" id="yBi-qb-yqm"/>
                         </constraints>
@@ -71,7 +61,7 @@
         <!--往期揭晓-->
         <scene sceneID="Wwu-xe-oOb">
             <objects>
-                <viewController storyboardIdentifier="showListViewController" title="往期揭晓" id="Foe-nM-Tda" customClass="ShowListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showEverResultViewController" title="往期揭晓" id="Foe-nM-Tda" customClass="ShowEverResultViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vKV-T7-O4r"/>
                         <viewControllerLayoutGuide type="bottom" id="k27-YG-Kid"/>
@@ -91,7 +81,7 @@
         <!--往期晒单-->
         <scene sceneID="VQL-Ac-2Sf">
             <objects>
-                <viewController storyboardIdentifier="showResultViewController" title="往期晒单" id="sZE-VV-Auu" customClass="ShowResultViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showEverOrdersViewController" title="往期晒单" id="sZE-VV-Auu" customClass="ShowEverOrdersViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cbu-hE-tkj"/>
                         <viewControllerLayoutGuide type="bottom" id="nxp-9F-qr3"/>
@@ -99,10 +89,25 @@
                     <view key="view" contentMode="scaleToFill" id="68b-pJ-kxU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HF2-D8-N5L">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HF2-D8-N5L" firstAttribute="leading" secondItem="68b-pJ-kxU" secondAttribute="leading" id="3ov-L8-C6V"/>
+                            <constraint firstItem="nxp-9F-qr3" firstAttribute="top" secondItem="HF2-D8-N5L" secondAttribute="bottom" id="IgW-gj-1W2"/>
+                            <constraint firstAttribute="trailing" secondItem="HF2-D8-N5L" secondAttribute="trailing" id="U5V-Lo-boZ"/>
+                            <constraint firstItem="HF2-D8-N5L" firstAttribute="top" secondItem="68b-pJ-kxU" secondAttribute="top" id="Y6P-f8-c22"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="ordersTableView" destination="HF2-D8-N5L" id="311-1A-Ffn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHM-ju-EDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

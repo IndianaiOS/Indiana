@@ -7,8 +7,9 @@
 //
 
 #import "LatestResultViewController.h"
+#import "LastResultTableViewCell.h"
 
-@interface LatestResultViewController ()
+@interface LatestResultViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -17,6 +18,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"最新揭晓";
+    self.lastTableView.delegate = self;
+    self.lastTableView.dataSource = self;
+    
+    [self.lastTableView registerNib:[UINib nibWithNibName:@"LastResultTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"lastResultCell"];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 180;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    LastResultTableViewCell *cell = [self.lastTableView dequeueReusableCellWithIdentifier:@"lastResultCell"];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

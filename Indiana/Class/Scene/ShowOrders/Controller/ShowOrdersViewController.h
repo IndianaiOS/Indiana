@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "ShowOrdersTableViewCell.h"
 
 @interface ShowOrdersViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UITableView *ordersTableView;
 
 @end
