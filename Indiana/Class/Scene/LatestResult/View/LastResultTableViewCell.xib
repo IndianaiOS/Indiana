@@ -57,7 +57,7 @@
                             <constraint firstAttribute="height" constant="25" id="uc3-uC-bFY"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04d-mD-7nB">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04d-mD-7nB" customClass="MZTimerLabel">
                         <rect key="frame" x="165" y="131.5" width="190" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="GMf-2F-bBP"/>
@@ -86,6 +86,13 @@
                     <constraint firstItem="04d-mD-7nB" firstAttribute="centerY" secondItem="qFO-jj-mVi" secondAttribute="centerY" id="wu3-ey-qvM"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="countDown" destination="04d-mD-7nB" id="JTq-yu-gR5"/>
+                <outlet property="dateNumber" destination="DLW-Cx-UfT" id="aNB-PB-0hk"/>
+                <outlet property="goodsNameLabel" destination="Yhu-Og-5I2" id="sJI-k1-7mI"/>
+                <outlet property="iconImageView" destination="ghj-r2-GDY" id="sFk-sC-MQ7"/>
+                <outlet property="joinTimes" destination="sby-u7-QCo" id="GD6-QF-fRD"/>
+            </connections>
             <point key="canvasLocation" x="308.5" y="240"/>
         </tableViewCell>
     </objects>

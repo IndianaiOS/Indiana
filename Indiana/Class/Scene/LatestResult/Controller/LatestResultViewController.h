@@ -10,6 +10,6 @@
 #import "BaseViewController.h"
 
 @interface LatestResultViewController :BaseViewController
-@property (weak, nonatomic) IBOutlet UITableView *lastTableView;
+//@property (weak, nonatomic) IBOutlet UITableView *lastTableView;
 
 @end

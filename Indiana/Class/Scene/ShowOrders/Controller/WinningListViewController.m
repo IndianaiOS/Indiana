@@ -24,7 +24,7 @@ static NSString *const ordersCellIdentifier = @"ordersCell";
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = NSLocalizedString(@"全部订单", nil);
+    self.title = NSLocalizedString(@"中奖订单", nil);
 //    self.tabBarController.tabBar.hidden = YES;
 //    self.navigationController.navigationBarHidden = NO;
     [self setupSubviews];

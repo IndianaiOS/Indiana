@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManageAddressViewController">
+            <connections>
+                <outlet property="addView" destination="osj-Oi-iGy" id="EMH-Op-qaM"/>
+                <outlet property="addressTableView" destination="w9l-as-kcl" id="Fbo-8f-Vlm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osj-Oi-iGy">
+                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新增地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijb-hg-UO8">
+                            <rect key="frame" x="128" y="14" width="64" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="2YN-wx-5XE"/>
+                                <constraint firstAttribute="width" constant="64" id="eRx-qx-uNN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4w4-Ct-gVc">
+                            <rect key="frame" x="106" y="13" width="22" height="22"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="OV9-5h-vC8"/>
+                                <constraint firstAttribute="width" constant="22" id="i66-un-37e"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="4w4-Ct-gVc" firstAttribute="centerX" secondItem="osj-Oi-iGy" secondAttribute="centerX" id="PXi-Yf-0OJ"/>
+                        <constraint firstItem="Ijb-hg-UO8" firstAttribute="leading" secondItem="4w4-Ct-gVc" secondAttribute="trailing" id="X0y-CS-WpQ"/>
+                        <constraint firstItem="4w4-Ct-gVc" firstAttribute="centerY" secondItem="osj-Oi-iGy" secondAttribute="centerY" id="rLX-h5-rVF"/>
+                        <constraint firstAttribute="height" constant="49" id="tdF-ji-UHz"/>
+                        <constraint firstItem="Ijb-hg-UO8" firstAttribute="centerY" secondItem="osj-Oi-iGy" secondAttribute="centerY" id="yVN-oS-0Hb"/>
+                        <constraint firstItem="Ijb-hg-UO8" firstAttribute="centerX" secondItem="osj-Oi-iGy" secondAttribute="centerX" id="ycF-9V-aKk"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="PXi-Yf-0OJ"/>
+                        </mask>
+                    </variation>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9l-as-kcl">
+                    <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="osj-Oi-iGy" secondAttribute="trailing" id="Dhd-3Y-m8H"/>
+                <constraint firstAttribute="trailing" secondItem="w9l-as-kcl" secondAttribute="trailing" id="FnW-jg-ljf"/>
+                <constraint firstItem="w9l-as-kcl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Uh2-Ae-fVA"/>
+                <constraint firstItem="w9l-as-kcl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fHA-BV-We2"/>
+                <constraint firstItem="osj-Oi-iGy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mb9-sN-Bjl"/>
+                <constraint firstAttribute="bottom" secondItem="osj-Oi-iGy" secondAttribute="bottom" id="whl-io-u4s"/>
+                <constraint firstItem="osj-Oi-iGy" firstAttribute="top" secondItem="w9l-as-kcl" secondAttribute="bottom" id="yhf-bf-OG0"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

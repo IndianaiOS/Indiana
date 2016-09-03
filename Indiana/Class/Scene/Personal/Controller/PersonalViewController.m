@@ -12,6 +12,7 @@
 #import "LoginRootViewController.h"
 #import "RechargeRecordViewController.h"
 #import "OrdersListViewController.h"
+#import "ManageAddressViewController.h"
 
 static NSString *const personalCellIdentifier = @"personalCell";
 static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
@@ -42,7 +43,7 @@ static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
-    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.tabBarController.tabBar.hidden = NO;
 
 }
@@ -125,6 +126,7 @@ static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    ManageAddressViewController *maVC = [[ManageAddressViewController alloc]init];
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
@@ -133,6 +135,8 @@ static NSString *const personalHeaderViewIdentifier = @"personalHeaderView";
             case 1:
                 break;
             case 2:
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController showViewController:maVC sender:nil];
                 break;
             default:
                 break;

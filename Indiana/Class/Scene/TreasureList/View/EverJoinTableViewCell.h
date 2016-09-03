@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface EverJoinTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *userIP;
+@property (weak, nonatomic) IBOutlet UILabel *joinDate;
+@property (weak, nonatomic) IBOutlet UILabel *joinTimes;
 
 @end

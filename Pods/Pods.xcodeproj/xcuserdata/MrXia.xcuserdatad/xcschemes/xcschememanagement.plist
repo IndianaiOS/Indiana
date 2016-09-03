@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AGImagePickerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>BlocksKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -40,6 +35,11 @@
 			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MZTimerLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -92,22 +92,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>00F436643411238A9665349D83D2DEEB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1306BB874098F8B2263B0C55C9E138FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>14D2008578FFE471DE50AE7147D301A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39F2A0EDCCFE8B54E013CB1DE156B23C</key>
+		<key>25957639463784A0B791BF39AB82C894</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A683C2824D37002BA4C2435532A3245</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3FE327BB6064729DA9AB2A9DC9F956F7</key>
+		<key>4D9C07C7C4A9B97871888B90BFC31EF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6271DD45F193FC2C3061C116692CCFD8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6F370DC98A82DB36ECB412D0C00B35DD</key>
+		<key>6DEEC7D54A4A70069CBE54C3A3781586</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +142,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>969903C242A6089365D2AF3DA4ED04D2</key>
+		<key>9C05E9EB347EE57498E3F410C57CA829</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B79AA691514C046862167E2FDF6D1090</key>
+		<key>B180241C64C8328694E67BDDD9D432E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D051333CC7800736C6676C781F494EE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,17 +162,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7FA661B5B11BCF3927E5822564C0B11</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>DA1A7295DF2A99609DA0EEBF5E83233D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE2B3EFDAEBD0E128689CA3365A8CD1E</key>
+		<key>FA0C87D65C41DBE643D83050B90B7E7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

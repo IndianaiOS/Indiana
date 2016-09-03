@@ -16,13 +16,15 @@
 #import "GoodsModel.h"
 #import "EverJoinTableViewCell.h"
 
+static NSString *everJoinUrl = @"http://192.168.0.123:8888/api/v1/scheduleOrders/A1?pageNumber=1&pageSize=10";
+
 @interface GoodsDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     SelectBuyTimes *selectView;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *goodsDetailTableView;
-
+@property(nonatomic, strong)NSArray *userArray;
 
 @end
 
@@ -65,7 +67,8 @@
     selectView.selectBuyTimesTextField.delegate = self;
     [selectView.buyAllTimes addTarget:self action:@selector(clickBuyAllTimes:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    [self data];
+    [self dataGoods];
+    [self dataUser];
     
 }
 
@@ -77,9 +80,16 @@
     
 }
 
-- (void)data {
+- (void)dataGoods {
     [self.goodsModel detailsblock:^(GoodsModel *goodsModel, NSError *error) {
         self.goodsModel = goodsModel;
+        [self.goodsDetailTableView reloadData];
+    }];
+}
+
+- (void)dataUser{
+    [[DataService sharedClient]GET:everJoinUrl parameters:@{} completion:^(id response, NSError *error, NSDictionary *header) {
+        self.userArray = [[response objectForKey:@"data"] objectForKey:@"ordersPage"];
         [self.goodsDetailTableView reloadData];
     }];
 }
@@ -158,7 +168,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 60;
+    return 20;
 }
 
 //隐藏多余分割线
@@ -182,7 +192,7 @@
         return 2;
     }
     if (section == 1) {
-        return 10;
+        return self.userArray.count;
     }
     return 1;
 }
@@ -194,7 +204,7 @@
         {
             [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"GoodsDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"goodsDetailCell"];
             NSArray *detailArray = [NSArray arrayWithObjects:@"往期揭晓",@"往期晒单", nil];
-            GoodsDetailTableViewCell * cell = [self.goodsDetailTableView dequeueReusableCellWithIdentifier:@"goodsDetailCell"];
+            GoodsDetailTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"goodsDetailCell"];
             cell.textLabel.text = detailArray[indexPath.row];
             return cell;
         }
@@ -210,7 +220,15 @@
 //            return cell;
 //            NSArray *detailArray = [NSArray arrayWithObjects:@"往期揭晓",@"往期晒单", nil];
             [self.goodsDetailTableView registerNib:[UINib nibWithNibName:@"EverJoinTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"everJoinCell"];
-            EverJoinTableViewCell * evercell = [self.goodsDetailTableView dequeueReusableCellWithIdentifier:@"everJoinCell"];
+            EverJoinTableViewCell * evercell = [tableView dequeueReusableCellWithIdentifier:@"everJoinCell"];
+            evercell.userImage.image = [UIImage imageNamed:@"用户头像"];
+            evercell.userName.text = [[self.userArray[indexPath.row] objectForKey:@"users"] objectForKey:@"userName"];
+            NSString *province = [[self.userArray[indexPath.row] objectForKey:@"users"] objectForKey:@"province"];
+            NSString *city = [[self.userArray[indexPath.row] objectForKey:@"users"] objectForKey:@"city"];
+            NSString *Ip = [[self.userArray[indexPath.row] objectForKey:@"users"] objectForKey:@"ip"];
+            evercell.userIP.text = [NSString stringWithFormat:@"%@%@ %@",province,city,Ip];
+            evercell.joinDate.text = [Tools timestampSwitchTime:[self.userArray[indexPath.row] objectForKey:@"createTime"]];
+            evercell.joinTimes.text = [NSString stringWithFormat:@"%@人次",[self.userArray[indexPath.row] objectForKey:@"joinCount"]];
             return evercell;
         }
             break;

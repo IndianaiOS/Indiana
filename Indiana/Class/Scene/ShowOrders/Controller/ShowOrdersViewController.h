@@ -11,6 +11,6 @@
 #import "ShowOrdersTableViewCell.h"
 
 @interface ShowOrdersViewController : BaseViewController
-@property (weak, nonatomic) IBOutlet UITableView *ordersTableView;
+//@property (weak, nonatomic) IBOutlet UITableView *ordersTableView;
 
 @end

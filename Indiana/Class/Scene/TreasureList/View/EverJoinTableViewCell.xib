@@ -17,17 +17,16 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="os2-et-NFf">
                         <rect key="frame" x="35" y="18" width="38" height="38"/>
-                        <color key="backgroundColor" red="1" green="0.82688143380000001" blue="0.38366202119999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="Jge-cZ-hqY"/>
                             <constraint firstAttribute="width" constant="38" id="aNy-sD-0FY"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="让我中一个吧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOb-HF-MJ5">
-                        <rect key="frame" x="85" y="18" width="200" height="21"/>
+                        <rect key="frame" x="85" y="18" width="150" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="2zf-37-1bJ"/>
-                            <constraint firstAttribute="width" constant="200" id="IC4-3u-T2l"/>
+                            <constraint firstAttribute="width" constant="150" id="IC4-3u-T2l"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,13 +51,23 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-10-1 12:23:34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O18-q5-VZe">
-                        <rect key="frame" x="85" y="56.5" width="200" height="17"/>
+                        <rect key="frame" x="85" y="56" width="200" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="1fY-O0-hYg"/>
                             <constraint firstAttribute="width" constant="200" id="78l-2E-9Hc"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyi-QU-ix4">
+                        <rect key="frame" x="257" y="20" width="60" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="i9X-GJ-B3W"/>
+                            <constraint firstAttribute="width" constant="60" id="o7b-iN-RRH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -68,11 +77,13 @@
                     <constraint firstItem="AOb-HF-MJ5" firstAttribute="leading" secondItem="os2-et-NFf" secondAttribute="trailing" constant="12" id="G9w-MM-YYf"/>
                     <constraint firstItem="AOb-HF-MJ5" firstAttribute="top" secondItem="os2-et-NFf" secondAttribute="top" id="Gyh-j3-lSt"/>
                     <constraint firstItem="O18-q5-VZe" firstAttribute="leading" secondItem="kAC-Y2-G7G" secondAttribute="leading" id="KuV-ZI-p30"/>
+                    <constraint firstAttribute="trailing" secondItem="nyi-QU-ix4" secondAttribute="trailing" constant="3" id="SU9-1n-OcB"/>
                     <constraint firstItem="kAC-Y2-G7G" firstAttribute="leading" secondItem="os2-et-NFf" secondAttribute="trailing" constant="12" id="SnU-Sb-Zf4"/>
                     <constraint firstItem="O18-q5-VZe" firstAttribute="top" secondItem="kAC-Y2-G7G" secondAttribute="bottom" id="dSR-Um-qpO"/>
                     <constraint firstItem="kAC-Y2-G7G" firstAttribute="leading" secondItem="os2-et-NFf" secondAttribute="trailing" constant="12" id="nQz-VY-NBO"/>
                     <constraint firstItem="os2-et-NFf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="obp-2p-ebZ"/>
                     <constraint firstItem="kAC-Y2-G7G" firstAttribute="top" secondItem="AOb-HF-MJ5" secondAttribute="bottom" id="rby-aK-sOB"/>
+                    <constraint firstItem="nyi-QU-ix4" firstAttribute="centerY" secondItem="AOb-HF-MJ5" secondAttribute="centerY" id="xDQ-n5-vbK"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -81,6 +92,13 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="joinDate" destination="O18-q5-VZe" id="Vst-yy-8Li"/>
+                <outlet property="joinTimes" destination="nyi-QU-ix4" id="bZa-US-rJd"/>
+                <outlet property="userIP" destination="kAC-Y2-G7G" id="cTW-ze-DBC"/>
+                <outlet property="userImage" destination="os2-et-NFf" id="Vrj-cJ-QEj"/>
+                <outlet property="userName" destination="AOb-HF-MJ5" id="Plb-Rw-6tr"/>
+            </connections>
             <point key="canvasLocation" x="339" y="210.5"/>
         </tableViewCell>
     </objects>

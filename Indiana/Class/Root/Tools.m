@@ -12,11 +12,12 @@
 
 + (NSString *)timestampSwitchTime:(NSString *)timestamp{
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-
-    [formatter setDateFormat:@"YYYY-MM-DD hh:mm:ss"];
-    NSDate * date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]];
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"beijing"];
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]/ 1000.0];
 
     return [formatter stringFromDate:date];
+    
 }
 
 + (NSString *)imageChangeBase64:(UIImage *)image {

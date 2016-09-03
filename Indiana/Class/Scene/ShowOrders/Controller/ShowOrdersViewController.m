@@ -9,7 +9,9 @@
 #import "ShowOrdersViewController.h"
 #import "WinningListViewController.h"
 
-@interface ShowOrdersViewController ()<UITableViewDataSource,UITableViewDelegate>
+static NSString *url = @"http://192.168.0.123:8888/api/v1/getOrderShare?selectType=all&goods_id=null&user_id=null";
+
+@interface ShowOrdersViewController ()<UITableViewDataSource,UITableViewDelegate,BaseViewControllerReloadDataDelegate>
 
 @property(strong,nonatomic)NSArray *dataArray;
 
@@ -21,37 +23,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.ordersTableView.delegate = self;
-    self.ordersTableView.dataSource = self;
-    self.ordersTableView.separatorStyle = YES;
-    
     self.title = @"晒单";
+    self.baseTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:self.baseTableView];
+    //self.baseTableView.tableFooterView = [[UIView alloc]init];
     
-//    UIBarButtonItem *addItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd) target:self action:@selector(showWinning:)];
-//    self.navigationItem.rightBarButtonItem = addItem;
+    [self.baseTableView registerNib:[UINib nibWithNibName:@"ShowOrdersTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"showOrdersTableViewCell"];
+    self.baseTableView.delegate = self;
+    self.baseTableView.dataSource = self;
     
-    [self.ordersTableView registerNib:[UINib nibWithNibName:@"ShowOrdersTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"showOrdersTableViewCell"];
+    super.delegate = self;
+    [self setupRefresh];
     
-    NSString *url = @"http://192.168.0.133:8888/api/v1/getOrderShare?selectType=all&goods_id=null&user_id=null";
+    [self data];
+    
+}
+
+- (void)data{
     //NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"all",@"selectType",@"",@"goods_id",@"",@"user_id", nil];
     [[DataService sharedClient] GET:url parameters:@{} completion:^(id response, NSError *error, NSDictionary *header) {
         if (response) {
             NSLog(@"success");
             self.dataArray = [response objectForKey:@"data"];
-            [self.ordersTableView reloadData];
+            [self.baseTableView reloadData];
         }
     }];
-    
 }
-
-//- (void)showWinning:(id)sender{
-//    
-//    WinningListViewController *winningVC = [[WinningListViewController alloc]init];
-//    [self presentViewController:winningVC animated:YES completion:^{
-//        
-//    }];
-//    
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *aString =  [self.dataArray[indexPath.row] objectForKey:@"contents"];
@@ -73,12 +70,22 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ShowOrdersTableViewCell *cell = [self.ordersTableView dequeueReusableCellWithIdentifier:@"showOrdersTableViewCell"];
+    ShowOrdersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"showOrdersTableViewCell"];
     //cell.personDetailLabel.text = @"随着先来一张用MMD渲染出来的图引狼。本教程目的在于给入门级MMD玩家介绍下最基本的MME使用方法，并提供一些常用MME的资源下载，以便于新入门玩家能够迅速制作出高质量的MMD渲染效果。大触手和老鸟请自动无视，如有不足之处当然还是请大触和老鸟多多指点，谢谢。";
     cell.nameLabel.text = [self.dataArray[indexPath.row] objectForKey:@"userName"];
     cell.personDetailLabel.text = [self.dataArray[indexPath.row] objectForKey:@"contents"];
     [cell.imageViewOne sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.0.133:8888%@",[self.dataArray[indexPath.row] objectForKey:@"imagePath"]]] placeholderImage:nil];
     return cell;
+}
+
+#pragma mark - 刷新
+- (void)reloadNewData {
+    [self data];
+    
+}
+
+- (void)reloadMoreData {
+    
 }
 
 - (void)didReceiveMemoryWarning {

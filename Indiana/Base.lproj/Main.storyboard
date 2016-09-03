@@ -54,33 +54,7 @@
                     <view key="view" contentMode="scaleToFill" id="X7q-dN-IdP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gpz-Lj-B4J">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Gpz-Lj-B4J" firstAttribute="leading" secondItem="X7q-dN-IdP" secondAttribute="leading" id="4se-Mj-S8C"/>
-                            <constraint firstItem="Gpz-Lj-B4J" firstAttribute="top" secondItem="M2O-GW-ctr" secondAttribute="bottom" id="5ep-JD-xnO"/>
-                            <constraint firstAttribute="bottom" secondItem="Gpz-Lj-B4J" secondAttribute="bottom" id="6vI-fP-4PD"/>
-                            <constraint firstItem="Gpz-Lj-B4J" firstAttribute="leading" secondItem="X7q-dN-IdP" secondAttribute="leading" id="G10-SJ-LbI"/>
-                            <constraint firstItem="Gpz-Lj-B4J" firstAttribute="top" secondItem="X7q-dN-IdP" secondAttribute="top" id="QrO-pu-vdE"/>
-                            <constraint firstAttribute="trailing" secondItem="Gpz-Lj-B4J" secondAttribute="trailing" id="WYX-JT-LL2"/>
-                            <constraint firstItem="ehd-NR-iC1" firstAttribute="top" secondItem="Gpz-Lj-B4J" secondAttribute="bottom" id="hHR-vw-Cpi"/>
-                            <constraint firstAttribute="trailing" secondItem="Gpz-Lj-B4J" secondAttribute="trailing" id="i1F-Tb-kmn"/>
-                            <constraint firstItem="ehd-NR-iC1" firstAttribute="top" secondItem="Gpz-Lj-B4J" secondAttribute="bottom" id="uNd-fM-S0V"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="4se-Mj-S8C"/>
-                                <exclude reference="5ep-JD-xnO"/>
-                                <exclude reference="WYX-JT-LL2"/>
-                                <exclude reference="hHR-vw-Cpi"/>
-                                <exclude reference="uNd-fM-S0V"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="lC0-O7-tqv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aq5-na-s0l">
@@ -89,9 +63,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="ordersTableView" destination="Gpz-Lj-B4J" id="hfu-Gu-pvp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMd-ck-a1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,38 +129,9 @@
                     <view key="view" contentMode="scaleToFill" id="ObD-5e-wzy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PMI-EX-sIp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PMI-EX-sIp" firstAttribute="top" secondItem="lye-Yx-1RD" secondAttribute="bottom" id="7IN-dV-AyX"/>
-                            <constraint firstItem="PMI-EX-sIp" firstAttribute="top" secondItem="ObD-5e-wzy" secondAttribute="top" id="8fP-ne-bRA"/>
-                            <constraint firstAttribute="trailing" secondItem="PMI-EX-sIp" secondAttribute="trailing" id="ID4-3e-IjX"/>
-                            <constraint firstItem="PMI-EX-sIp" firstAttribute="leading" secondItem="ObD-5e-wzy" secondAttribute="leading" id="O8F-Zv-dfZ"/>
-                            <constraint firstItem="ccV-JL-j2P" firstAttribute="top" secondItem="PMI-EX-sIp" secondAttribute="bottom" id="Thm-DJ-D2x"/>
-                            <constraint firstAttribute="trailing" secondItem="PMI-EX-sIp" secondAttribute="trailing" id="U0I-sI-LAc"/>
-                            <constraint firstItem="ccV-JL-j2P" firstAttribute="top" secondItem="PMI-EX-sIp" secondAttribute="bottom" id="a3i-E1-1NX"/>
-                            <constraint firstItem="PMI-EX-sIp" firstAttribute="top" secondItem="ObD-5e-wzy" secondAttribute="top" id="jK1-cj-Nyb"/>
-                            <constraint firstItem="PMI-EX-sIp" firstAttribute="leading" secondItem="ObD-5e-wzy" secondAttribute="leading" id="wh7-Ut-aic"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="7IN-dV-AyX"/>
-                                <exclude reference="U0I-sI-LAc"/>
-                                <exclude reference="jK1-cj-Nyb"/>
-                                <exclude reference="wh7-Ut-aic"/>
-                                <exclude reference="Thm-DJ-D2x"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="GAQ-AJ-4xY"/>
-                    <connections>
-                        <outlet property="lastTableView" destination="PMI-EX-sIp" id="ICC-Yp-Yqw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ae2-8Z-oXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
